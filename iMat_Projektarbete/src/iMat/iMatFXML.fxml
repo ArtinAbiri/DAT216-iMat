@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -18,36 +17,31 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
               </content>
             </ScrollPane>
-            <AnchorPane fx:id="header" prefHeight="75.0" prefWidth="714.0" />
+            <AnchorPane fx:id="header" prefHeight="75.0" prefWidth="714.0" styleClass="header" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="startScreen" layoutX="5.0" layoutY="5.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <ImageView fitHeight="482.0" fitWidth="714.0" layoutX="-9.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/Capture.PNG" />
-               </image>
-            </ImageView>
             <Button fx:id="startShopButton" layoutX="417.0" layoutY="109.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="172.0" text="Börja handla" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="23.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
                <styleClass>
-                  <String fx:value="color-green" />
                   <String fx:value="button" />
+                  <String fx:value="color-green" />
                </styleClass>
             </Button>
             <Button fx:id="startGuideButton" layoutX="417.0" layoutY="262.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="172.0" text="Så här gör du">
                <font>
                   <Font size="22.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </Button>
+            <Button layoutX="367.0" layoutY="342.0" mnemonicParsing="false" text="Button" />
+            <ImageView fitHeight="482.0" fitWidth="714.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../resources/startScreenImage.jpg" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
