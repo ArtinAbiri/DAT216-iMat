@@ -11,16 +11,6 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMat">
    <children>
-      <AnchorPane fx:id="mainScreen" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <ScrollPane fx:id="mainScrollScreen" prefHeight="482.0" prefWidth="714.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-              </content>
-            </ScrollPane>
-            <AnchorPane fx:id="header" prefHeight="75.0" prefWidth="714.0" />
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="startScreen" layoutX="5.0" layoutY="5.0" prefHeight="400.0" prefWidth="600.0">
          <children>
             <ImageView fitHeight="482.0" fitWidth="714.0" layoutX="-9.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
@@ -48,6 +38,16 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainScreen" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ScrollPane fx:id="mainScrollScreen" layoutY="75.0" prefHeight="407.0" prefWidth="714.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+              </content>
+            </ScrollPane>
+            <AnchorPane fx:id="header" prefHeight="75.0" prefWidth="714.0" />
          </children>
       </AnchorPane>
    </children>
