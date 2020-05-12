@@ -33,6 +33,9 @@
 }
 
 .header{
-   -fx-background-color: #f6f6f6;
+   -fx-background-color: #FFFFFF;
+}
+.standard-background{
+-fx-background-color: #f6f6f6
 }
 
