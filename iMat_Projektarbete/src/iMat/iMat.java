@@ -33,7 +33,7 @@ public class iMat extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("iMat/iMat.fxml"));
 
-        Scene scene = new Scene(root, 800, 500);
+        Scene scene = new Scene(root);
 
         stage.setScene(scene);
         stage.setTitle("Hello world");
