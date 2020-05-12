@@ -1,34 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMat">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMat">
    <children>
+      <AnchorPane fx:id="mainScreen" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ScrollPane fx:id="mainScrollScreen" prefHeight="482.0" prefWidth="714.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+              </content>
+            </ScrollPane>
+            <AnchorPane fx:id="header" prefHeight="75.0" prefWidth="714.0" />
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="startScreen" layoutX="5.0" layoutY="5.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <ImageView fitHeight="482.0" fitWidth="705.0" layoutX="-9.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="482.0" fitWidth="714.0" layoutX="-9.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/Capture.PNG" />
                </image>
             </ImageView>
-            <Button fx:id="startShopButton" layoutX="417.0" layoutY="109.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="172.0" style="-fx-background-color: #4CC773;" text="Börja handla" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="startShopButton" layoutX="417.0" layoutY="109.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="172.0" text="Börja handla" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="23.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" color="#9a9a9a" height="1.93" offsetY="2.0" radius="5.2325" />
-               </effect>
+               <styleClass>
+                  <String fx:value="color-green" />
+                  <String fx:value="button" />
+               </styleClass>
             </Button>
             <Button fx:id="startGuideButton" layoutX="417.0" layoutY="262.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="172.0" text="Så här gör du">
                <font>
@@ -37,20 +47,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" color="#9a9a9a" height="10.28" offsetY="2.0" radius="4.9375" width="11.47" />
-               </effect>
             </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="mainScreen" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <ScrollPane fx:id="mainScrollScreen" prefHeight="438.0" prefWidth="714.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-              </content>
-            </ScrollPane>
-            <AnchorPane fx:id="header" prefHeight="75.0" prefWidth="714.0" />
          </children>
       </AnchorPane>
    </children>
