@@ -1,0 +1,41 @@
+@font-face {
+    src: url("../../resources/PatuaOne-Regular.ttf");
+}
+
+@font-face {
+    src: url("../../resources/SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+    src: url("../../resources/SourceSansPro-SemiBold.ttf");
+}
+
+@font-face {
+    src: url("../../resources/SourceSansPro-Bold.ttf");
+}
+
+.button {
+   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 7, 0.1, 0, 2);
+   -fx-background-color: #f6f6f6;
+   -fx-font-family: "Patua One";
+}
+
+.regular-text {
+    -fx-font-family: "Source Sans Pro";
+}
+
+.patua-text {
+    -fx-font-family: "Patua One";
+}
+
+.color-green{
+    -fx-background-color: #4cc773;
+}
+
+.header{
+   -fx-background-color: #FFFFFF;
+}
+.standard-background{
+-fx-background-color: #f6f6f6
+}
+
