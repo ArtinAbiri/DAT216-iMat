@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
 public class iMat extends Application {
@@ -28,6 +29,10 @@ public class iMat extends Application {
     ScrollPane mainScrollScreen;
     @FXML
     AnchorPane header;
+
+    @FXML
+    FlowPane categoryFlowPane;
+
 
     @Override
     public void start(Stage stage) throws Exception {

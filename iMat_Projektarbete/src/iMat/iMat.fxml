@@ -56,7 +56,7 @@
          <children>
             <ScrollPane fx:id="mainScrollScreen" layoutY="75.0" prefHeight="407.0" prefWidth="714.0" styleClass="standard-background">
                <content>
-                  <FlowPane prefHeight="383.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" translateX="20.0" translateY="20.0" />
+                  <FlowPane fx:id="categoryFlowPane" prefHeight="383.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" translateX="20.0" translateY="20.0" />
                </content>
             </ScrollPane>
             <AnchorPane fx:id="header" prefHeight="75.0" prefWidth="714.0" styleClass="header" />
