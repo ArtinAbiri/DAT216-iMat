@@ -13,6 +13,16 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMat">
    <children>
+      <AnchorPane fx:id="mainScreen" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ScrollPane fx:id="mainScrollScreen" layoutY="75.0" prefHeight="407.0" prefWidth="714.0" styleClass="standard-background">
+               <content>
+                  <FlowPane fx:id="categoryFlowPane" prefHeight="383.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" translateX="20.0" translateY="20.0" />
+               </content>
+            </ScrollPane>
+            <AnchorPane fx:id="header" prefHeight="75.0" prefWidth="714.0" styleClass="header" />
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="startScreen" layoutX="5.0" layoutY="5.0" prefHeight="400.0" prefWidth="600.0">
          <children>
             <ImageView fitHeight="482.0" fitWidth="714.0" layoutX="-9.0" layoutY="-8.0" pickOnBounds="true">
@@ -50,16 +60,6 @@
                   <Font name="Source Sans Pro SemiBold" size="19.0" />
                </font>
             </Text>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="mainScreen" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <ScrollPane fx:id="mainScrollScreen" layoutY="75.0" prefHeight="407.0" prefWidth="714.0" styleClass="standard-background">
-               <content>
-                  <FlowPane prefHeight="383.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" translateX="20.0" translateY="20.0" />
-               </content>
-            </ScrollPane>
-            <AnchorPane fx:id="header" prefHeight="75.0" prefWidth="714.0" styleClass="header" />
          </children>
       </AnchorPane>
    </children>
