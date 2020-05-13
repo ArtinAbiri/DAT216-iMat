@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class iMat extends Application {
@@ -36,14 +37,26 @@ public class iMat extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("iMat/iMat.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("iMat.fxml"));
 
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
-        stage.setTitle("Hello world");
         stage.show();
+    }
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+        Font.loadFont(iMat.class.getResourceAsStream("/SourceSansPro-Regular.ttf"), 16);
+
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+            }
+        }));
     }
 
 }
