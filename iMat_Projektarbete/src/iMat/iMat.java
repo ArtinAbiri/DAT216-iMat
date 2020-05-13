@@ -41,8 +41,9 @@ public class iMat extends Application {
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
-        stage.setTitle("Hello world");
+        stage.setTitle("Hello worldiworld");
         stage.show();
+
     }
 
 }
