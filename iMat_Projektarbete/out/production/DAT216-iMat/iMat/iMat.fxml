@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -11,55 +10,65 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMat">
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMat">
    <children>
-      <AnchorPane fx:id="mainScreen" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <ScrollPane fx:id="mainScrollScreen" layoutY="75.0" prefHeight="407.0" prefWidth="714.0" styleClass="standard-background">
-               <content>
-                  <FlowPane fx:id="categoryFlowPane" prefHeight="383.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" translateX="20.0" translateY="20.0" />
-               </content>
-            </ScrollPane>
-            <AnchorPane fx:id="header" prefHeight="75.0" prefWidth="714.0" styleClass="header" />
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="startScreen" layoutX="5.0" layoutY="5.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <ImageView fitHeight="482.0" fitWidth="714.0" layoutX="-9.0" layoutY="-8.0" pickOnBounds="true">
+            <ImageView fitHeight="910.0" fitWidth="1600.0" layoutX="-4.0" layoutY="-8.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../resources/startScreenImage.jpg" />
+                  <Image url="@../../../../resources/startScreenImage.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="startShopButton" layoutX="417.0" layoutY="196.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="172.0" text="Börja handla" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="startShopButton" layoutX="982.0" layoutY="232.0" mnemonicParsing="false" prefHeight="201.0" prefWidth="377.0" text="Börja handla" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
-                  <Font size="23.0" />
+                  <Font size="55.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
                <styleClass>
                   <String fx:value="color-green" />
                   <String fx:value="button" />
                </styleClass>
             </Button>
-            <Button fx:id="startGuideButton" layoutX="417.0" layoutY="349.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="172.0" text="Så här gör du">
+            <Button fx:id="startGuideButton" layoutX="982.0" layoutY="473.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="377.0" text="Så här gör du">
                <font>
-                  <Font size="22.0" />
+                  <Font size="36.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </Button>
-            <Text layoutX="336.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välkommen till iMat" textAlignment="CENTER" wrappingWidth="333.3367004394531">
+            <Text layoutX="955.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-bold" text="Välkommen till iMat" textAlignment="CENTER" wrappingWidth="430.3367004394531">
                <font>
-                  <Font name="Source Sans Pro SemiBold" size="37.0" />
+                  <Font size="48.0" />
                </font>
             </Text>
-            <Text layoutX="343.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- matbutiken för alla generationer" textAlignment="CENTER" wrappingWidth="319.7366638183594">
+            <Text layoutX="939.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-semibold" text="- matbutiken för alla generationer" textAlignment="CENTER" wrappingWidth="462.7366638183594">
                <font>
-                  <Font name="Source Sans Pro SemiBold" size="19.0" />
+                  <Font size="30.0" />
                </font>
             </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainScreen" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ScrollPane fx:id="mainScrollScreen" layoutY="100.0" prefHeight="407.0" prefWidth="714.0" styleClass="standard-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+               <content>
+                  <FlowPane prefHeight="726.0" prefWidth="1180.0" style="-fx-background-color: #ffffff;" translateX="380.0" translateY="120.0" />
+               </content>
+            </ScrollPane>
+            <FlowPane prefHeight="726.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" translateX="40.0" translateY="140.0" />
+            <AnchorPane fx:id="header" prefHeight="100.0" prefWidth="1601.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button layoutX="380.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="subcategory-button" text="Frukt">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="620.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" styleClass="subcategory-button" text="Grönsaker">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="500.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="subcategory-button-selected" text="Bär">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

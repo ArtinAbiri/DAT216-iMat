@@ -17,15 +17,38 @@
 .button {
    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 7, 0.1, 0, 2);
    -fx-background-color: #f6f6f6;
-   -fx-font-family: "PatuaOne";
+   -fx-font-family: "Patua One";
+   -fx-border-radius: 5px;
 }
 
-.regular-text {
-    -fx-font-family: "SourceSansPro";
+.subcategory-button {
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-border-color: #4cc773;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.0), 0, 0, 0, 0);
+}
+
+.subcategory-button-selected {
+    -fx-background-color: #4cc773;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.0), 0, 0, 0, 0);
+
+}
+
+.source-sans-regular {
+    -fx-font-family: "Source Sans Pro";
+}
+
+.source-sans-semibold {
+    -fx-font-family: "Source Sans Pro SemiBold";
+}
+
+.source-sans-bold {
+    -fx-font-family: "Source Sans Pro Bold";
 }
 
 .patua-text {
-    -fx-font-family: "PatuaOne";
+    -fx-font-family: "Patua One";
 }
 
 .color-green{
@@ -35,7 +58,8 @@
 .header{
    -fx-background-color: #FFFFFF;
 }
+
 .standard-background{
--fx-background-color: #f6f6f6
+    -fx-background-color: #f6f6f6
 }
 

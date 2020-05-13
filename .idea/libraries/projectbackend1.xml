@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="projectbackend1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/iMat_Projektarbete/lib/projectbackend.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
