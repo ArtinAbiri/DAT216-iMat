@@ -20,18 +20,6 @@ import java.io.IOException;
 
 public class iMat extends Application {
 
-@FXML
-Text logoText;
-@FXML
-    TextField searchBar;
-@FXML
-Button searchButton;
-@FXML
-    TextField minaSidorText;
-@FXML
-Text varukorgText;
-@FXML
-Button varukorgButton;
 
 
     @Override

@@ -39,22 +39,22 @@
             </ImageView>
          </children>
       </Pane>
-      <Label fx:id="nameLabel" layoutX="25.0" layoutY="200.0" styleClass="source-sans-regular" text="Produktnamn" AnchorPane.leftAnchor="25.0">
+      <Label fx:id="productNameLabel" layoutX="25.0" layoutY="200.0" styleClass="source-sans-regular" text="Produktnamn" AnchorPane.leftAnchor="25.0">
          <font>
             <Font size="32.0" />
          </font>
       </Label>
-      <Label fx:id="countryLabel" layoutX="27.0" layoutY="238.0" styleClass="source-sans-regular" text="Land" AnchorPane.leftAnchor="25.0">
+      <Label fx:id="productCountryLabel" layoutX="27.0" layoutY="238.0" styleClass="source-sans-regular" text="Land" AnchorPane.leftAnchor="25.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="priceLabel" layoutX="28.0" layoutY="274.0" styleClass="source-sans-semibold" text="Pris" AnchorPane.leftAnchor="25.0">
+      <Label fx:id="productPriceLabel" layoutX="28.0" layoutY="274.0" styleClass="source-sans-semibold" text="Pris" AnchorPane.leftAnchor="25.0">
          <font>
             <Font size="32.0" />
          </font>
       </Label>
-      <Label fx:id="amountLabel" layoutX="105.0" layoutY="337.0" styleClass="source-sans-regular" text="Antal">
+      <Label fx:id="productAmountLabel" layoutX="105.0" layoutY="337.0" styleClass="source-sans-regular" text="Antal">
          <font>
             <Font size="24.0" />
          </font>
