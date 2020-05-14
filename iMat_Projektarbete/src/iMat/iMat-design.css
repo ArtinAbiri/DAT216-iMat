@@ -15,7 +15,6 @@
 }
 
 .button {
-   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 7, 0.1, 0, 2);
    -fx-background-color: #f6f6f6;
    -fx-font-family: "Patua One";
    -fx-border-radius: 5px;
@@ -61,5 +60,18 @@
 
 .standard-background{
     -fx-background-color: #f6f6f6
+}
+
+.search-bar{
+    -fx-border-color: #000000;
+    -fx-border-radius: 5 0 0 5  ;
+}
+.search-button{
+    -fx-border-radius: 0 5 5 0;
+    -fx-border-color: #000000;
+
+}
+.button-shadow{
+   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 7, 0.1, 0, 2);
 }
 
