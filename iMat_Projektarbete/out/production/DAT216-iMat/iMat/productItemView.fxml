@@ -8,7 +8,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="265.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.ProductCard">
    <children>
       <ImageView fitHeight="168.0" fitWidth="216.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
@@ -40,27 +39,22 @@
             </ImageView>
          </children>
       </Pane>
-      <Label fx:id="productName" layoutX="25.0" layoutY="200.0" text="Produktnamn" AnchorPane.leftAnchor="25.0">
+      <Label fx:id="nameLabel" layoutX="25.0" layoutY="200.0" styleClass="source-sans-regular" text="Produktnamn" AnchorPane.leftAnchor="25.0">
          <font>
             <Font size="32.0" />
          </font>
       </Label>
-      <Label fx:id="productCountry" layoutX="27.0" layoutY="238.0" text="Land," AnchorPane.leftAnchor="25.0">
+      <Label fx:id="countryLabel" layoutX="27.0" layoutY="238.0" styleClass="source-sans-regular" text="Land" AnchorPane.leftAnchor="25.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="productAmount" layoutX="84.0" layoutY="238.0" text="mängd">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="productPrice" layoutX="28.0" layoutY="274.0" text="Pris" AnchorPane.leftAnchor="25.0">
+      <Label fx:id="priceLabel" layoutX="28.0" layoutY="274.0" styleClass="source-sans-semibold" text="Pris" AnchorPane.leftAnchor="25.0">
          <font>
             <Font size="32.0" />
          </font>
       </Label>
-      <Label fx:id="numberOfProduct" layoutX="105.0" layoutY="337.0" text="Antal">
+      <Label fx:id="amountLabel" layoutX="105.0" layoutY="337.0" styleClass="source-sans-regular" text="Antal">
          <font>
             <Font size="24.0" />
          </font>
