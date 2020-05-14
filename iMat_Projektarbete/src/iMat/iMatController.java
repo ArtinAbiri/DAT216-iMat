@@ -23,7 +23,6 @@ public class iMatController {
     ScrollPane mainScrollScreen;
     @FXML
     AnchorPane header;
-
     @FXML
     FlowPane categoryFlowPane;
 }
