@@ -90,6 +90,6 @@
 .search-button{
     -fx-border-radius: 0 5 5 0;
     -fx-border-color: #000000;
-    -fx-graphic: url('../../../../resources/icons/outline_search_white_18dp.png');
+    -fx-graphic: url('../../../../resources/icons/outline_search_white_48dp.png');
 
 }
