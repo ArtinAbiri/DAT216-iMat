@@ -21,13 +21,8 @@
             <Image url="@../../resources/icons/baseline_favorite_border_black_48dp.png" />
          </image>
       </ImageView>
-      <Line endX="215.0" layoutX="128.0" layoutY="282.0" AnchorPane.leftAnchor="25.0" />
-      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="14.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true" styleClass="productIcon" AnchorPane.leftAnchor="15.0">
-         <image>
-            <Image url="@../../resources/icons/baseline_remove_black_48dp.png" />
-         </image>
-      </ImageView>
-      <Pane layoutX="185.0" layoutY="322.0" prefHeight="64.0" prefWidth="64.0" styleClass="add-button-rectangle" AnchorPane.rightAnchor="15.0">
+      <Line endX="215.0" layoutX="25.0" layoutY="273.0" AnchorPane.leftAnchor="24.5" />
+      <Pane layoutX="185.0" layoutY="322.0" prefHeight="64.0" prefWidth="64.0" styleClass="add-button" AnchorPane.rightAnchor="16.0">
          <children>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -36,24 +31,38 @@
             </ImageView>
          </children>
       </Pane>
-      <Label layoutX="25.0" layoutY="200.0" text="Produktnamn" AnchorPane.leftAnchor="25.0">
+      <Pane layoutX="19.0" layoutY="322.0" prefHeight="64.0" prefWidth="64.0" styleClass="remove-button" AnchorPane.leftAnchor="15.0">
+         <children>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/icons/baseline_remove_white_48dp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label fx:id="productName" layoutX="25.0" layoutY="200.0" text="Produktnamn" AnchorPane.leftAnchor="25.0">
          <font>
             <Font size="32.0" />
          </font>
       </Label>
-      <Label layoutX="27.0" layoutY="238.0" text="Land," AnchorPane.leftAnchor="25.0">
+      <Label fx:id="productCountry" layoutX="27.0" layoutY="238.0" text="Land," AnchorPane.leftAnchor="25.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="84.0" layoutY="238.0" text="mängd">
+      <Label fx:id="productAmount" layoutX="84.0" layoutY="238.0" text="mängd">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="25.0" layoutY="289.0" text="Pris" AnchorPane.leftAnchor="25.0">
+      <Label fx:id="productPrice" layoutX="28.0" layoutY="274.0" text="Pris" AnchorPane.leftAnchor="25.0">
          <font>
             <Font size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberOfProduct" layoutX="105.0" layoutY="337.0" text="Antal">
+         <font>
+            <Font size="24.0" />
          </font>
       </Label>
    </children>
