@@ -75,3 +75,11 @@
    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 7, 0.1, 0, 2);
 }
 
+.add-button-rectangle {
+    -fx-background-color: #4cc733;
+    -fx-border-radius: 5px;
+}
+
+.remove-button-rectangle {
+    -fx-background-color: #c6c6c6;
+}
