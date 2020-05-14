@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 
 <AnchorPane prefHeight="400.0" prefWidth="265.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.ProductCard">
@@ -21,37 +21,40 @@
             <Image url="@../../resources/icons/baseline_favorite_border_black_48dp.png" />
          </image>
       </ImageView>
-      <Text layoutX="27.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produktnamn" wrappingWidth="211.7615966796875" AnchorPane.leftAnchor="25.0">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Text>
-      <Text layoutX="27.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land," wrappingWidth="75.611328125" AnchorPane.leftAnchor="25.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Text layoutX="92.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mängd" wrappingWidth="84.611328125">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
       <Line endX="215.0" layoutX="128.0" layoutY="282.0" AnchorPane.leftAnchor="25.0" />
-      <Text layoutX="22.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pris" wrappingWidth="113.4169921875" AnchorPane.leftAnchor="25.0">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Text>
       <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="14.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true" styleClass="productIcon" AnchorPane.leftAnchor="15.0">
          <image>
             <Image url="@../../resources/icons/baseline_remove_black_48dp.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="64.0" layoutX="186.0" layoutY="322.0" stroke="BLACK" strokeType="INSIDE" width="64.0" />
-      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="187.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="15.0">
-         <image>
-            <Image url="@../../resources/icons/baseline_add_black_48dp.png" />
-         </image>
-      </ImageView>
+      <Pane layoutX="185.0" layoutY="322.0" prefHeight="64.0" prefWidth="64.0" styleClass="add-button-rectangle" AnchorPane.rightAnchor="15.0">
+         <children>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/icons/baseline_add_white_48dp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label layoutX="25.0" layoutY="200.0" text="Produktnamn" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="238.0" text="Land," AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="238.0" text="mängd">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="289.0" text="Pris" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
