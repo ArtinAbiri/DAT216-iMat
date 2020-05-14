@@ -17,27 +17,6 @@ import java.io.IOException;
 
 public class iMat extends Application {
 
-    @FXML
-    Button startShopButton;
-
-    @FXML
-    Button startGuideButton;
-
-    @FXML
-    AnchorPane startScreen;
-
-    @FXML
-    AnchorPane mainScreen;
-
-    @FXML
-    ScrollPane mainScrollScreen;
-    @FXML
-    AnchorPane header;
-
-    @FXML
-    FlowPane categoryFlowPane;
-
-
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("iMat.fxml"));
