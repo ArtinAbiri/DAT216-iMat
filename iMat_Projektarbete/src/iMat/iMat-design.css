@@ -71,15 +71,21 @@
    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 7, 0.1, 0, 2);
 }
 
-.add-button-rectangle {
+.add-button {
     -fx-background-color: #4cc733;
+    -fx-background-radius: 5px;
     -fx-border-radius: 5px;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
 }
 
-.remove-button-rectangle {
+.remove-button {
     -fx-background-color: #c6c6c6;
-
-
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+}
 
 .search-button{
     -fx-border-radius: 0 5 5 0;
@@ -87,4 +93,5 @@
     -fx-graphic: url('http://icons.iconarchive.com/icons/aha-soft/desktop-buffet/128/Pizza-icon.png');
 
 }
+
 
