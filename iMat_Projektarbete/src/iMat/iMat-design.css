@@ -18,7 +18,10 @@
    -fx-background-color: #f6f6f6;
    -fx-font-family: "Patua One";
    -fx-border-radius: 5px;
+   -fx-font-size: 30px;
 }
+
+
 
 .subcategory-button {
     -fx-background-color: rgba(0,0,0,0);
