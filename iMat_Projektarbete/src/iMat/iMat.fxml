@@ -46,7 +46,7 @@
          <children>
             <ScrollPane fx:id="mainScrollScreen" layoutY="100.0" prefHeight="407.0" prefWidth="714.0" styleClass="standard-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
                <content>
-                  <FlowPane prefHeight="726.0" prefWidth="1180.0" style="-fx-background-color: #ffffff;" translateX="380.0" translateY="120.0" />
+                  <FlowPane fx:id="productsFlowPane" prefHeight="726.0" prefWidth="1180.0" translateX="380.0" translateY="120.0" />
                </content>
             </ScrollPane>
             <FlowPane prefHeight="726.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" translateX="40.0" translateY="140.0" />

@@ -64,12 +64,24 @@
 .standard-background{
     -fx-background-color: #f6f6f6
 }
+.white-scrollpane{
+   -fx-background: #FFFFFF;
+   -fx-border-color: #FFFFFF;
+}
+.checkout-boxes{
+   -fx-background-color: #FFFFFF;
+       -fx-border-radius:5;
 
+}
 .search-bar{
     -fx-border-color: #000000;
     -fx-border-radius: 5 0 0 5  ;
 }
+.text-field-checkout{
+-fx-background-color: #E9E9E9;
+    -fx-font-family: "Source Sans Pro";
 
+}
 .button-shadow{
    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 7, 0.1, 0, 2);
 }
@@ -95,4 +107,26 @@
     -fx-border-color: #000000;
     -fx-graphic: url('../../../../resources/icons/outline_search_white_48dp.png');
 
+}
+.example-text-color{
+    -fx-text-fill: #f6f6f6;
+    -fx-font-family: "Source Sans Pro";
+    -fx-font-size: 18px;
+}
+.next-button{
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Source Sans Pro";
+       -fx-font-family: "Patua One";
+    -fx-font-size: 45px;
+
+}
+.green-circle{
+
+}
+
+.productPanel {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 0 20px 20px 0;
+    -fx-border-insets: 0 20px 20px 0;
+    -fx-background-insets: 0 20px 20px 0;
 }

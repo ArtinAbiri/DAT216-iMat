@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root prefHeight="400.0" prefWidth="265.0" styleClass="productPanel" stylesheets="@iMat-design.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="productImage" fitHeight="168.0" fitWidth="216.0" layoutX="34.0" layoutY="45.0" pickOnBounds="true" AnchorPane.leftAnchor="25.0">
+         <image>
+            <Image url="@../../resources/startScreenImage.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="55.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <image>
+            <Image url="@../../../../resources/icons/baseline_favorite_border_black_48dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="productEcoImage" fitHeight="48.0" fitWidth="48.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <image>
+            <Image url="@../../../../resources/icons/baseline_eco_black_48dp.png" />
+         </image>
+      </ImageView>
+      <Line endX="215.0" layoutX="25.0" layoutY="274.0" />
+      <Pane layoutX="226.0" layoutY="341.0" prefHeight="64.0" prefWidth="64.0" styleClass="add-button" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <children>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/icons/baseline_add_white_48dp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="55.0" layoutY="341.0" prefHeight="64.0" prefWidth="64.0" styleClass="remove-button" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0">
+         <children>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/icons/baseline_remove_white_48dp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label fx:id="productNameLabel" layoutX="25.0" layoutY="219.0" styleClass="source-sans-regular" text="Produktnamn" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="productPriceLabel" layoutX="22.0" layoutY="274.0" styleClass="source-sans-semibold" text="Pris" AnchorPane.leftAnchor="22.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="productAmountLabel" layoutX="105.0" layoutY="336.0" styleClass="source-sans-regular" text="Antal">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</fx:root>

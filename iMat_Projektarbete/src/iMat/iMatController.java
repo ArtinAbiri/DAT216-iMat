@@ -1,6 +1,7 @@
 package iMat;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -8,7 +9,60 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
+import se.chalmers.cse.dat216.project.Product;
 
-public class iMatController {
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
+public class iMatController implements Initializable {
+    @FXML
+    Button startShopButton;
+
+    @FXML
+    Button startGuideButton;
+
+    @FXML
+    AnchorPane startScreen;
+
+    @FXML
+    AnchorPane mainScreen;
+
+    @FXML
+    ScrollPane mainScrollScreen;
+    @FXML
+    AnchorPane header;
+
+    @FXML
+    FlowPane categoryFlowPane;
+
+    @FXML
+    Text logoText;
+    @FXML
+    TextField searchBar;
+    @FXML
+    Button searchButton;
+    @FXML
+    Text minaSidorText;
+    @FXML
+    Text varukorgText;
+    @FXML
+    Button varukorgButton;
+
+    @FXML
+    FlowPane productsFlowPane;
+
+    private final Model model = Model.getInstance();
+
+    public void initialize(URL url, ResourceBundle rb) {
+        updateProductsPanel(model.getProducts());
+    }
+
+    private void updateProductsPanel(List<Product> products) {
+        productsFlowPane.getChildren().clear();
+
+        for (Product product : products) {
+            productsFlowPane.getChildren().add(new productPanel(product));
+        }
+    }
 }
