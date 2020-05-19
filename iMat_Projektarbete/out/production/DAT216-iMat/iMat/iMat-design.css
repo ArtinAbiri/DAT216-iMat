@@ -121,12 +121,54 @@
 
 }
 .green-circle{
+    -fx-background-color: #4cc773;
+    -fx-fill: #4cc773;
+    -fx-stroke-width: 0;
 
 }
+.grey-circle{
+     -fx-stroke: #C5C5C5;
+    -fx-fill: rgba(0,0,0,0);
+    -fx-stroke-width: 5;
+}
+
+.green-line{
+    -fx-stroke: #4cc773;
+    -fx-stroke-width: 9;
+}
+.grey-line{
+    -fx-stroke: #C5C5C5;
+    -fx-stroke-width: 9;
+}
+
 
 .productPanel {
     -fx-background-color: #FFFFFF;
     -fx-padding: 0 20px 20px 0;
     -fx-border-insets: 0 20px 20px 0;
     -fx-background-insets: 0 20px 20px 0;
+}
+.white-cart{
+    -fx-graphic: url('../../../../resources/icons/outline_shopping_cart_white_48dp.png');
+
+}
+.black-cart{
+    -fx-graphic: url('../../../../resources/icons/outline_shopping_cart_black_48dp.png');
+
+}
+.white-card{
+    -fx-graphic: url('../../../../resources/icons/outline_credit_card_white_48dp.png');
+
+}
+.black-card{
+    -fx-graphic: url('../../../../resources/icons/outline_credit_card_black_48dp.png');
+
+}
+.white-home{
+    -fx-graphic: url('../../../../resources/icons/outline_home_white_48dp.png');
+
+}
+.black-home{
+    -fx-graphic: url('../../../../resources/icons/outline_home_black_48dp.png');
+
 }

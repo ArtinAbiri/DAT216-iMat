@@ -11,96 +11,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.Kassa">
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMat">
    <stylesheets>
       <URL value="@artin.css" />
       <URL value="@iMat-design.css" />
    </stylesheets>
    <children>
-      <AnchorPane fx:id="checkoutPart11" layoutY="110.0" prefHeight="800.0" prefWidth="1600.0" styleClass="standard-background" stylesheets="@iMat-design.css">
-         <children>
-            <AnchorPane layoutX="34.0" layoutY="154.0" prefHeight="600.0" prefWidth="1100.0" styleClass="checkout-boxes">
-               <children>
-                  <Text layoutX="45.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Betalinformation">
-                     <font>
-                        <Font size="56.0" />
-                     </font>
-                  </Text>
-                  <TextField layoutX="41.0" layoutY="161.0" prefHeight="60.0" prefWidth="1020.0" promptText="Kortinnehavarens fullständiga namn" styleClass="text-field-checkout">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                  </TextField>
-                  <TextField layoutX="40.0" layoutY="429.0" prefHeight="60.0" prefWidth="480.0" promptText="MM/ÅÅ" styleClass="text-field-checkout">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                  </TextField>
-                  <TextField layoutX="580.0" layoutY="429.0" prefHeight="60.0" prefWidth="480.0" promptText="CVV" styleClass="text-field-checkout">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                  </TextField>
-                  <Text layoutX="45.0" layoutY="508.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ex. 03/23" wrappingWidth="220.13671875">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="source-sans-regular" />
-                        <String fx:value="example-text-color" />
-                     </styleClass>
-                  </Text>
-                  <CheckBox layoutX="46.0" layoutY="536.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="1009.0" styleClass="source-sans-regular" text="Spara min kortinformation till nästa köp">
-                     <font>
-                        <Font size="28.0" />
-                     </font>
-                  </CheckBox>
-                  <TextField layoutX="41.0" layoutY="293.0" prefHeight="60.0" prefWidth="1020.0" promptText="Kortnummer" styleClass="text-field-checkout">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                  </TextField>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="1181.0" layoutY="120.0" prefHeight="432.0" prefWidth="380.0" styleClass="checkout-boxes">
-               <children>
-                  <Text layoutX="40.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Summa">
-                     <font>
-                        <Font size="56.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="40.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Deltotal:" wrappingWidth="220.13671875">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Frakt:" wrappingWidth="220.13671875">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Line endX="200.0" layoutX="140.0" layoutY="225.0" startX="-100.0" />
-                  <Text layoutX="40.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Totalkostnad (inkl skatt):" wrappingWidth="279.13671875">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <Button layoutX="1181.0" layoutY="592.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="380.0" text="Slutför köp!">
-               <styleClass>
-                  <String fx:value="color-green" />
-                  <String fx:value="next-button" />
-                  <String fx:value="button-shadow" />
-               </styleClass>
-            </Button>
-            <Circle fill="DODGERBLUE" layoutX="477.0" layoutY="51.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="green-circle" />
-            <Line endX="90.0" layoutX="625.0" layoutY="51.0" startX="-72.0" styleClass="green-line" />
-            <Circle fill="DODGERBLUE" layoutX="794.0" layoutY="51.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="green-circle" />
-            <Line endX="90.0" layoutX="950.0" layoutY="51.0" startX="-72.0" styleClass="green-line" />
-            <Circle fill="DODGERBLUE" layoutX="1119.0" layoutY="51.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" styleClass="grey-circle" />
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="checkoutPart1" layoutY="100.0" prefHeight="800.0" prefWidth="1600.0" styleClass="standard-background" stylesheets="@iMat-design.css">
          <children>
             <AnchorPane layoutX="40.0" layoutY="110.0" prefHeight="600.0" prefWidth="1100.0" styleClass="checkout-boxes">
@@ -215,11 +131,119 @@
                   <String fx:value="button-shadow" />
                </styleClass>
             </Button>
-            <Circle fill="DODGERBLUE" layoutX="457.0" layoutY="61.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="green-circle" />
+            <Circle fill="DODGERBLUE" layoutX="450.0" layoutY="61.0" radius="40.0" stroke="BLACK" strokeType="INSIDE">
+               <styleClass>
+                  <String fx:value="green-circle" />
+                  <String fx:value="white-cart" />
+               </styleClass></Circle>
             <Line endX="90.0" layoutX="605.0" layoutY="61.0" startX="-72.0" styleClass="green-line" />
             <Line endX="90.0" layoutX="930.0" layoutY="61.0" startX="-72.0" styleClass="grey-circle" />
-            <Circle fill="DODGERBLUE" layoutX="1099.0" layoutY="61.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" styleClass="grey-circle" />
-            <Circle fill="DODGERBLUE" layoutX="774.0" layoutY="61.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" styleClass="grey-circle" />
+            <Circle fill="DODGERBLUE" layoutX="1099.0" layoutY="61.0" radius="45.0" stroke="BLACK" strokeType="INSIDE">
+               <styleClass>
+                  <String fx:value="grey-circle" />
+                  <String fx:value="black-card" />
+               </styleClass></Circle>
+            <Circle fill="DODGERBLUE" layoutX="774.0" layoutY="61.0" radius="45.0" stroke="BLACK" strokeType="INSIDE">
+               <styleClass>
+                  <String fx:value="grey-circle" />
+                  <String fx:value="black-home" />
+               </styleClass></Circle>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="checkoutPart11" layoutY="110.0" prefHeight="800.0" prefWidth="1600.0" styleClass="standard-background" stylesheets="@iMat-design.css">
+         <children>
+            <AnchorPane layoutX="34.0" layoutY="154.0" prefHeight="600.0" prefWidth="1100.0" styleClass="checkout-boxes">
+               <children>
+                  <Text layoutX="45.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Betalinformation">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Text>
+                  <TextField layoutX="41.0" layoutY="161.0" prefHeight="60.0" prefWidth="1020.0" promptText="Kortinnehavarens fullständiga namn" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="40.0" layoutY="429.0" prefHeight="60.0" prefWidth="480.0" promptText="MM/ÅÅ" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="580.0" layoutY="429.0" prefHeight="60.0" prefWidth="480.0" promptText="CVV" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <Text layoutX="45.0" layoutY="508.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ex. 03/23" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="source-sans-regular" />
+                        <String fx:value="example-text-color" />
+                     </styleClass>
+                  </Text>
+                  <CheckBox layoutX="46.0" layoutY="536.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="1009.0" styleClass="source-sans-regular" text="Spara min kortinformation till nästa köp">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </CheckBox>
+                  <TextField layoutX="41.0" layoutY="293.0" prefHeight="60.0" prefWidth="1020.0" promptText="Kortnummer" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1181.0" layoutY="120.0" prefHeight="432.0" prefWidth="380.0" styleClass="checkout-boxes">
+               <children>
+                  <Text layoutX="40.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Summa">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Deltotal:" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Frakt:" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Line endX="200.0" layoutX="140.0" layoutY="225.0" startX="-100.0" />
+                  <Text layoutX="40.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Totalkostnad (inkl skatt):" wrappingWidth="279.13671875">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <Button layoutX="1181.0" layoutY="592.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="380.0" text="Slutför köp!">
+               <styleClass>
+                  <String fx:value="color-green" />
+                  <String fx:value="next-button" />
+                  <String fx:value="button-shadow" />
+               </styleClass>
+            </Button>
+            <Circle fill="DODGERBLUE" layoutX="477.0" layoutY="51.0" radius="40.0" stroke="BLACK" strokeType="INSIDE">
+               <styleClass>
+                  <String fx:value="green-circle" />
+                  <String fx:value="white-cart" />
+               </styleClass></Circle>
+            <Line endX="90.0" layoutX="625.0" layoutY="51.0" startX="-72.0" styleClass="green-line" />
+            <Circle fill="DODGERBLUE" layoutX="794.0" layoutY="51.0" radius="40.0" stroke="BLACK" strokeType="INSIDE">
+               <styleClass>
+                  <String fx:value="white-home" />
+                  <String fx:value="green-circle" />
+               </styleClass></Circle>
+            <Line endX="90.0" layoutX="950.0" layoutY="51.0" startX="-72.0" styleClass="green-line" />
+            <Circle fill="DODGERBLUE" layoutX="1119.0" layoutY="51.0" radius="45.0" stroke="BLACK" strokeType="INSIDE">
+               <styleClass>
+                  <String fx:value="grey-circle" />
+                  <String fx:value="black-card" />
+               </styleClass></Circle>
          </children>
       </AnchorPane>
    </children>
