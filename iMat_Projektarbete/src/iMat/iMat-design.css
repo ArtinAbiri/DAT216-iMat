@@ -14,46 +14,27 @@
     src: url("../../../../resources/SourceSansPro-Bold.ttf");
 }
 
-.font-size-52 {
-    -fx-font-size: 52px;
-}
-
-.font-size-48 {
-    -fx-font-size: 48px;
-}
-
-.font-size-32 {
-    -fx-font-size: 32px;
-}
-
-.font-size-24 {
-    -fx-font-size: 24px;
-}
-
-.font-size-18 {
-    -fx-font-size: 18px;
-}
-
 .button {
    -fx-background-color: #f6f6f6;
    -fx-font-family: "Patua One";
    -fx-border-radius: 5px;
+   -fx-font-size: 30px;
 }
+
+
 
 .subcategory-button {
     -fx-background-color: rgba(0,0,0,0);
     -fx-border-color: #4cc773;
     -fx-border-width: 3px;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.0), 0, 0, 0, 0);
-    -fx-max-height: 50px;
 }
 
 .subcategory-button-selected {
     -fx-background-color: #4cc773;
     -fx-text-fill: white;
-    -fx-border-color: #4cc773;
-    -fx-border-width: 2px;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.0), 0, 0, 0, 0);
+
 }
 
 .source-sans-regular {
