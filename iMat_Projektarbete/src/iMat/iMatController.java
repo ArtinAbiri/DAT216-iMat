@@ -3,14 +3,13 @@ package iMat;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
-
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -52,10 +51,13 @@ public class iMatController implements Initializable {
     @FXML
     FlowPane productsFlowPane;
 
+    @FXML
+    Circle shoppingcartPay;
+
     private final Model model = Model.getInstance();
 
     public void initialize(URL url, ResourceBundle rb) {
-        updateProductsPanel(model.getProducts());
+      //  updateProductsPanel(model.getProducts());
     }
 
     private void updateProductsPanel(List<Product> products) {
