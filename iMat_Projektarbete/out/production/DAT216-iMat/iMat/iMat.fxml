@@ -46,7 +46,7 @@
          <children>
             <ScrollPane fx:id="mainScrollScreen" layoutY="100.0" prefHeight="407.0" prefWidth="714.0" styleClass="standard-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
                <content>
-                  <FlowPane fx:id="productsFlowPane" prefHeight="726.0" prefWidth="1180.0" translateX="380.0" translateY="120.0" />
+                  <FlowPane fx:id="productsFlowPane" prefHeight="646.0" prefWidth="1180.0" translateX="380.0" translateY="120.0" />
                </content>
             </ScrollPane>
             <FlowPane prefHeight="726.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" translateX="40.0" translateY="140.0" />
@@ -67,15 +67,23 @@
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Text fx:id="minaSidorText" layoutX="1007.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Mina Sidor" wrappingWidth="278.8424072265625">
+                  <Text fx:id="minaSidorText" layoutX="1007.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mina Sidor" wrappingWidth="278.8424072265625">
                      <font>
                         <Font size="52.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="patua-text" />
+                        <String fx:value="font-size-48" />
+                     </styleClass>
                   </Text>
-                  <Text fx:id="varukorgText" fill="WHITE" layoutX="1322.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Varukorg" textAlignment="CENTER" wrappingWidth="260.0">
+                  <Text fx:id="varukorgText" fill="WHITE" layoutX="1322.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varukorg" textAlignment="CENTER" wrappingWidth="260.0">
                      <font>
                         <Font size="52.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="patua-text" />
+                        <String fx:value="font-size-48" />
+                     </styleClass>
                   </Text>
                   <Button fx:id="searchButton" layoutX="900.0" layoutY="10.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
                      <styleClass>
@@ -85,20 +93,29 @@
                   </Button>
                </children>
             </AnchorPane>
-            <Button layoutX="380.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="subcategory-button" text="Frukt">
-               <font>
-                  <Font size="18.0" />
-               </font>
+            <Button layoutX="380.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Frukt">
+               <styleClass>
+                  <String fx:value="subcategory-button" />
+                  <String fx:value="font-size-24" />
+               </styleClass>
             </Button>
-            <Button layoutX="620.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" styleClass="subcategory-button" text="Grönsaker">
+            <Button layoutX="620.0" layoutY="140.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="165.0" text="Grönsaker">
                <font>
                   <Font size="18.0" />
                </font>
+               <styleClass>
+                  <String fx:value="subcategory-button" />
+                  <String fx:value="font-size-24" />
+               </styleClass>
             </Button>
-            <Button layoutX="500.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" styleClass="subcategory-button-selected" text="Bär">
+            <Button layoutX="500.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Bär">
                <font>
                   <Font size="18.0" />
                </font>
+               <styleClass>
+                  <String fx:value="subcategory-button-selected" />
+                  <String fx:value="font-size-24" />
+               </styleClass>
             </Button>
          </children>
       </AnchorPane>

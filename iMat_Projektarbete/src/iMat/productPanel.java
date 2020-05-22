@@ -41,7 +41,7 @@ public class productPanel extends AnchorPane {
         productNameLabel.setText(product.getName());
         productPriceLabel.setText(String.format("%.2f", product.getPrice()) + " " + product.getUnit());
         productAmountLabel.setText("0");
-        productImage.setImage(model.getImage(product, 220, 170));
+        productImage.setImage(model.getImage(product, 205, 160));
         if (!product.isEcological()) {
             productEcoImage.setImage(null);
         }
