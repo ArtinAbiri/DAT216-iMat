@@ -57,7 +57,7 @@ public class iMatController implements Initializable {
     private final Model model = Model.getInstance();
 
     public void initialize(URL url, ResourceBundle rb) {
-      //  updateProductsPanel(model.getProducts());
+        updateProductsPanel(model.getProducts());
     }
 
     private void updateProductsPanel(List<Product> products) {
