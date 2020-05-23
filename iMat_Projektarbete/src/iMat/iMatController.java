@@ -63,6 +63,7 @@ public class iMatController implements Initializable {
         System.out.println("# matching products: " + matches.size());
 
     }
+
     private final Model model = Model.getInstance();
 
     public void initialize(URL url, ResourceBundle rb) {
