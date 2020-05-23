@@ -1,5 +1,6 @@
 package iMat;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -54,6 +55,14 @@ public class iMatController implements Initializable {
     @FXML
     Circle shoppingcartPay;
 
+    @FXML
+    private void handleSearchAction(ActionEvent event) {
+
+        List<Product> matches = model.findProducts(searchBar.getText());
+        updateProductList(matches);
+        System.out.println("# matching products: " + matches.size());
+
+    }
     private final Model model = Model.getInstance();
 
     public void initialize(URL url, ResourceBundle rb) {
@@ -66,5 +75,15 @@ public class iMatController implements Initializable {
         for (Product product : products) {
             productsFlowPane.getChildren().add(new productPanel(product));
         }
+    }
+    private void updateProductList(List<Product> products) {
+
+        productsFlowPane.getChildren().clear();
+
+        for (Product product : products) {
+
+            productsFlowPane.getChildren().add(new productPanel(product));
+        }
+
     }
 }

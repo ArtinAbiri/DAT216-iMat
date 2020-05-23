@@ -1,8 +1,10 @@
 package iMat;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
+
 
 
 public class Model {
@@ -48,4 +51,10 @@ public class Model {
     public Image getImage(Product p, double width, double height) {
         return iMatDataHandler.getFXImage(p, width, height);
     }
+
+    public List<Product> findProducts(java.lang.String s) {
+        return iMatDataHandler.findProducts(s);
+    }
+
+
 }

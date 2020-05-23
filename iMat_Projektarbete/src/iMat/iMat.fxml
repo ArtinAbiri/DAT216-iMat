@@ -85,7 +85,7 @@
                         <String fx:value="font-size-48" />
                      </styleClass>
                   </Text>
-                  <Button fx:id="searchButton" layoutX="900.0" layoutY="10.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+                  <Button fx:id="searchButton" layoutX="900.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleSearchAction" prefHeight="80.0" prefWidth="80.0">
                      <styleClass>
                         <String fx:value="color-green" />
                         <String fx:value="search-button" />
@@ -93,13 +93,13 @@
                   </Button>
                </children>
             </AnchorPane>
-            <Button layoutX="380.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Frukt">
+            <Button layoutX="380.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0">
                <styleClass>
                   <String fx:value="subcategory-button" />
                   <String fx:value="font-size-24" />
                </styleClass>
             </Button>
-            <Button layoutX="620.0" layoutY="140.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="165.0" text="Grönsaker">
+            <Button layoutX="620.0" layoutY="140.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="165.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -108,12 +108,12 @@
                   <String fx:value="font-size-24" />
                </styleClass>
             </Button>
-            <Button layoutX="500.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Bär">
+            <Button layoutX="500.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0">
                <font>
                   <Font size="18.0" />
                </font>
                <styleClass>
-                  <String fx:value="subcategory-button-selected" />
+                  <String fx:value="subcategory-button" />
                   <String fx:value="font-size-24" />
                </styleClass>
             </Button>
