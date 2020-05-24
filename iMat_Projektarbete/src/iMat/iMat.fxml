@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -13,15 +15,51 @@
 
 <AnchorPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMatController">
    <children>
-      <AnchorPane fx:id="mainScreen" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="shoppingCart" prefHeight="900.0" prefWidth="1600.0">
          <children>
-            <ScrollPane fx:id="mainScrollScreen" layoutY="100.0" prefHeight="407.0" prefWidth="714.0" styleClass="standard-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+            <AnchorPane prefHeight="900.0" prefWidth="878.0" styleClass="shopping-cart">
+               <children>
+                  <ScrollPane layoutX="898.0" prefHeight="900.0" prefWidth="702.0" styleClass="white-scrollpane">
+                     <content>
+                        <FlowPane prefHeight="620.0" prefWidth="698.0" translateY="135.0" />
+                     </content>
+                  </ScrollPane>
+                <AnchorPane layoutX="898.0" minHeight="0.0" minWidth="0.0" prefHeight="112.0" prefWidth="700.0">
+                     <children>
+                        <Text layoutX="220.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varukorg" textAlignment="CENTER" wrappingWidth="260.0">
+                           <styleClass>
+                              <String fx:value="font-size-55" />
+                              <String fx:value="patua-text" />
+                           </styleClass>
+                        </Text>
+                        <Button fx:id="closeCartButtonSmall" layoutX="620.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleCloseShoppingCartAction" prefHeight="69.0" prefWidth="80.0" text="ⓧ">
+                           <styleClass>
+                              <String fx:value="font-size-32" />
+                              <String fx:value="closeCartButton" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <Button layoutX="1000.0" layoutY="774.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="500.0" text="Till Kassan" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="color-green" />
+                        <String fx:value="font-size-52" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="closeCartButtonBig" mnemonicParsing="false" onAction="#handleCloseShoppingCartAction" prefHeight="900.0" prefWidth="900.0" styleClass="closeCartButton" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainScreen" prefHeight="892.0" prefWidth="1600.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ScrollPane fx:id="mainScrollScreen" layoutY="100.0" prefHeight="800.0" prefWidth="1600.0" styleClass="standard-background" AnchorPane.bottomAnchor="-11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
                <content>
                   <FlowPane fx:id="productsFlowPane" prefHeight="646.0" prefWidth="1180.0" translateX="380.0" translateY="120.0" />
                </content>
             </ScrollPane>
             <FlowPane prefHeight="726.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" translateX="40.0" translateY="140.0" />
-            <AnchorPane fx:id="header" prefHeight="100.0" prefWidth="1601.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="header" prefHeight="100.0" prefWidth="1600.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Text fx:id="logoText" layoutX="25.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="iMat" wrappingWidth="179.13671875">
                      <font>
@@ -33,12 +71,12 @@
                         <Font size="34.0" />
                      </font>
                   </TextField>
-                  <Button fx:id="varukorgButton" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="1322.0" layoutY="10.0" maxHeight="80.0" maxWidth="270.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="260.0" styleClass="color-green" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+                  <Button fx:id="varukorgButton" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="1322.0" layoutY="10.0" maxHeight="80.0" maxWidth="270.0" mnemonicParsing="false" onAction="#handleOpenShoppingCartAction" prefHeight="80.0" prefWidth="260.0" styleClass="color-green" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Text fx:id="minaSidorText" layoutX="1007.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mina Sidor" wrappingWidth="278.8424072265625">
+                  <Text fx:id="minaSidorText" layoutX="1007.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tidigare köp" wrappingWidth="278.8424072265625">
                      <font>
                         <Font size="52.0" />
                      </font>
@@ -47,15 +85,16 @@
                         <String fx:value="font-size-48" />
                      </styleClass>
                   </Text>
-                  <Text fx:id="varukorgText" fill="WHITE" layoutX="1322.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varukorg" textAlignment="CENTER" wrappingWidth="260.0">
-                     <font>
-                        <Font size="52.0" />
-                     </font>
+                  <Hyperlink layoutX="1341.0" layoutY="6.0" onAction="#handleOpenShoppingCartAction" prefHeight="88.0" prefWidth="229.0" text="Varukorg" textFill="WHITE">
                      <styleClass>
-                        <String fx:value="patua-text" />
                         <String fx:value="font-size-48" />
+                        <String fx:value="patua-text" />
+                        <String fx:value="link" />
                      </styleClass>
-                  </Text>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Hyperlink>
                   <Button fx:id="searchButton" layoutX="900.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleSearchAction" prefHeight="80.0" prefWidth="80.0">
                      <styleClass>
                         <String fx:value="color-green" />
@@ -90,9 +129,9 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="startScreen" layoutX="5.0" layoutY="5.0" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane fx:id="startScreen" prefHeight="400.0" prefWidth="1600.0">
          <children>
-            <ImageView fitHeight="910.0" fitWidth="1600.0" layoutX="-4.0" layoutY="-8.0" pickOnBounds="true">
+            <ImageView fitHeight="900.0" fitWidth="1600.0" pickOnBounds="true">
                <image>
                   <Image url="@../../../../resources/startScreenImage.jpg" />
                </image>

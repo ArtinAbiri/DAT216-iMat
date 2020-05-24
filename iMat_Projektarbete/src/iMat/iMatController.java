@@ -11,6 +11,8 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingCart;
+
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -56,6 +58,13 @@ public class iMatController implements Initializable {
     Circle shoppingcartPay;
 
     @FXML
+    AnchorPane shoppingCart;
+@FXML
+Button closeCartButtonBig;
+@FXML
+Button closeCartButtonSmall;
+
+    @FXML
     private void handleSearchAction(ActionEvent event) {
 
         List<Product> matches = model.findProducts(searchBar.getText());
@@ -67,7 +76,14 @@ public class iMatController implements Initializable {
     private void handleStartShoppingAction(ActionEvent event) {
         mainScreen.toFront();
     }
-
+    @FXML
+    private void handleCloseShoppingCartAction(ActionEvent event) {
+        shoppingCart.toBack();
+    }
+    @FXML
+    private void handleOpenShoppingCartAction(ActionEvent event) {
+        shoppingCart.toFront();
+    }
     private final Model model = Model.getInstance();
 
     public void initialize(URL url, ResourceBundle rb) {
