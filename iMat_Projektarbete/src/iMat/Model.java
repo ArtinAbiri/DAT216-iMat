@@ -56,6 +56,5 @@ public class Model {
         return iMatDataHandler.findProducts(s);
     }
 
-    public void setiMatDataHandler(IMatDataHandler iMatDataHandler) {
 
 }

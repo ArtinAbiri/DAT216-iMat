@@ -40,7 +40,7 @@
             <String fx:value="font-size-32" />
          </styleClass>
       </Label>
-      <Label fx:id="productAmountLabel" layoutX="87.0" layoutY="335.0" prefHeight="47.0" prefWidth="80.0" textAlignment="CENTER">
+      <Label fx:id="productAmountLabel" layoutX="109.0" layoutY="335.0" prefHeight="47.0" prefWidth="42.0" textAlignment="CENTER">
          <font>
             <Font size="36.0" />
          </font>

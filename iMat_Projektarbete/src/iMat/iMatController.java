@@ -63,6 +63,10 @@ public class iMatController implements Initializable {
         System.out.println("# matching products: " + matches.size());
 
     }
+    @FXML
+    private void handleStartShoppingAction(ActionEvent event) {
+        mainScreen.toFront();
+    }
 
     private final Model model = Model.getInstance();
 
