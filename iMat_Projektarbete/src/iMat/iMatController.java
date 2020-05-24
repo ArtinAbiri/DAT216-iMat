@@ -11,7 +11,6 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
 
 import java.net.URL;
 import java.util.List;
@@ -59,10 +58,14 @@ public class iMatController implements Initializable {
 
     @FXML
     AnchorPane shoppingCart;
-@FXML
-Button closeCartButtonBig;
-@FXML
-Button closeCartButtonSmall;
+    @FXML
+    Button closeCartButtonBig;
+    @FXML
+    Button closeCartButtonSmall;
+    @FXML
+    Button favouriteButton;
+
+    private Boolean FavouriteButtonSelected = false;
 
     @FXML
     private void handleSearchAction(ActionEvent event) {
@@ -72,18 +75,40 @@ Button closeCartButtonSmall;
         System.out.println("# matching products: " + matches.size());
 
     }
+
+    @FXML
+    private void handleFavouriteProductsAction(ActionEvent event) {
+        if(!FavouriteButtonSelected) {
+            List<Product> matches = model.iMatDataHandler.favorites();
+            updateProductList(matches);
+            System.out.println("# matching products: " + matches.size());
+            FavouriteButtonSelected = true;
+            favouriteButton.getStyleClass().add("subcategory-button-selected");
+        }
+        else{
+            List<Product> matches = model.findProducts("");
+            updateProductList(matches);
+            System.out.println("# matching products: " + matches.size());
+            FavouriteButtonSelected = false;
+            favouriteButton.getStyleClass().remove("subcategory-button-selected");
+        }
+    }
+
     @FXML
     private void handleStartShoppingAction(ActionEvent event) {
         mainScreen.toFront();
     }
+
     @FXML
     private void handleCloseShoppingCartAction(ActionEvent event) {
         shoppingCart.toBack();
     }
+
     @FXML
     private void handleOpenShoppingCartAction(ActionEvent event) {
         shoppingCart.toFront();
     }
+
     private final Model model = Model.getInstance();
 
     public void initialize(URL url, ResourceBundle rb) {
@@ -97,6 +122,7 @@ Button closeCartButtonSmall;
             productsFlowPane.getChildren().add(new productPanel(product));
         }
     }
+
     private void updateProductList(List<Product> products) {
 
         productsFlowPane.getChildren().clear();

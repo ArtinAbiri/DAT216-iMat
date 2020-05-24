@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 
 public class Model {
     private static Model instance = null;
-    private IMatDataHandler iMatDataHandler;
+     IMatDataHandler iMatDataHandler;
 
     /**
      * Constructor that should never be called, use getInstance() instead.

@@ -8,10 +8,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import se.chalmers.cse.dat216.project.Product;
+
 import java.io.IOException;
-import java.util.List;
 
 public class productPanel extends AnchorPane {
 
@@ -26,23 +25,46 @@ public class productPanel extends AnchorPane {
     @FXML
     ImageView productEcoImage;
     @FXML
-    ImageView favoImageView;
+    Button favoButton;
     @FXML
     Button addButton;
     @FXML
     Button removeButton;
 
     @FXML
-        private void handleAddAction(ActionEvent event) {
-        numberOfItems = numberOfItems+1;
+    private void handleAddAction(ActionEvent event) {
+        numberOfItems = numberOfItems + 1;
         productAmountLabel.setText(String.valueOf(numberOfItems));
 
     }
+
     @FXML
     private void handleRemoveAction(ActionEvent event) {
-        if(numberOfItems>0){
-        numberOfItems = numberOfItems-1;}
+        if (numberOfItems > 0) {
+            numberOfItems = numberOfItems - 1;
+        }
         productAmountLabel.setText(String.valueOf(numberOfItems));
+    }
+
+    @FXML
+    private void handleFavouriteAction(ActionEvent event) {
+        if (!favouriteSelected) {
+            Image favoSelected = new Image("file:iMat_Projektarbete/resources/icons/favorite_filled.png");
+            ImageView favobuttonSelected = new ImageView(favoSelected);
+            favobuttonSelected.setFitHeight(50);
+            favobuttonSelected.setFitWidth(50);
+            favoButton.setGraphic(favobuttonSelected);
+            favouriteSelected=true;
+            model.iMatDataHandler.addFavorite(this.product);
+        } else {
+            Image favo = new Image("file:iMat_Projektarbete/resources/icons/baseline_favorite_border_black_48dp.png");
+            ImageView favobutton = new ImageView(favo);
+            favobutton.setFitHeight(50);
+            favobutton.setFitWidth(50);
+            favoButton.setGraphic(favobutton);
+            favouriteSelected=false;
+            model.iMatDataHandler.removeFavorite(this.product);
+        }
     }
 
     private Model model = Model.getInstance();
@@ -50,6 +72,8 @@ public class productPanel extends AnchorPane {
     private Product product;
 
     private int numberOfItems = 0;
+    private boolean favouriteSelected = false;
+
     public productPanel(Product product) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productPanel.fxml"));
         fxmlLoader.setRoot(this);
@@ -69,16 +93,32 @@ public class productPanel extends AnchorPane {
         if (!product.isEcological()) {
             productEcoImage.setImage(null);
         }
-        Image plus= new Image("file:iMat_Projektarbete/resources/icons/baseline_add_white_48dp.png");
-        ImageView plusimage= new ImageView(plus);
+        Image plus = new Image("file:iMat_Projektarbete/resources/icons/baseline_add_white_48dp.png");
+        ImageView plusimage = new ImageView(plus);
         plusimage.setFitHeight(50);
         plusimage.setFitWidth(45);
         addButton.setGraphic(plusimage);
-        Image remove= new Image("file:iMat_Projektarbete/resources/icons/baseline_remove_white_48dp.png");
-        ImageView removeimage= new ImageView(remove);
+        Image remove = new Image("file:iMat_Projektarbete/resources/icons/baseline_remove_white_48dp.png");
+        ImageView removeimage = new ImageView(remove);
         removeimage.setFitHeight(50);
         removeimage.setFitWidth(45);
         removeButton.setGraphic(removeimage);
+
+        if (favouriteSelected){
+            Image favoSelected = new Image("file:iMat_Projektarbete/resources/icons/favorite_filled.png");
+            ImageView favobuttonSelected = new ImageView(favoSelected);
+            favobuttonSelected.setFitHeight(50);
+            favobuttonSelected.setFitWidth(50);
+            favoButton.setGraphic(favobuttonSelected);
+            favouriteSelected=true;
+            model.iMatDataHandler.addFavorite(this.product);
+        }else{
+            Image favo = new Image("file:iMat_Projektarbete/resources/icons/baseline_favorite_border_black_48dp.png");
+            ImageView favobutton = new ImageView(favo);
+            favobutton.setFitHeight(50);
+            favobutton.setFitWidth(50);
+            favoButton.setGraphic(favobutton);
+        }
     }
 
 

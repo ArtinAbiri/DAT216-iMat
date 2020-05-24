@@ -54,6 +54,7 @@
 .subcategory-button-selected {
     -fx-background-color: #4cc773;
     -fx-text-fill: white;
+       -fx-border-radius: 15px;
     -fx-border-color: #4cc773;
     -fx-border-width: 2px;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.0), 0, 0, 0, 0);
