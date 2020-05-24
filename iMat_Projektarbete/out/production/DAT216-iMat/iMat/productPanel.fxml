@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root cacheShape="false" centerShape="false" maxHeight="-Infinity" maxWidth="-Infinity" pickOnBounds="false" prefHeight="425.0" prefWidth="265.0" scaleShape="false" styleClass="productPanel" stylesheets="@iMat-design.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root cacheShape="false" centerShape="false" maxHeight="-Infinity" maxWidth="-Infinity" pickOnBounds="false" prefHeight="425.0" prefWidth="265.0" scaleShape="false" styleClass="productPanel" stylesheets="@iMat-design.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
    <children>
       <ImageView fx:id="productImage" fitHeight="160.0" fitWidth="205.0" layoutX="21.0" layoutY="74.0" pickOnBounds="true" AnchorPane.leftAnchor="20.0" />
       <ImageView fx:id="productEcoImage" fitHeight="48.0" fitWidth="48.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
