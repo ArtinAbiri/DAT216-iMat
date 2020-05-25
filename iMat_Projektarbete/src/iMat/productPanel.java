@@ -35,7 +35,7 @@ public class productPanel extends AnchorPane {
     private void handleAddAction(ActionEvent event) {
         numberOfItems = numberOfItems + 1;
         productAmountLabel.setText(String.valueOf(numberOfItems));
-
+        
     }
 
     @FXML

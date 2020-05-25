@@ -72,7 +72,6 @@ public class iMatController implements Initializable {
 
         List<Product> matches = model.findProducts(searchBar.getText());
         updateProductList(matches);
-        System.out.println("# matching products: " + matches.size());
 
     }
 
@@ -81,14 +80,12 @@ public class iMatController implements Initializable {
         if(!FavouriteButtonSelected) {
             List<Product> matches = model.iMatDataHandler.favorites();
             updateProductList(matches);
-            System.out.println("# matching products: " + matches.size());
             FavouriteButtonSelected = true;
             favouriteButton.getStyleClass().add("subcategory-button-selected");
         }
         else{
             List<Product> matches = model.findProducts("");
             updateProductList(matches);
-            System.out.println("# matching products: " + matches.size());
             FavouriteButtonSelected = false;
             favouriteButton.getStyleClass().remove("subcategory-button-selected");
         }
