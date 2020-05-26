@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="checkoutRootPane" prefHeight="900.0" prefWidth="1600.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkoutController">
+   <children>
+      <AnchorPane fx:id="header" prefHeight="100.0" prefWidth="1601.0" styleClass="header">
+         <children>
+            <Text fx:id="logoText" layoutX="5.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="iMat" textAlignment="CENTER" wrappingWidth="179.13671875">
+               <font>
+                  <Font name="Arial Narrow" size="70.0" />
+               </font>
+            </Text>
+            <Button fx:id="varukorgButton11" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="5.0" layoutY="5.0" maxHeight="90.0" maxWidth="270.0" mnemonicParsing="false" onAction="#loadStoreFromCheckout" prefHeight="90.0" prefWidth="196.0" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="clickable" />
+                  <String fx:value="invisible" />
+               </styleClass>
+            </Button>
+            <Button fx:id="varukorgButton1" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="5.0" layoutY="5.0" maxHeight="90.0" maxWidth="270.0" mnemonicParsing="false" onAction="#loadStoreFromCheckout" prefHeight="90.0" prefWidth="196.0" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="clickable" />
+                  <String fx:value="invisible" />
+               </styleClass>
+            </Button>
+            <TextField fx:id="searchBar" layoutX="198.0" layoutY="10.0" prefHeight="80.0" prefWidth="702.0" promptText="Sök efter produkter..." styleClass="search-bar">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </TextField>
+            <Button fx:id="varukorgButton" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="1322.0" layoutY="10.0" maxHeight="80.0" maxWidth="270.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="260.0" styleClass="color-green" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Text fx:id="minaSidorText" layoutX="1007.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Mina Sidor" textAlignment="CENTER" wrappingWidth="278.8424072265625">
+               <font>
+                  <Font size="52.0" />
+               </font>
+            </Text>
+            <Text fx:id="varukorgText" fill="WHITE" layoutX="1322.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Varukorg" textAlignment="CENTER" wrappingWidth="260.0">
+               <font>
+                  <Font size="52.0" />
+               </font>
+            </Text>
+            <Button fx:id="searchButton" layoutX="900.0" layoutY="10.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+               <styleClass>
+                  <String fx:value="color-green" />
+                  <String fx:value="search-button" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="checkoutPart2" layoutY="100.0" prefHeight="810.0" prefWidth="1600.0" styleClass="standard-background" stylesheets="@iMat-design.css">
+         <children>
+            <AnchorPane layoutX="40.0" layoutY="110.0" prefHeight="655.0" prefWidth="1100.0" styleClass="checkout-boxes">
+               <children>
+                  <TextField layoutX="40.0" layoutY="144.0" prefHeight="60.0" prefWidth="480.0" promptText="Förnamn" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <Text layoutX="40.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Utcheckning">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Text>
+                  <TextField layoutX="580.0" layoutY="144.0" prefHeight="60.0" prefWidth="480.0" promptText="Efternamn" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="40.0" layoutY="272.0" prefHeight="60.0" prefWidth="1020.0" promptText="Adress" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="40.0" layoutY="417.0" prefHeight="60.0" prefWidth="480.0" promptText="Postnummer" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="580.0" layoutY="417.0" prefHeight="60.0" prefWidth="480.0" promptText="Postort" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="40.0" layoutY="557.0" prefHeight="60.0" prefWidth="480.0" promptText="Epostadress" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <Text layoutX="55.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Ex. Hörsalsvägen 8" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="55.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Ex. 412 58" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="595.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Ex. Göteborg" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="55.0" layoutY="636.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Ex. iMat@matbutik.se" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <CheckBox layoutX="580.0" layoutY="557.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="424.0" styleClass="source-sans-regular" text="Hemleverans">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </CheckBox>
+                  <Text layoutX="55.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Förnamn">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="595.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Efternamn">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="55.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Adress">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="55.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Postnummer">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="595.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Postort">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="55.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Epostadress">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1180.0" layoutY="110.0" prefHeight="400.0" prefWidth="380.0" styleClass="checkout-boxes">
+               <children>
+                  <Text layoutX="40.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Summa">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Deltotal:" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Frakt:" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Line endX="200.0" layoutX="140.0" layoutY="225.0" startX="-100.0" />
+                  <Text layoutX="40.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Totalkostnad (inkl skatt):" wrappingWidth="279.13671875">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <Button layoutX="1178.0" layoutY="661.0" mnemonicParsing="false" onAction="#loadCheckout3" prefHeight="104.0" prefWidth="380.0" text="Nästa">
+               <styleClass>
+                  <String fx:value="color-green" />
+                  <String fx:value="button-shadow" />
+                  <String fx:value="next-button" />
+               </styleClass>
+            </Button>
+            <Button layoutX="40.0" layoutY="30.0" mnemonicParsing="false" onAction="#loadStoreFromCheckout" prefHeight="52.0" prefWidth="255.0" text="Tillbaka till butiken" textAlignment="RIGHT">
+               <styleClass>
+                  <String fx:value="button-shadow" />
+                  <String fx:value="font-size-18" />
+               </styleClass>
+            </Button>
+            <AnchorPane layoutX="437.0" layoutY="14.0">
+               <children>
+                  <Circle fx:id="shoppingcartPay1" fill="DODGERBLUE" layoutX="40.0" layoutY="41.0" radius="40.0" stroke="BLACK" strokeType="INSIDE">
+                     <styleClass>
+                        <String fx:value="green-circle" />
+                        <String fx:value="white-cart" />
+                     </styleClass>
+                  </Circle>
+                  <Line endX="90.0" layoutX="189.0" layoutY="41.0" startX="-72.0" styleClass="green-line" />
+                  <Circle fill="DODGERBLUE" layoutX="356.0" layoutY="41.0" radius="40.0" stroke="BLACK" strokeType="INSIDE">
+                     <styleClass>
+                        <String fx:value="black-home" />
+                        <String fx:value="grey-circle" />
+                     </styleClass>
+                  </Circle>
+                  <Line endX="90.0" layoutX="508.0" layoutY="41.0" startX="-72.0" styleClass="grey-line" />
+                  <Circle fill="DODGERBLUE" layoutX="682.0" layoutY="40.0" radius="45.0" stroke="BLACK" strokeType="INSIDE">
+                     <styleClass>
+                        <String fx:value="grey-circle" />
+                        <String fx:value="black-card" />
+                     </styleClass>
+                  </Circle>
+                  <ImageView fitHeight="52.0" fitWidth="60.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="white-cart">
+                     <image>
+                        <Image url="@../../resources/icons/outline_shopping_cart_white_48dp.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="62.0" layoutX="326.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="white-cart">
+                     <image>
+                        <Image url="@../../resources/icons/outline_home_black_48dp.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="62.0" layoutX="652.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="white-cart">
+                     <image>
+                        <Image url="@../../resources/icons/outline_credit_card_black_48dp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Button layoutX="1180.0" layoutY="530.0" mnemonicParsing="false" onAction="#loadCheckout1" prefHeight="74.0" prefWidth="380.0" text="Tillbaka">
+               <styleClass>
+                  <String fx:value="button-shadow" />
+                  <String fx:value="font-size-48" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="checkoutPart3" layoutY="100.0" prefHeight="810.0" prefWidth="1600.0" styleClass="standard-background" stylesheets="@iMat-design.css">
+         <children>
+            <AnchorPane layoutX="40.0" layoutY="110.0" prefHeight="655.0" prefWidth="1100.0" styleClass="checkout-boxes">
+               <children>
+                  <Text layoutX="45.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Betalinformation">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Text>
+                  <TextField layoutX="40.0" layoutY="161.0" prefHeight="60.0" prefWidth="1020.0" promptText="Kortinnehavarens fullständiga namn" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="40.0" layoutY="429.0" prefHeight="60.0" prefWidth="480.0" promptText="MM/ÅÅ" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="580.0" layoutY="429.0" prefHeight="60.0" prefWidth="480.0" promptText="CVV" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <Text layoutX="53.0" layoutY="508.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ex. 03/23" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="source-sans-regular" />
+                        <String fx:value="example-text-color" />
+                     </styleClass>
+                  </Text>
+                  <CheckBox layoutX="46.0" layoutY="536.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="1009.0" styleClass="source-sans-regular" text="Spara min kortinformation till nästa köp">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </CheckBox>
+                  <TextField layoutX="40.0" layoutY="293.0" prefHeight="60.0" prefWidth="1020.0" promptText="Kortnummer" styleClass="text-field-checkout">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </TextField>
+                  <Text layoutX="53.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Kortinnehavarens Namn">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="53.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Kortnummer">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="53.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Månad / År">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="591.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="CVV">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1180.0" layoutY="110.0" prefHeight="400.0" prefWidth="380.0" styleClass="checkout-boxes">
+               <children>
+                  <Text layoutX="40.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Summa">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Deltotal:" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Frakt:" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Line endX="200.0" layoutX="140.0" layoutY="225.0" startX="-100.0" />
+                  <Text layoutX="40.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-regular" text="Totalkostnad (inkl skatt):" wrappingWidth="279.13671875">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <Button layoutX="1181.0" layoutY="663.0" mnemonicParsing="false" onAction="#completePurchase" prefHeight="74.0" prefWidth="380.0" text="Slutför köp!">
+               <styleClass>
+                  <String fx:value="color-green" />
+                  <String fx:value="next-button" />
+                  <String fx:value="button-shadow" />
+               </styleClass>
+            </Button>
+            <AnchorPane layoutX="437.0" layoutY="14.0">
+               <children>
+                  <Circle fx:id="shoppingcartPay" fill="DODGERBLUE" layoutX="40.0" layoutY="41.0" radius="40.0" stroke="BLACK" strokeType="INSIDE">
+                     <styleClass>
+                        <String fx:value="green-circle" />
+                        <String fx:value="white-cart" />
+                     </styleClass>
+                  </Circle>
+                  <Line endX="90.0" layoutX="189.0" layoutY="41.0" startX="-72.0" styleClass="green-line" />
+                  <Circle fill="DODGERBLUE" layoutX="356.0" layoutY="41.0" radius="40.0" stroke="BLACK" strokeType="INSIDE">
+                     <styleClass>
+                        <String fx:value="white-home" />
+                        <String fx:value="green-circle" />
+                     </styleClass>
+                  </Circle>
+                  <Line endX="90.0" layoutX="508.0" layoutY="41.0" startX="-72.0" styleClass="green-line" />
+                  <Circle fill="DODGERBLUE" layoutX="682.0" layoutY="40.0" radius="45.0" stroke="BLACK" strokeType="INSIDE">
+                     <styleClass>
+                        <String fx:value="grey-circle" />
+                        <String fx:value="black-card" />
+                     </styleClass>
+                  </Circle>
+                  <ImageView fitHeight="52.0" fitWidth="60.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="white-cart">
+                     <image>
+                        <Image url="@../../resources/icons/outline_shopping_cart_white_48dp.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="62.0" layoutX="326.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="white-cart">
+                     <image>
+                        <Image url="@../../resources/icons/outline_home_white_48dp.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="62.0" layoutX="652.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="white-cart">
+                     <image>
+                        <Image url="@../../resources/icons/outline_credit_card_black_48dp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Button layoutX="40.0" layoutY="30.0" mnemonicParsing="false" onAction="#loadStoreFromCheckout" prefHeight="52.0" prefWidth="255.0" text="Tillbaka till butiken" textAlignment="RIGHT">
+               <styleClass>
+                  <String fx:value="button-shadow" />
+                  <String fx:value="font-size-18" />
+               </styleClass>
+            </Button>
+            <Button layoutX="1180.0" layoutY="530.0" mnemonicParsing="false" onAction="#loadCheckout2" prefHeight="74.0" prefWidth="380.0" text="Tillbaka">
+               <styleClass>
+                  <String fx:value="button-shadow" />
+                  <String fx:value="font-size-48" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

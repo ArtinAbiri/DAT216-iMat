@@ -13,8 +13,46 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="iMat.iMatController">
+<AnchorPane fx:id="storeRootPane" prefHeight="900.0" prefWidth="1600.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMatController">
    <children>
+      <AnchorPane fx:id="startScreen" prefHeight="400.0" prefWidth="1600.0">
+         <children>
+            <ImageView fitHeight="900.0" fitWidth="1600.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../resources/startScreenImage.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="startShopButton" layoutX="982.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleStartShoppingAction" prefHeight="201.0" prefWidth="377.0" text="Börja handla" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="55.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="color-green" />
+                  <String fx:value="font-size-55" />
+                  <String fx:value="button-shadow" />
+               </styleClass>
+            </Button>
+            <Button fx:id="startGuideButton" layoutX="982.0" layoutY="473.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="377.0" text="Så här gör du">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="button-shadow" />
+                  <String fx:value="font-size-48" />
+               </styleClass>
+            </Button>
+            <Text layoutX="955.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-bold" text="Välkommen till iMat" textAlignment="CENTER" wrappingWidth="430.3367004394531">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <Text layoutX="939.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-semibold" text="- matbutiken för alla generationer" textAlignment="CENTER" wrappingWidth="462.7366638183594">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="shoppingCart" prefHeight="900.0" prefWidth="1600.0">
          <children>
             <AnchorPane prefHeight="900.0" prefWidth="878.0" styleClass="shopping-cart">
@@ -40,7 +78,7 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <Button layoutX="1000.0" layoutY="774.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="500.0" text="Till Kassan" textFill="WHITE">
+                  <Button layoutX="1000.0" layoutY="774.0" mnemonicParsing="false" onAction="#loadCheckout" prefHeight="110.0" prefWidth="500.0" text="Till Kassan" textFill="WHITE">
                      <styleClass>
                         <String fx:value="color-green" />
                         <String fx:value="font-size-52" />
@@ -49,39 +87,6 @@
                   <Button fx:id="closeCartButtonBig" mnemonicParsing="false" onAction="#handleCloseShoppingCartAction" prefHeight="900.0" prefWidth="900.0" styleClass="closeCartButton" />
                </children>
             </AnchorPane>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="startScreen" prefHeight="400.0" prefWidth="1600.0">
-         <children>
-            <ImageView fitHeight="900.0" fitWidth="1600.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../../../resources/startScreenImage.jpg" />
-               </image>
-            </ImageView>
-            <Button fx:id="startShopButton" layoutX="982.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleStartShoppingAction" prefHeight="201.0" prefWidth="377.0" text="Börja handla" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-               <font>
-                  <Font size="55.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="color-green" />
-                  <String fx:value="font-size-55" />
-               </styleClass>
-            </Button>
-            <Button fx:id="startGuideButton" layoutX="982.0" layoutY="473.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="377.0" text="Så här gör du">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Button>
-            <Text layoutX="955.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-bold" text="Välkommen till iMat" textAlignment="CENTER" wrappingWidth="430.3367004394531">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Text>
-            <Text layoutX="939.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-semibold" text="- matbutiken för alla generationer" textAlignment="CENTER" wrappingWidth="462.7366638183594">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Text>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="mainScreen" prefHeight="892.0" prefWidth="1600.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -94,11 +99,6 @@
             <FlowPane prefHeight="726.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" translateX="40.0" translateY="140.0" />
             <AnchorPane fx:id="header" prefHeight="100.0" prefWidth="1600.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Text fx:id="logoText" layoutX="25.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="iMat" wrappingWidth="179.13671875">
-                     <font>
-                        <Font name="Arial Narrow" size="70.0" />
-                     </font>
-                  </Text>
                   <TextField fx:id="searchBar" layoutX="198.0" layoutY="10.0" prefHeight="80.0" prefWidth="702.0" promptText="Sök efter produkter..." styleClass="search-bar">
                      <font>
                         <Font size="34.0" />
@@ -116,6 +116,7 @@
                      <styleClass>
                         <String fx:value="patua-text" />
                         <String fx:value="font-size-48" />
+                        <String fx:value="clickable" />
                      </styleClass>
                   </Text>
                   <Hyperlink layoutX="1341.0" layoutY="6.0" onAction="#handleOpenShoppingCartAction" prefHeight="88.0" prefWidth="229.0" text="Varukorg" textFill="WHITE">
@@ -132,6 +133,20 @@
                      <styleClass>
                         <String fx:value="color-green" />
                         <String fx:value="search-button" />
+                     </styleClass>
+                  </Button>
+                  <Text fx:id="logoText" layoutX="5.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="iMat" textAlignment="CENTER" wrappingWidth="179.13671875">
+                     <font>
+                        <Font name="Arial Narrow" size="70.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="varukorgButton11" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="5.0" layoutY="5.0" maxHeight="90.0" maxWidth="270.0" mnemonicParsing="false" onAction="#reloadStore" prefHeight="90.0" prefWidth="196.0" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="clickable" />
+                        <String fx:value="invisible" />
                      </styleClass>
                   </Button>
                </children>

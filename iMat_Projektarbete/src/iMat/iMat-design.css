@@ -38,9 +38,10 @@
 }
 
 .button {
-   -fx-background-color: #f6f6f6;
+   -fx-background-color: #ffffff;
    -fx-font-family: "Patua One";
    -fx-border-radius: 15px;
+   -fx-cursor: hand;
 }
 
 .subcategory-button {
@@ -136,13 +137,17 @@
     -fx-font-family: "Source Sans Pro";
     -fx-font-size: 18px;
 }
+
 .next-button{
     -fx-text-fill: #ffffff;
-    -fx-font-family: "Source Sans Pro";
-       -fx-font-family: "Patua One";
-    -fx-font-size: 45px;
+    /*-fx-font-family: "Source Sans Pro";
+    -fx-font-family: "Patua One";*/
+    -fx-font-size: 48px;
 
 }
+
+
+
 .green-circle{
     -fx-background-color: #4cc773;
     -fx-fill: #4cc773;
@@ -178,10 +183,18 @@
 .closeCartButton{
     -fx-background-color: rgba(0,0,0,0);
 }
-.link{
+
+.link {
 -fx-underline: false;
     -fx-border-color: transparent;
-
+    -fx-cursor: hand;
 }
 
+.clickable {
+    -fx-cursor: hand;
+}
+
+.invisible {
+    -fx-opacity: 0;
+}
 

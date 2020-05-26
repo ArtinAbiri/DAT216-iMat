@@ -2,7 +2,11 @@ package iMat;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -10,13 +14,20 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.Product;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class iMatController implements Initializable {
+    @FXML
+    AnchorPane storeRootPane;
+
+
+
     @FXML
     Button startShopButton;
 
@@ -67,12 +78,15 @@ public class iMatController implements Initializable {
 
     private Boolean FavouriteButtonSelected = false;
 
+    public void initialize(URL url, ResourceBundle rb) {
+        updateProductList(model.getProducts());
+    }
+
     @FXML
     private void handleSearchAction(ActionEvent event) {
 
         List<Product> matches = model.findProducts(searchBar.getText());
         updateProductList(matches);
-
     }
 
     @FXML
@@ -108,20 +122,9 @@ public class iMatController implements Initializable {
 
     private final Model model = Model.getInstance();
 
-    public void initialize(URL url, ResourceBundle rb) {
-        updateProductsPanel(model.getProducts());
-    }
 
-    private void updateProductsPanel(List<Product> products) {
-        productsFlowPane.getChildren().clear();
-
-        for (Product product : products) {
-            productsFlowPane.getChildren().add(new productPanel(product));
-        }
-    }
 
     private void updateProductList(List<Product> products) {
-
         productsFlowPane.getChildren().clear();
 
         for (Product product : products) {
@@ -129,5 +132,20 @@ public class iMatController implements Initializable {
             productsFlowPane.getChildren().add(new productPanel(product));
         }
 
+    }
+
+    @FXML
+    private void loadCheckout(ActionEvent event) throws IOException {
+        Parent checkoutParent = FXMLLoader.load(getClass().getResource("checkout.fxml"));
+        Scene checkoutScene = new Scene(checkoutParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(checkoutScene);
+        window.show();
+    }
+
+    @FXML
+    private void reloadStore(ActionEvent event) throws IOException {
+        updateProductList(model.getProducts());
     }
 }
