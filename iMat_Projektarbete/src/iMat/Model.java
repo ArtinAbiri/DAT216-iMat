@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import se.chalmers.cse.dat216.project.CreditCard;
+import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -18,7 +20,7 @@ import java.util.ResourceBundle;
 
 public class Model {
     private static Model instance = null;
-     IMatDataHandler iMatDataHandler;
+    IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
 
     /**
      * Constructor that should never be called, use getInstance() instead.
@@ -44,6 +46,7 @@ public class Model {
 
     }
 
+
     public List<Product> getProducts() {
         return iMatDataHandler.getProducts();
     }
@@ -56,5 +59,26 @@ public class Model {
         return iMatDataHandler.findProducts(s);
     }
 
+    Customer customer = iMatDataHandler.getCustomer();
+
+    public void updateCustomerInformation(String firstName, String lastName, String address, String postCode, String postArea, String email, String mobilePhoneNumber) {
+        customer.setFirstName(firstName);
+        customer.setLastName(lastName);
+        customer.setAddress(address);
+        customer.setPostCode(postCode);
+        customer.setPostAddress(postArea);
+        customer.setEmail(email);
+        customer.setMobilePhoneNumber(mobilePhoneNumber);
+    }
+
+    CreditCard creditCard = iMatDataHandler.getCreditCard();
+
+    public void updateCard(String cardHolder, String cardNumber, int validMonth, int validYear, int cvvCode) {
+        creditCard.setHoldersName(cardHolder);
+        creditCard.setCardNumber(cardNumber);
+        creditCard.setValidMonth(validMonth);
+        creditCard.setValidYear(validYear);
+        creditCard.setVerificationCode(cvvCode);
+    }
 
 }

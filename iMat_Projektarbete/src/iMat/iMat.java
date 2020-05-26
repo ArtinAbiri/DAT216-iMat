@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 
 public class iMat extends Application {
 
@@ -13,6 +14,9 @@ public class iMat extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("startscreen.fxml"));
         Scene scene = new Scene(root);
 
+
+        stage.setMinWidth(1600);
+        stage.setMinHeight(900);
         stage.setScene(scene);
         stage.show();
     }
@@ -26,6 +30,7 @@ public class iMat extends Application {
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
             public void run() {
+                IMatDataHandler.getInstance().shutDown();
             }
         }));
     }

@@ -15,6 +15,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.Product;
 
 import java.io.IOException;
@@ -23,11 +24,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class iMatController implements Initializable {
-    @FXML
-    AnchorPane storeRootPane;
-
-
-
     @FXML
     Button startShopButton;
 
@@ -121,8 +117,6 @@ public class iMatController implements Initializable {
     }
 
     private final Model model = Model.getInstance();
-
-
 
     private void updateProductList(List<Product> products) {
         productsFlowPane.getChildren().clear();
