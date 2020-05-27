@@ -10,9 +10,13 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
+import java.util.concurrent.Flow;
 
 public class checkoutController {
     private final Model model = Model.getInstance();
@@ -23,6 +27,34 @@ public class checkoutController {
     AnchorPane checkoutPart2;
     @FXML
     AnchorPane checkoutPart3;
+    @FXML
+    AnchorPane purchaseComplete;
+
+    //checkoutPart1
+    @FXML
+    FlowPane checkoutCartFlowPane;
+
+    //Receipt
+    @FXML
+    FlowPane checkoutReceiptFlowPane;
+
+    //Cost labels
+    @FXML
+    Text checkoutSumLabel;
+    @FXML
+    Text checkoutTotalLabel;
+    @FXML
+    Text checkoutSumLabel1;
+    @FXML
+    Text checkoutTotalLabel1;
+    @FXML
+    Text checkoutSumLabel2;
+    @FXML
+    Text checkoutTotalLabel2;
+    @FXML
+    Text checkoutSumLabel3;
+    @FXML
+    Text checkoutTotalLabel3;
 
     //Personal info textfields
     @FXML
@@ -71,6 +103,8 @@ public class checkoutController {
     @FXML
     private void loadCheckout1() {
         checkoutPart1.toFront();
+        updateCartList();
+        updateCost();
     }
 
     @FXML
@@ -89,7 +123,33 @@ public class checkoutController {
     @FXML
     private void completePurchase() {
         updateCard();
-        //purchaseComplete.toFront();
+        showPurchase();
+        model.placeOrder(true);
+        purchaseComplete.toFront();
+    }
+
+    @FXML
+    private void updateCartList() {
+        checkoutCartFlowPane.getChildren().clear();
+
+        for (ShoppingItem shoppingItem : model.shoppingCart.getItems()) {
+            checkoutCartFlowPane.getChildren().add(new cartItemPanel(shoppingItem));
+        }
+    }
+
+    @FXML
+    private void updateCost() {
+        checkoutSumLabel.setText("Varor: " + model.shoppingCart.getTotal());
+        checkoutTotalLabel.setText("Total summa: " + (model.shoppingCart.getTotal() + 49));
+
+        checkoutSumLabel1.setText("Varor: " + model.shoppingCart.getTotal());
+        checkoutTotalLabel1.setText("Total summa: " + (model.shoppingCart.getTotal() + 49));
+
+        checkoutSumLabel2.setText("Varor: " + model.shoppingCart.getTotal());
+        checkoutTotalLabel2.setText("Total summa: " + (model.shoppingCart.getTotal() + 49));
+
+        checkoutSumLabel3.setText("Varor: " + model.shoppingCart.getTotal());
+        checkoutTotalLabel3.setText("Total summa: " + (model.shoppingCart.getTotal() + 49));
     }
 
     @FXML
@@ -113,7 +173,7 @@ public class checkoutController {
         if(saveCard.isSelected()) {
             model.updateCard(cardHolder.getText(), cardNumber.getText(), Integer.parseInt(validMonth.getText()), Integer.parseInt(validYear.getText()), Integer.parseInt(cvvCode.getText()));
         } else {
-            model.updateCard("", "", 0, 0, 0);
+            model.updateCard(null, null, 0, 0, 0);
         }
     }
 
@@ -139,8 +199,14 @@ public class checkoutController {
             cvvCode.setText("");
         } else {
             cvvCode.setText(Integer.toString(model.creditCard.getVerificationCode()));
-
         }
+    }
 
+    private void showPurchase() {
+        checkoutReceiptFlowPane.getChildren().clear();
+
+        for (ShoppingItem shoppingItem : model.shoppingCart.getItems()) {
+            checkoutReceiptFlowPane.getChildren().add(new receiptItemPanel(shoppingItem));
+        }
     }
 }

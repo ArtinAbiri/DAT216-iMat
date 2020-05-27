@@ -4,12 +4,16 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -57,20 +61,26 @@
          <children>
             <AnchorPane prefHeight="900.0" prefWidth="878.0" styleClass="shopping-cart">
                <children>
-                  <ScrollPane layoutX="898.0" prefHeight="900.0" prefWidth="702.0" styleClass="white-scrollpane">
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="900.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="750.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ScrollPane layoutX="898.0" layoutY="104.0" prefHeight="580.0" prefWidth="750.0" styleClass="white-scrollpane" AnchorPane.rightAnchor="0.0">
                      <content>
-                        <FlowPane prefHeight="620.0" prefWidth="698.0" translateY="135.0" />
+                        <FlowPane fx:id="cartFlowPane" maxHeight="740.0" prefHeight="586.0" prefWidth="730.0" />
                      </content>
                   </ScrollPane>
                 <AnchorPane layoutX="898.0" minHeight="0.0" minWidth="0.0" prefHeight="112.0" prefWidth="700.0">
                      <children>
-                        <Text layoutX="220.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varukorg" textAlignment="CENTER" wrappingWidth="260.0">
+                        <Text layoutX="198.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varukorg" textAlignment="CENTER" wrappingWidth="260.0">
                            <styleClass>
                               <String fx:value="font-size-55" />
                               <String fx:value="patua-text" />
                            </styleClass>
                         </Text>
-                        <Button fx:id="closeCartButtonSmall" layoutX="620.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleCloseShoppingCartAction" prefHeight="69.0" prefWidth="80.0" text="ⓧ">
+                        <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="600.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../resources/icons/cancel.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="closeCartButtonSmall" layoutX="600.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleCloseShoppingCartAction" prefHeight="80.0" prefWidth="80.0">
                            <styleClass>
                               <String fx:value="font-size-32" />
                               <String fx:value="closeCartButton" />
@@ -78,25 +88,144 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <Button layoutX="1000.0" layoutY="774.0" mnemonicParsing="false" onAction="#loadCheckout" prefHeight="110.0" prefWidth="500.0" text="Till Kassan" textFill="WHITE">
+                  <Button layoutX="1150.0" layoutY="775.0" mnemonicParsing="false" onAction="#loadCheckout" prefHeight="111.0" prefWidth="430.0" text="Till Kassan" textFill="WHITE">
                      <styleClass>
                         <String fx:value="color-green" />
                         <String fx:value="font-size-52" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="closeCartButtonBig" mnemonicParsing="false" onAction="#handleCloseShoppingCartAction" prefHeight="900.0" prefWidth="900.0" styleClass="closeCartButton" />
+                  <Button fx:id="closeCartButtonBig" mnemonicParsing="false" onAction="#handleCloseShoppingCartAction" prefHeight="900.0" prefWidth="849.0" styleClass="closeCartButton" />
+                  <Button layoutX="870.0" layoutY="775.0" mnemonicParsing="false" onAction="#clearCart" prefHeight="111.0" prefWidth="260.0" text="Töm varukorgen" textFill="WHITE" wrapText="true">
+                     <styleClass>
+                        <String fx:value="font-size-28" />
+                        <String fx:value="clear-cart-button" />
+                     </styleClass>
+                  </Button>
+                  <Line endX="650.0" layoutX="900.0" layoutY="700.0" />
+                  <Label fx:id="cartSumLabel" layoutX="900.0" layoutY="707.0" text="Summa: ">
+                     <styleClass>
+                        <String fx:value="font-size-42" />
+                        <String fx:value="source-sans-semibold" />
+                     </styleClass>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="mainScreen" prefHeight="892.0" prefWidth="1600.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="mainScreen" prefHeight="800.0" prefWidth="1600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ScrollPane fx:id="mainScrollScreen" layoutY="100.0" prefHeight="800.0" prefWidth="1600.0" styleClass="standard-background" AnchorPane.bottomAnchor="-11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+            <Rectangle fill="#f6f6f6" height="800.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="standard-background" width="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
+            <ScrollPane fx:id="mainScrollScreen" layoutX="380.0" layoutY="220.0" maxWidth="1180.0" prefHeight="670.0" prefWidth="1180.0" styleClass="standard-background" AnchorPane.topAnchor="223.0">
                <content>
-                  <FlowPane fx:id="productsFlowPane" prefHeight="646.0" prefWidth="1180.0" translateX="380.0" translateY="120.0" />
+                  <FlowPane fx:id="productsFlowPane" prefHeight="665.0" prefWidth="1160.0" />
                </content>
             </ScrollPane>
-            <FlowPane prefHeight="726.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" translateX="40.0" translateY="140.0" />
+            <AnchorPane layoutX="40.0" layoutY="140.0" prefHeight="674.0" prefWidth="300.0">
+               <styleClass>
+                  <String fx:value="white-background" />
+                  <String fx:value="button-shadow" />
+               </styleClass>
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <Button fx:id="allButton" mnemonicParsing="false" onAction="#allProducts" prefHeight="75.0" prefWidth="300.0" text="Alla produkter">
+                           <styleClass>
+                              <String fx:value="category-item-selected" />
+                              <String fx:value="category-item" />
+                           </styleClass></Button>
+                           <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
+                              <image>
+                                 <Image url="@../../../../resources/icons/chevron_right.png" />
+                              </image>
+                           </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="75.0">
+                     <children>
+                        <Button fx:id="meatAndFishButton" mnemonicParsing="false" onAction="#meatAndFish" prefHeight="75.0" prefWidth="300.0" styleClass="category-item" text="Kött &amp; Fisk" />
+                        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
+                           <image>
+                              <Image url="@../../../../resources/icons/chevron_right.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="150.0">
+                     <children>
+                        <Button fx:id="fruitAndVegetablesButton" mnemonicParsing="false" onAction="#fruitAndVegetable" prefHeight="75.0" prefWidth="300.0" styleClass="category-item" text="Frukt &amp; Grönt" />
+                        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
+                           <image>
+                              <Image url="@../../../../resources/icons/chevron_right.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="225.0">
+                     <children>
+                        <Button fx:id="dairyButton" mnemonicParsing="false" onAction="#dairy" prefHeight="75.0" prefWidth="300.0" styleClass="category-item" text="Mejeri" />
+                        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
+                           <image>
+                              <Image url="@../../../../resources/icons/chevron_right.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="300.0">
+                     <children>
+                        <Button fx:id="pastaPotatoRiceButton" mnemonicParsing="false" onAction="#pastaPotatoAndRice" prefHeight="75.0" prefWidth="300.0" text="Pasta &amp; Ris">
+                           <styleClass>
+                              <String fx:value="category-item" />
+                              <String fx:value="font-size-28" />
+                           </styleClass></Button>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
+                           <image>
+                              <Image url="@../../../../resources/icons/chevron_right.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="375.0">
+                     <children>
+                        <Button fx:id="ingredientsButton" mnemonicParsing="false" onAction="#ingredients" prefHeight="75.0" prefWidth="300.0" styleClass="category-item" text="Ingredienser" />
+                        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
+                           <image>
+                              <Image url="@../../../../resources/icons/chevron_right.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="450.0">
+                     <children>
+                        <Button fx:id="breadButton" mnemonicParsing="false" onAction="#bread" prefHeight="75.0" prefWidth="300.0" styleClass="category-item" text="Bröd" />
+                        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
+                           <image>
+                              <Image url="@../../../../resources/icons/chevron_right.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="525.0">
+                     <children>
+                        <Button fx:id="drinksButton" mnemonicParsing="false" onAction="#drinks" prefHeight="75.0" prefWidth="300.0" styleClass="category-item" text="Dryck" />
+                        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
+                           <image>
+                              <Image url="@../../../../resources/icons/chevron_right.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="600.0">
+                     <children>
+                        <Button fx:id="sweetsButton" mnemonicParsing="false" onAction="#sweets" prefHeight="75.0" prefWidth="300.0" style="-fx-border-width: 0;" styleClass="category-item" text="Godis &amp; Fika" />
+                        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
+                           <image>
+                              <Image url="@../../../../resources/icons/chevron_right.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="header" prefHeight="100.0" prefWidth="1600.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <TextField fx:id="searchBar" layoutX="198.0" layoutY="10.0" prefHeight="80.0" prefWidth="702.0" promptText="Sök efter produkter..." styleClass="search-bar">
@@ -140,6 +269,13 @@
                         <Font name="Arial Narrow" size="70.0" />
                      </font>
                   </Text>
+                  <Circle fill="#4078cc" layoutX="1570.0" layoutY="30.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Label fx:id="cartNumberOfItems" layoutX="1560.0" layoutY="7.0" prefHeight="47.0" prefWidth="21.0" text="0" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="patua-text" />
+                        <String fx:value="font-size-32" />
+                     </styleClass>
+                  </Label>
                   <Button fx:id="varukorgButton11" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="5.0" layoutY="5.0" maxHeight="90.0" maxWidth="270.0" mnemonicParsing="false" onAction="#reloadStore" prefHeight="90.0" prefWidth="196.0" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
                      <font>
                         <Font size="19.0" />
@@ -151,22 +287,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <Button layoutX="380.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0">
-               <styleClass>
-                  <String fx:value="subcategory-button" />
-                  <String fx:value="font-size-24" />
-               </styleClass>
-            </Button>
-            <Button fx:id="favouriteButton" layoutX="620.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleFavouriteProductsAction" prefHeight="57.0" prefWidth="165.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="subcategory-button" />
-                  <String fx:value="font-size-24" />
-               </styleClass>
-            </Button>
-            <Button layoutX="500.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0">
+            <Button fx:id="favouriteButton" layoutX="380.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleFavouriteProductsAction" prefHeight="57.0" prefWidth="165.0" text="Favoriter" textAlignment="RIGHT">
                <font>
                   <Font size="18.0" />
                </font>

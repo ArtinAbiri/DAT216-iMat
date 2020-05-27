@@ -5,17 +5,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.Customer;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.*;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Stream;
 
+import static se.chalmers.cse.dat216.project.ProductCategory.*;
 
 
 public class Model {
@@ -81,4 +80,71 @@ public class Model {
         creditCard.setVerificationCode(cvvCode);
     }
 
+    ShoppingCart shoppingCart = iMatDataHandler.getShoppingCart();
+
+    public void addToCart(ShoppingItem shoppingItem) {
+        if (shoppingCart.getItems().contains(shoppingItem)) {
+            shoppingItem.setAmount(shoppingItem.getAmount() + 1);
+        } else {
+            shoppingItem.setAmount(1);
+            shoppingCart.addItem(shoppingItem);
+        }
+    }
+
+    public void removeFromCart(ShoppingItem shoppingItem) {
+        if (shoppingItem.getAmount() > 1) {
+            shoppingItem.setAmount(shoppingItem.getAmount() - 1);
+        } else if (shoppingItem.getAmount() == 1){
+            shoppingItem.setAmount(shoppingItem.getAmount() - 1);
+            shoppingCart.removeItem(shoppingItem);
+        }
+    }
+
+    public List<Product> categorySearch(String category) {
+        List<Product> returnList = new ArrayList<>();
+        switch(category) {
+            case "meatAndFish":
+                returnList.addAll(iMatDataHandler.getProducts(MEAT));
+                returnList.addAll(iMatDataHandler.getProducts(FISH));
+                return returnList;
+            case "fruitAndVegetables":
+                returnList.addAll(iMatDataHandler.getProducts(FRUIT));
+                returnList.addAll(iMatDataHandler.getProducts(CITRUS_FRUIT));
+                returnList.addAll(iMatDataHandler.getProducts(VEGETABLE_FRUIT));
+                returnList.addAll(iMatDataHandler.getProducts(ROOT_VEGETABLE));
+                returnList.addAll(iMatDataHandler.getProducts(EXOTIC_FRUIT));
+                returnList.addAll(iMatDataHandler.getProducts(CABBAGE));
+                returnList.addAll(iMatDataHandler.getProducts(BERRY));
+                returnList.addAll(iMatDataHandler.getProducts(MELONS));
+                returnList.addAll(iMatDataHandler.getProducts(NUTS_AND_SEEDS));
+                returnList.addAll(iMatDataHandler.getProducts(POD));
+                return returnList;
+            case "pastaPotatoAndRice":
+                returnList.addAll(iMatDataHandler.getProducts(POTATO_RICE));
+                returnList.addAll(iMatDataHandler.getProducts(PASTA));
+                return returnList;
+            case "dairy":
+                returnList.addAll(iMatDataHandler.getProducts(DAIRIES));
+                return returnList;
+            case "bread":
+                returnList.addAll(iMatDataHandler.getProducts(BREAD));
+                return returnList;
+            case "drinks":
+                returnList.addAll(iMatDataHandler.getProducts(HOT_DRINKS));
+                returnList.addAll(iMatDataHandler.getProducts(COLD_DRINKS));
+                return returnList;
+            case "ingredients":
+                returnList.addAll(iMatDataHandler.getProducts(HERB));
+                returnList.addAll(iMatDataHandler.getProducts(FLOUR_SUGAR_SALT));
+                return returnList;
+            case "sweets":
+                returnList.addAll(iMatDataHandler.getProducts(SWEET));
+                return returnList;
+        }
+        return null;
+    }
+
+    public void placeOrder(boolean clearShoppingCart) {
+        iMatDataHandler.placeOrder(clearShoppingCart);
+    }
 }
