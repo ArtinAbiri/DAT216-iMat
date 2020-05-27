@@ -125,13 +125,13 @@ public class iMatController implements Initializable, ShoppingCartListener {
             List<Product> matches = model.iMatDataHandler.favorites();
             updateProductList(matches);
             FavouriteButtonSelected = true;
-            favouriteButton.getStyleClass().add("subcategory-button-selected");
-        }
+            favouriteButton.setStyle("-fx-background-color: #4cc773; -fx-text-fill: white; -fx-border-color: #4cc773; -fx-border-width: 3px; -fx-border-radius: 15;");
+    }
         else{
             List<Product> matches = model.findProducts("");
             updateProductList(matches);
             FavouriteButtonSelected = false;
-            favouriteButton.getStyleClass().remove("subcategory-button-selected");
+            favouriteButton.setStyle("-fx-background-color: rgba(0,0,0,0); -fx-border-color: #4cc773; -fx-border-width: 3px; -fx-border-radius: 15;");
         }
     }
 
@@ -321,6 +321,15 @@ public class iMatController implements Initializable, ShoppingCartListener {
     private void loadCheckout(ActionEvent event) throws IOException {
         Parent checkoutParent = FXMLLoader.load(getClass().getResource("checkout.fxml"));
         Scene checkoutScene = new Scene(checkoutParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(checkoutScene);
+        window.show();
+    }
+    @FXML
+    private void loadHelp(ActionEvent event) throws IOException {
+        Parent helpParent = FXMLLoader.load(getClass().getResource("help.fxml"));
+        Scene checkoutScene = new Scene(helpParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(checkoutScene);

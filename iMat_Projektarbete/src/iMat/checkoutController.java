@@ -7,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -16,10 +15,23 @@ import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
-import java.util.concurrent.Flow;
 
 public class checkoutController {
     private final Model model = Model.getInstance();
+    @FXML
+    Text errorPhone;
+    @FXML
+    Text errorFirstName;
+    @FXML
+    Text errorLastName;
+    @FXML
+    Text errorEmail;
+    @FXML
+    Text errorPostal;
+    @FXML
+    Text errorPostalCode;
+    @FXML
+    Text errorAddress;
 
     @FXML
     AnchorPane checkoutPart1;
@@ -83,6 +95,8 @@ public class checkoutController {
     TextField validYear;
     @FXML
     TextField cvvCode;
+    @FXML
+    TextField searchBar;
 
     //Save card info checkbox
     @FXML
@@ -97,6 +111,16 @@ public class checkoutController {
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(storeScene);
+        window.show();
+    }
+
+    @FXML
+    private void loadHelpCheckout(ActionEvent event) throws IOException {
+        Parent helpParent = FXMLLoader.load(getClass().getResource("help.fxml"));
+        Scene checkoutScene = new Scene(helpParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(checkoutScene);
         window.show();
     }
 
@@ -116,16 +140,20 @@ public class checkoutController {
 
     @FXML
     private void loadCheckout3() {
-        displayCard();
-        checkoutPart3.toFront();
+        if (checkifLegalCheckout2()) {
+            displayCard();
+            checkoutPart3.toFront();
+        }
     }
 
     @FXML
     private void completePurchase() {
-        updateCard();
-        showPurchase();
-        model.placeOrder(true);
-        purchaseComplete.toFront();
+        if (checkifLegalCheckout3()) {
+            updateCard();
+            showPurchase();
+            model.placeOrder(true);
+            purchaseComplete.toFront();
+        }
     }
 
     @FXML
@@ -154,9 +182,9 @@ public class checkoutController {
 
     @FXML
     private void updateCustomerInformation() {
-        model.updateCustomerInformation(firstName.getText(), lastName.getText(), address.getText(), postCode.getText(), postArea.getText(), email.getText(),  mobilePhoneNumber.getText());
+        model.updateCustomerInformation(firstName.getText(), lastName.getText(), address.getText(), postCode.getText(), postArea.getText(), email.getText(), mobilePhoneNumber.getText());
     }
-    
+
     @FXML
     private void displayCustomerInformation() {
         firstName.setText(model.customer.getFirstName());
@@ -170,7 +198,7 @@ public class checkoutController {
 
     @FXML
     private void updateCard() {
-        if(saveCard.isSelected()) {
+        if (saveCard.isSelected()) {
             model.updateCard(cardHolder.getText(), cardNumber.getText(), Integer.parseInt(validMonth.getText()), Integer.parseInt(validYear.getText()), Integer.parseInt(cvvCode.getText()));
         } else {
             model.updateCard(null, null, 0, 0, 0);
@@ -202,6 +230,7 @@ public class checkoutController {
         }
     }
 
+
     private void showPurchase() {
         checkoutReceiptFlowPane.getChildren().clear();
 
@@ -209,4 +238,153 @@ public class checkoutController {
             checkoutReceiptFlowPane.getChildren().add(new receiptItemPanel(shoppingItem));
         }
     }
+
+    private Boolean checkIfIllegalNumber(String str) {
+
+        if (str == null || str.isEmpty()) return true;
+        int num = 0;
+        for (char c : str.toCharArray()) {
+            if (Character.isDigit(c)) {
+                num++;
+            }
+        }
+        return (num > 0);
+    }
+
+    private boolean checkIfIllegalLetter(String str) {
+
+        if (str == null || str.isEmpty()) return true;
+        int num = 0;
+        for (char c : str.toCharArray()) {
+            if (Character.isLetter(c)) {
+                num++;
+            }
+        }
+        return (num > 0);
+    }
+
+    private boolean checkIfIllegalPhone(String str) {
+
+        int num = 0;
+        for (char c : str.toCharArray()) {
+            if (Character.isLetter(c)) {
+                num++;
+            }
+        }
+        return (num > 0);
+    }
+
+    private boolean checkIfIllegalEmail(String str) {
+        if (str == null || str.isEmpty()) return true;
+        int num = 0;
+        for (char c : str.toCharArray()) {
+            if ((Character.toString(c).equals("@")) || (Character.toString(c).equals("."))) {
+                num++;
+            }
+        }
+        return (num < 2);
+    }
+
+    private boolean checkIfIllegalAdress(String str) {
+
+        if (str == null || str.isEmpty()) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean checkifLegalCheckout2() {
+        int num = 0;
+        if (checkIfIllegalNumber(firstName.getText())) {
+            firstName.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            num++;
+            errorFirstName.toFront();
+        } else{ firstName.setStyle("-fx-border-width: 0px ;");
+        errorFirstName.toBack();
+    }
+
+        if (checkIfIllegalNumber(lastName.getText())) {
+            lastName.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            num++;
+            errorLastName.toFront();
+        } else{ lastName.setStyle("-fx-border-width: 0px ;");
+        errorLastName.toBack();
+    }
+
+        if (checkIfIllegalNumber(postArea.getText())) {
+            postArea.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            num++;
+            errorPostal.toFront();
+        } else{ postArea.setStyle("-fx-border-width: 0px ;");
+        errorPostal.toBack();
+    }
+
+        if (checkIfIllegalAdress(address.getText())) {
+            address.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            num++;
+            errorAddress.toFront();
+        } else{ address.setStyle("-fx-border-width: 0px ;");
+        errorAddress.toBack();
+    }
+
+        if (checkIfIllegalLetter(postCode.getText())) {
+            postCode.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            num++;
+            errorPostalCode.toFront();
+
+        } else {postCode.setStyle("-fx-border-width: 0px ;");
+        errorPostalCode.toBack();
+
+    }
+        if (checkIfIllegalPhone(mobilePhoneNumber.getText())) {
+            mobilePhoneNumber.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            num++;
+            errorPhone.toFront();
+        } else {
+            mobilePhoneNumber.setStyle("-fx-border-width: 0px ;");
+            errorPhone.toBack();
+        }
+
+        if (checkIfIllegalEmail(email.getText())) {
+            email.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            num++;
+            errorEmail.toFront();
+        } else {
+            email.setStyle("-fx-border-width: 0px ;");
+            errorEmail.toBack();
+        }
+
+        return num == 0;
+    }
+
+    private boolean checkifLegalCheckout3() {
+        int num = 0;
+        if (checkIfIllegalNumber(cardHolder.getText())) {
+            cardHolder.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            num++;
+        } else cardHolder.setStyle("-fx-border-width: 0px ;");
+
+        if (checkIfIllegalLetter(cardNumber.getText())) {
+            cardNumber.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            num++;
+        } else cardNumber.setStyle("-fx-border-width: 0px ;");
+
+        if (checkIfIllegalLetter(validMonth.getText()) && !(validMonth.getText().length() == 2)) {
+            validMonth.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            num++;
+        } else validMonth.setStyle("-fx-border-width: 0px ;");
+
+        if (checkIfIllegalAdress(validYear.getText()) && !(validYear.getText().length() == 2)) {
+            validYear.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            num++;
+        } else validYear.setStyle("-fx-border-width: 0px ;");
+
+        if (checkIfIllegalLetter(cvvCode.getText()) && !(cvvCode.getText().length() == 3)) {
+            cvvCode.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            num++;
+        } else cvvCode.setStyle("-fx-border-width: 0px ;");
+
+        return num == 0;
+    }
+
 }

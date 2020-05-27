@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.helpController">
+   <children>
+      <AnchorPane fx:id="header" prefHeight="100.0" prefWidth="1600.0" styleClass="header">
+         <children>
+            <TextField fx:id="searchBar" layoutX="198.0" layoutY="10.0" prefHeight="80.0" prefWidth="702.0" promptText="Sök efter produkter..." styleClass="search-bar">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </TextField>
+            <Text fx:id="minaSidorText" layoutX="1007.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tidigare köp" wrappingWidth="278.8424072265625">
+               <font>
+                  <Font size="52.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="patua-text" />
+                  <String fx:value="font-size-48" />
+                  <String fx:value="clickable" />
+               </styleClass>
+            </Text>
+            <Button fx:id="searchButton" layoutX="900.0" layoutY="10.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+               <styleClass>
+                  <String fx:value="color-green" />
+                  <String fx:value="search-button" />
+               </styleClass>
+            </Button>
+            <Text fx:id="logoText" layoutX="5.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="iMat" textAlignment="CENTER" wrappingWidth="179.13671875">
+               <font>
+                  <Font name="Arial Narrow" size="70.0" />
+               </font>
+            </Text>
+            <Label fx:id="cartNumberOfItems" layoutX="1560.0" layoutY="7.0" prefHeight="47.0" prefWidth="21.0" text="0" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="patua-text" />
+                  <String fx:value="font-size-32" />
+               </styleClass>
+            </Label>
+            <Button fx:id="varukorgButton11" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="5.0" layoutY="5.0" maxHeight="90.0" maxWidth="270.0" mnemonicParsing="false" onAction="#loadStoreFromHelpscreen" prefHeight="90.0" prefWidth="196.0" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="clickable" />
+                  <String fx:value="invisible" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="40.0" layoutY="210.0" prefHeight="655.0" prefWidth="985.0" styleClass="checkout-boxes">
+         <children>
+            <Text layoutX="67.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Kundtjänst">
+               <font>
+                  <Font size="56.0" />
+               </font>
+            </Text>
+            <Text layoutX="67.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefon">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="patua-text" />
+                  <String fx:value="font-size-42" />
+               </styleClass>
+            </Text>
+            <Text layoutX="67.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="072 555 55 10">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="source-sans-regular" />
+                  <String fx:value="font-size-32" />
+               </styleClass>
+            </Text>
+            <Text layoutX="67.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-post">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="patua-text" />
+                  <String fx:value="font-size-42" />
+               </styleClass>
+            </Text>
+            <Text layoutX="67.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kundtjänst@imat.se">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="source-sans-regular" />
+                  <String fx:value="font-size-32" />
+               </styleClass>
+            </Text>
+            <Text layoutX="67.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adress">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="patua-text" />
+                  <String fx:value="font-size-42" />
+               </styleClass>
+            </Text>
+            <Text layoutX="67.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="iMatsvägen 9001">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="source-sans-regular" />
+                  <String fx:value="font-size-32" />
+               </styleClass>
+            </Text>
+            <Text layoutX="67.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" text="420 69, iMat">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="source-sans-regular" />
+                  <String fx:value="font-size-32" />
+               </styleClass>
+            </Text>
+            <Text layoutX="528.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Öppet tider:">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="patua-text" />
+                  <String fx:value="font-size-42" />
+               </styleClass>
+            </Text>
+            <Text layoutX="528.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vardagar" underline="true">
+               <styleClass>
+                  <String fx:value="source-sans-regular" />
+                  <String fx:value="font-size-32" />
+               </styleClass>
+            </Text>
+            <Text layoutX="528.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="09:00 - 17:30">
+               <styleClass>
+                  <String fx:value="source-sans-regular" />
+                  <String fx:value="font-size-32" />
+               </styleClass>
+            </Text>
+            <Text layoutX="528.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Helger &amp; Röda dagar" underline="true">
+               <styleClass>
+                  <String fx:value="source-sans-regular" />
+                  <String fx:value="font-size-32" />
+               </styleClass>
+            </Text>
+            <Text layoutX="528.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="09:00 - 12:30">
+               <styleClass>
+                  <String fx:value="source-sans-regular" />
+                  <String fx:value="font-size-32" />
+               </styleClass>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1076.0" layoutY="210.0" prefHeight="655.0" prefWidth="472.0" styleClass="checkout-boxes">
+         <children>
+            <Button layoutX="35.0" layoutY="35.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="403.0" text="Chatta med iMat:s kundjänst" textAlignment="CENTER">
+               <styleClass>
+                  <String fx:value="button-shadow" />
+                  <String fx:value="font-size-28" />
+               </styleClass>
+            </Button>
+            <Button layoutX="35.0" layoutY="195.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="403.0" text="Skicka ett mail till iMat" textAlignment="CENTER">
+               <styleClass>
+                  <String fx:value="button-shadow" />
+                  <String fx:value="font-size-28" />
+               </styleClass>
+            </Button>
+            <Button layoutX="35.0" layoutY="442.0" mnemonicParsing="false" prefHeight="165.0" prefWidth="403.0" text="Så här använder du iMat" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <styleClass>
+                  <String fx:value="button-shadow" />
+                  <String fx:value="font-size-42" />
+                  <String fx:value="color-green" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Button layoutX="40.0" layoutY="131.0" mnemonicParsing="false" onAction="#loadStoreFromHelpscreen" prefHeight="52.0" prefWidth="255.0" text="Tillbaka till butiken" textAlignment="RIGHT" textFill="WHITE">
+         <styleClass>
+            <String fx:value="button-shadow" />
+            <String fx:value="font-size-18" />
+            <String fx:value="color-green" />
+         </styleClass>
+      </Button>
+   </children>
+</AnchorPane>
