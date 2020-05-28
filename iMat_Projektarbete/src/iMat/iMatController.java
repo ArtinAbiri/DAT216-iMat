@@ -23,10 +23,15 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class iMatController implements Initializable, ShoppingCartListener {
+
+    static HashMap<Integer,productPanel> hashproducts= new HashMap<Integer, productPanel>();
+
     @FXML
     Button startShopButton;
 
@@ -110,8 +115,16 @@ public class iMatController implements Initializable, ShoppingCartListener {
         updateProductList(model.getProducts());
         model.shoppingCart.clear();
         model.shoppingCart.addShoppingCartListener(this);
-    }
 
+
+    }
+ public void hashstart(){
+        List<Product> allpro = model.getProducts();
+        allpro.remove(allpro.size()-1);
+        for (Product product : allpro) {
+
+            hashproducts.put( product.getProductId(),new productPanel(product));
+        }}
     @FXML
     private void handleSearchAction(ActionEvent event) {
 
@@ -166,11 +179,14 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void updateProductList(List<Product> products) {
         productsFlowPane.getChildren().clear();
-
-        for (Product product : products) {
-            productsFlowPane.getChildren().add(new productPanel(product));
+        List<Integer> id = new ArrayList<>();
+        for (Product pro:products) {
+            id.add(pro.getProductId());
         }
 
+        for (Integer productId : id) {
+            productsFlowPane.getChildren().add(hashproducts.get(productId));
+        }
     }
 
     @FXML
@@ -351,4 +367,5 @@ public class iMatController implements Initializable, ShoppingCartListener {
     public void shoppingCartChanged(CartEvent cartEvent) {
         cartNumberOfItems.setText(Integer.toString(model.shoppingCart.getItems().size()));
     }
+
 }
