@@ -15,7 +15,7 @@
             <Image url="@../../../../resources/startScreenImageScaled.png" />
          </image>
       </ImageView>
-      <Button fx:id="startShopButton1" layoutX="992.0" layoutY="242.0" mnemonicParsing="false" onAction="#loadStoreFromStartscreen" prefHeight="201.0" prefWidth="377.0" text="Börja handla" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button fx:id="startShopButton1" layoutX="992.0" layoutY="271.0" mnemonicParsing="false" onAction="#loadStoreFromStartscreen" prefHeight="201.0" prefWidth="377.0" text="Börja handla" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="55.0" />
          </font>
@@ -25,7 +25,7 @@
             <String fx:value="button-shadow" />
          </styleClass>
       </Button>
-      <Button fx:id="startGuideButton1" layoutX="992.0" layoutY="483.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="377.0" text="Så här gör du">
+      <Button fx:id="startGuideButton1" layoutX="992.0" layoutY="512.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="377.0" text="Så här gör du">
          <font>
             <Font size="36.0" />
          </font>
@@ -39,7 +39,7 @@
             <Font size="48.0" />
          </font>
       </Text>
-      <Text layoutX="949.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-semibold" text="- matbutiken för alla generationer" textAlignment="CENTER" wrappingWidth="462.7366638183594">
+      <Text layoutX="949.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="source-sans-semibold" text="- Matbutiken för alla generationer" textAlignment="CENTER" wrappingWidth="462.7366638183594">
          <font>
             <Font size="30.0" />
          </font>

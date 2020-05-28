@@ -120,7 +120,7 @@
                   <FlowPane fx:id="productsFlowPane" prefHeight="665.0" prefWidth="1160.0" />
                </content>
             </ScrollPane>
-            <AnchorPane layoutX="40.0" layoutY="140.0" prefHeight="674.0" prefWidth="300.0">
+            <AnchorPane layoutX="27.0" layoutY="140.0" prefHeight="674.0" prefWidth="300.0">
                <styleClass>
                   <String fx:value="white-background" />
                   <String fx:value="button-shadow" />
@@ -233,7 +233,7 @@
                         <Font size="34.0" />
                      </font>
                   </TextField>
-                  <Button fx:id="varukorgButton" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="1322.0" layoutY="10.0" maxHeight="80.0" maxWidth="270.0" mnemonicParsing="false" onAction="#handleOpenShoppingCartAction" prefHeight="80.0" prefWidth="260.0" styleClass="color-green" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+                  <Button fx:id="varukorgButton" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="1312.0" layoutY="10.0" maxHeight="80.0" maxWidth="270.0" mnemonicParsing="false" onAction="#handleOpenShoppingCartAction" prefHeight="80.0" prefWidth="260.0" styleClass="color-green" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -248,7 +248,7 @@
                         <String fx:value="clickable" />
                      </styleClass>
                   </Text>
-                  <Hyperlink layoutX="1341.0" layoutY="6.0" onAction="#handleOpenShoppingCartAction" prefHeight="88.0" prefWidth="229.0" text="Varukorg" textFill="WHITE">
+                  <Hyperlink layoutX="1331.0" layoutY="6.0" onAction="#handleOpenShoppingCartAction" prefHeight="88.0" prefWidth="229.0" text="Varukorg" textFill="WHITE">
                      <styleClass>
                         <String fx:value="font-size-48" />
                         <String fx:value="patua-text" />
@@ -269,8 +269,8 @@
                         <Font name="Arial Narrow" size="70.0" />
                      </font>
                   </Text>
-                  <Circle fill="#4078cc" layoutX="1570.0" layoutY="30.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                  <Label fx:id="cartNumberOfItems" layoutX="1560.0" layoutY="7.0" prefHeight="47.0" prefWidth="21.0" text="0" textFill="WHITE">
+                  <Circle fill="#4078cc" layoutX="1560.0" layoutY="30.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Label fx:id="cartNumberOfItems" layoutX="1536.0" layoutY="7.0" prefHeight="47.0" prefWidth="48.0" style="-fx-alignment: center;" text="0" textFill="WHITE">
                      <styleClass>
                         <String fx:value="patua-text" />
                         <String fx:value="font-size-32" />
@@ -287,13 +287,13 @@
                   </Button>
                </children>
             </AnchorPane>
-            <Button fx:id="favouriteButton" layoutX="380.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleFavouriteProductsAction" prefHeight="57.0" prefWidth="165.0" text="Favoriter" textAlignment="RIGHT">
+            <Button fx:id="favouriteButton" layoutX="1274.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleFavouriteProductsAction" prefHeight="57.0" prefWidth="165.0" text="Favoriter" textAlignment="RIGHT">
                <font>
                   <Font size="18.0" />
                </font>
                <styleClass>
                   <String fx:value="subcategory-button" />
-                  <String fx:value="font-size-24" />
+                  <String fx:value="font-size-28" />
                </styleClass>
             </Button>
          </children>

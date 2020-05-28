@@ -167,17 +167,17 @@ public class checkoutController {
 
     @FXML
     private void updateCost() {
-        checkoutSumLabel.setText("Varor: " + model.shoppingCart.getTotal());
-        checkoutTotalLabel.setText("Total summa: " + (model.shoppingCart.getTotal() + 49));
+        checkoutSumLabel.setText("Varor: " + model.shoppingCart.getTotal() + ":-");
+        checkoutTotalLabel.setText("Total summa: " + (model.shoppingCart.getTotal() + 49) + ":-");
 
-        checkoutSumLabel1.setText("Varor: " + model.shoppingCart.getTotal());
-        checkoutTotalLabel1.setText("Total summa: " + (model.shoppingCart.getTotal() + 49));
+        checkoutSumLabel1.setText("Varor: " + model.shoppingCart.getTotal() + ":-");
+        checkoutTotalLabel1.setText("Total summa: " + (model.shoppingCart.getTotal() + 49) + ":-");
 
-        checkoutSumLabel2.setText("Varor: " + model.shoppingCart.getTotal());
-        checkoutTotalLabel2.setText("Total summa: " + (model.shoppingCart.getTotal() + 49));
+        checkoutSumLabel2.setText("Varor: " + model.shoppingCart.getTotal() + ":-");
+        checkoutTotalLabel2.setText("Total summa: " + (model.shoppingCart.getTotal() + 49) + ":-");
 
-        checkoutSumLabel3.setText("Varor: " + model.shoppingCart.getTotal());
-        checkoutTotalLabel3.setText("Total summa: " + (model.shoppingCart.getTotal() + 49));
+        checkoutSumLabel3.setText("Varor: " + model.shoppingCart.getTotal() + ":-");
+        checkoutTotalLabel3.setText("Total summa: " + (model.shoppingCart.getTotal() + 49)  + ":-");
     }
 
     @FXML
