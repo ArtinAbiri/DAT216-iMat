@@ -39,7 +39,7 @@
             <String fx:value="font-size-28" />
          </styleClass>
       </Label>
-      <Label fx:id="cartItemAmount" layoutX="426.0" layoutY="44.0" prefHeight="47.0" prefWidth="20.0" text="0" textAlignment="CENTER">
+      <Label fx:id="cartItemAmount" layoutX="410.0" layoutY="44.0" prefHeight="47.0" prefWidth="48.0" style="-fx-alignment: center;" text="0" textAlignment="CENTER">
          <font>
             <Font size="36.0" />
          </font>

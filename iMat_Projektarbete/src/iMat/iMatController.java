@@ -108,7 +108,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
 
     public void initialize(URL url, ResourceBundle rb) {
         updateProductList(model.getProducts());
-        model.shoppingCart.clear();
+        //model.shoppingCart.clear();
         model.shoppingCart.addShoppingCartListener(this);
     }
 
@@ -125,13 +125,13 @@ public class iMatController implements Initializable, ShoppingCartListener {
             List<Product> matches = model.iMatDataHandler.favorites();
             updateProductList(matches);
             FavouriteButtonSelected = true;
-            favouriteButton.setStyle("-fx-background-color: #4cc773; -fx-text-fill: white; -fx-border-color: #4cc773; -fx-border-width: 3px; -fx-border-radius: 15;");
+            favouriteButton.setStyle("-fx-background-color: #4cc773; -fx-text-fill: white; -fx-border-color: #4cc773; -fx-border-width: 3px; -fx-border-radius: 3;");
     }
         else{
             List<Product> matches = model.findProducts("");
             updateProductList(matches);
             FavouriteButtonSelected = false;
-            favouriteButton.setStyle("-fx-background-color: rgba(0,0,0,0); -fx-border-color: #4cc773; -fx-border-width: 3px; -fx-border-radius: 15;");
+            favouriteButton.setStyle("-fx-background-color: rgba(0,0,0,0); -fx-border-color: #4cc773; -fx-border-width: 3px; -fx-border-radius: 3;");
         }
     }
 
@@ -350,5 +350,6 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         cartNumberOfItems.setText(Integer.toString(model.shoppingCart.getItems().size()));
+        updateCartList();
     }
 }
