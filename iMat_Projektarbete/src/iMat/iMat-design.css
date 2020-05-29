@@ -191,8 +191,8 @@
     -fx-stroke-width: 5;
 }
 .black-circle{
-    -fx-stroke: black;
-    -fx-fill: #4cc773;
+    -fx-stroke: #4cc773;
+    -fx-fill: rgba(0,0,0,0);
     -fx-stroke-width: 5;
 }
 
