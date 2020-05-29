@@ -23,12 +23,16 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class iMatController implements Initializable, ShoppingCartListener {
+
+  public final static DecimalFormat df2 = new DecimalFormat("0.00");
+
 
     static HashMap<Integer,productPanel> hashproducts= new HashMap<Integer, productPanel>();
 
@@ -148,6 +152,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
         }
     }
 
+
     @FXML
     private void handleStartShoppingAction(ActionEvent event) {
         mainScreen.toFront();
@@ -164,6 +169,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
         updateCartList();
     }
 
+
     private void updateCartList() {
         cartFlowPane.getChildren().clear();
 
@@ -171,8 +177,10 @@ public class iMatController implements Initializable, ShoppingCartListener {
             cartFlowPane.getChildren().add(new cartItemPanel(shoppingItem));
         }
 
-        cartSumLabel.setText("Summa: " + model.shoppingCart.getTotal() + " kr");
-    }
+
+        cartSumLabel.setText("Summa: " + df2.format( model.shoppingCart.getTotal()) + " kr");
+        }
+
 
     private final Model model = Model.getInstance();
 
@@ -355,6 +363,8 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void clearCart(ActionEvent event) throws IOException {
         model.shoppingCart.clear();
+        cartSumLabel.setText("Summa: " + df2.format( model.shoppingCart.getTotal()) + " kr");
+
         updateCartList();
     }
 
@@ -366,7 +376,13 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         cartNumberOfItems.setText(Integer.toString(model.shoppingCart.getItems().size()));
+
+
+        cartSumLabel.setText("Summa: " + df2.format( model.shoppingCart.getTotal()) + " kr");
+
         updateCartList();
+
     }
+
 
 }

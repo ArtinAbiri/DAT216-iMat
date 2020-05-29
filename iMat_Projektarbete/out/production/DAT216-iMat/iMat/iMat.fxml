@@ -67,9 +67,9 @@
                         <FlowPane fx:id="cartFlowPane" maxHeight="740.0" prefHeight="586.0" prefWidth="730.0" />
                      </content>
                   </ScrollPane>
-                <AnchorPane layoutX="898.0" minHeight="0.0" minWidth="0.0" prefHeight="112.0" prefWidth="700.0">
+                <AnchorPane layoutX="848.0" minHeight="0.0" minWidth="0.0" prefHeight="112.0" prefWidth="750.0">
                      <children>
-                        <Text layoutX="198.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varukorg" textAlignment="CENTER" wrappingWidth="260.0">
+                        <Text layoutX="245.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varukorg" textAlignment="CENTER" wrappingWidth="260.0">
                            <styleClass>
                               <String fx:value="font-size-55" />
                               <String fx:value="patua-text" />

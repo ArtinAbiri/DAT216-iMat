@@ -73,11 +73,16 @@ public class cartItemPanel extends AnchorPane {
     private void handleAddAction(ActionEvent event) {
         model.addToCart(shoppingItem);
         cartItemAmount.setText(Integer.toString( (int) shoppingItem.getAmount()));
+        iMatController.hashproducts.get(shoppingItem.getProduct().getProductId()).update(shoppingItem);
+
     }
 
     @FXML
     private void handleRemoveAction(ActionEvent event) {
         model.removeFromCart(shoppingItem);
         cartItemAmount.setText(Integer.toString( (int) shoppingItem.getAmount()));
+        iMatController.hashproducts.get(shoppingItem.getProduct().getProductId()).update(shoppingItem);
+
+
     }
 }

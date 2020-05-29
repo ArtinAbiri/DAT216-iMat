@@ -244,7 +244,7 @@
                         <String fx:value="font-size-28" />
                      </styleClass>
                   </Text>
-                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frakt: 49:-" wrappingWidth="220.13671875">
+                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frakt: 49,00:-" wrappingWidth="220.13671875">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -369,7 +369,7 @@
                         <String fx:value="font-size-28" />
                      </styleClass>
                   </Text>
-                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frakt: 49:-" wrappingWidth="220.13671875">
+                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frakt: 49,00:-" wrappingWidth="220.13671875">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -536,7 +536,7 @@
                         <String fx:value="font-size-28" />
                      </styleClass>
                   </Text>
-                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frakt: 49:-" wrappingWidth="220.13671875">
+                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frakt: 49,00:-" wrappingWidth="220.13671875">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -654,7 +654,7 @@
                         <String fx:value="font-size-28" />
                      </styleClass>
                   </Text>
-                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frakt: 49:-" wrappingWidth="220.13671875">
+                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frakt: 49,00:-" wrappingWidth="220.13671875">
                      <font>
                         <Font size="24.0" />
                      </font>

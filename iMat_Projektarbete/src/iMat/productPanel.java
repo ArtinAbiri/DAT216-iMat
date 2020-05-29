@@ -124,4 +124,8 @@ public class productPanel extends AnchorPane {
             model.iMatDataHandler.removeFavorite(this.product);
         }
     }
+    public void update(ShoppingItem s){
+        productAmountLabel.setText(Integer.toString( (int) shoppingItem.getAmount()));
+
+    }
 }

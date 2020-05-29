@@ -16,6 +16,8 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 
+import static iMat.iMatController.df2;
+
 public class checkoutController {
     private final Model model = Model.getInstance();
     @FXML
@@ -167,17 +169,17 @@ public class checkoutController {
 
     @FXML
     private void updateCost() {
-        checkoutSumLabel.setText("Varor: " + model.shoppingCart.getTotal() + ":-");
-        checkoutTotalLabel.setText("Total summa: " + (model.shoppingCart.getTotal() + 49) + ":-");
+        checkoutSumLabel.setText("Varor: " + df2.format( model.shoppingCart.getTotal())+ ":-");
+        checkoutTotalLabel.setText("Total summa: " + (df2.format(49+ model.shoppingCart.getTotal())) + ":-");
 
-        checkoutSumLabel1.setText("Varor: " + model.shoppingCart.getTotal() + ":-");
-        checkoutTotalLabel1.setText("Total summa: " + (model.shoppingCart.getTotal() + 49) + ":-");
+        checkoutSumLabel1.setText("Varor: " +df2.format( model.shoppingCart.getTotal()) + ":-");
+        checkoutTotalLabel1.setText("Total summa: " + (df2.format(49+ model.shoppingCart.getTotal()) ) + ":-");
 
-        checkoutSumLabel2.setText("Varor: " + model.shoppingCart.getTotal() + ":-");
-        checkoutTotalLabel2.setText("Total summa: " + (model.shoppingCart.getTotal() + 49) + ":-");
+        checkoutSumLabel2.setText("Varor: " + df2.format( model.shoppingCart.getTotal()) + ":-");
+        checkoutTotalLabel2.setText("Total summa: " + (df2.format( 49+model.shoppingCart.getTotal()) ) + ":-");
 
-        checkoutSumLabel3.setText("Varor: " + model.shoppingCart.getTotal() + ":-");
-        checkoutTotalLabel3.setText("Total summa: " + (model.shoppingCart.getTotal() + 49)  + ":-");
+        checkoutSumLabel3.setText("Varor: " + df2.format( model.shoppingCart.getTotal()) + ":-");
+        checkoutTotalLabel3.setText("Total summa: " + ( df2.format(49+ model.shoppingCart.getTotal()) )  + ":-");
     }
 
     @FXML

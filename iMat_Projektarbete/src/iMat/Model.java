@@ -93,9 +93,10 @@ public class Model {
         }
     }
 
-    public void removeFromCart(ShoppingItem shoppingItem) {
+        public void removeFromCart(ShoppingItem shoppingItem) {
         if (shoppingItem.getAmount() > 1) {
             shoppingItem.setAmount(shoppingItem.getAmount() - 1);
+            shoppingCart.fireShoppingCartChanged(shoppingItem,true);
         } else if (shoppingItem.getAmount() == 1){
             shoppingItem.setAmount(shoppingItem.getAmount() - 1);
             shoppingCart.removeItem(shoppingItem);
