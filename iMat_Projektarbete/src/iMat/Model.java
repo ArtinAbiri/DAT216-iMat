@@ -85,8 +85,10 @@ public class Model {
     public void addToCart(ShoppingItem shoppingItem) {
         if (shoppingCart.getItems().contains(shoppingItem)) {
             shoppingItem.setAmount(shoppingItem.getAmount() + 1);
+            shoppingCart.fireShoppingCartChanged(shoppingItem, true);
         } else {
             shoppingItem.setAmount(1);
+            shoppingCart.fireShoppingCartChanged(shoppingItem, true);
             shoppingCart.addItem(shoppingItem);
         }
     }
