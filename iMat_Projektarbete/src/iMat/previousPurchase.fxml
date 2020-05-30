@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<fx:root animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="1050.0" stylesheets="@iMat-design.css" text="2020-05-15 | Ordernummer" type="javafx.scene.control.TitledPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0">
+         <content>
+            <FlowPane fx:id="previousOrderFlowPane" prefHeight="273.0" prefWidth="1036.0" />
+         </content>
+      </ScrollPane>
+   </content>
+   <styleClass>
+      <String fx:value="font-size-24" />
+      <String fx:value="source-sans-bold" />
+   </styleClass>
+</fx:root>

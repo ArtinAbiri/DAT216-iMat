@@ -378,6 +378,16 @@ public class iMatController implements Initializable, ShoppingCartListener {
     }
 
     @FXML
+    private void loadOrderHistory(ActionEvent event) throws IOException {
+        Parent helpParent = FXMLLoader.load(getClass().getResource("orderHistory.fxml"));
+        Scene checkoutScene = new Scene(helpParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(checkoutScene);
+        window.show();
+    }
+
+    @FXML
     private void clearCart(ActionEvent event) throws IOException {
         model.shoppingCart.clear();
         cartSumLabel.setText("Summa: " + df2.format( model.shoppingCart.getTotal()) + " kr");

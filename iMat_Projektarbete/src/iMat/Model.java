@@ -151,4 +151,8 @@ public class Model {
     public void placeOrder(boolean clearShoppingCart) {
         iMatDataHandler.placeOrder(clearShoppingCart);
     }
+
+    public List<Order> getOrders() {
+        return iMatDataHandler.getOrders();
+    }
 }

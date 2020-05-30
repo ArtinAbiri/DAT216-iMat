@@ -8,12 +8,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 
-public class cartItemPanel extends AnchorPane {
+public class orderHistoryItemPanel extends AnchorPane {
     //Shared instance of model
     Model model = Model.getInstance();
 
@@ -30,14 +29,12 @@ public class cartItemPanel extends AnchorPane {
     ImageView cartItemEco;
     @FXML
     Button cartItemAdd;
-    @FXML
-    Button cartItemRemove;
 
     ShoppingItem shoppingItem;
-    private int numberOfItems;
+    int numberOfItems;
 
-    public cartItemPanel(ShoppingItem shoppingItem) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cartItemPanel.fxml"));
+    public orderHistoryItemPanel(ShoppingItem shoppingItem) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("orderHistoryItemPanel.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -51,38 +48,24 @@ public class cartItemPanel extends AnchorPane {
         this.numberOfItems = (int) shoppingItem.getAmount();
 
         cartItemName.setText(shoppingItem.getProduct().getName());
-        cartItemPrice.setText(String.format("%.2f", shoppingItem.getProduct().getPrice()) + " " + shoppingItem.getProduct().getUnit());
-        cartItemAmount.setText(String.valueOf(numberOfItems));
-        cartItemImage.setImage(model.getImage(shoppingItem.getProduct(), 120, 93));
+        cartItemPrice.setText(String.format("%.2f", shoppingItem.getProduct().getPrice()) + " kr");
+        cartItemAmount.setText(String.valueOf(numberOfItems) + " st");
+        cartItemImage.setImage(model.getImage(shoppingItem.getProduct(), 120, 110));
         if (!shoppingItem.getProduct().isEcological()) {
             cartItemEco.setImage(null);
         }
         Image plus = new Image("file:iMat_Projektarbete/resources/icons/baseline_add_white_48dp.png");
         ImageView plusimage = new ImageView(plus);
-        plusimage.setFitHeight(50);
-        plusimage.setFitWidth(45);
+        plusimage.setFitHeight(40);
+        plusimage.setFitWidth(40);
         cartItemAdd.setGraphic(plusimage);
-        Image remove = new Image("file:iMat_Projektarbete/resources/icons/baseline_remove_white_48dp.png");
-        ImageView removeimage = new ImageView(remove);
-        removeimage.setFitHeight(50);
-        removeimage.setFitWidth(45);
-        cartItemRemove.setGraphic(removeimage);
     }
 
     @FXML
     private void handleAddAction(ActionEvent event) {
         model.addToCart(shoppingItem);
-        cartItemAmount.setText(Integer.toString( (int) shoppingItem.getAmount()));
+        model.shoppingCart.fireShoppingCartChanged(shoppingItem, true);
         iMatController.hashproducts.get(shoppingItem.getProduct().getProductId()).update(shoppingItem);
-
-    }
-
-    @FXML
-    private void handleRemoveAction(ActionEvent event) {
-        model.removeFromCart(shoppingItem);
-        cartItemAmount.setText(Integer.toString( (int) shoppingItem.getAmount()));
-        iMatController.hashproducts.get(shoppingItem.getProduct().getProductId()).update(shoppingItem);
-
 
     }
 }

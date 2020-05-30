@@ -144,6 +144,16 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     }
 
     @FXML
+    private void loadOrderHistory(ActionEvent event) throws IOException {
+        Parent helpParent = FXMLLoader.load(getClass().getResource("orderHistory.fxml"));
+        Scene checkoutScene = new Scene(helpParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(checkoutScene);
+        window.show();
+    }
+
+    @FXML
     private void loadCheckout1() {
         checkoutPart1.toFront();
         updateCartList();

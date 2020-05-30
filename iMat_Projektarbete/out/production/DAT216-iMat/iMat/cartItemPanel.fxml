@@ -11,7 +11,7 @@
 
 <fx:root cacheShape="false" centerShape="false" maxHeight="730.0" maxWidth="-Infinity" pickOnBounds="false" prefHeight="125.0" prefWidth="730.0" scaleShape="false" stylesheets="@iMat-design.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="cartItemImage" fitHeight="110.0" fitWidth="120.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" AnchorPane.leftAnchor="14.0" />
+      <ImageView fx:id="cartItemImage" fitHeight="93.0" fitWidth="120.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" AnchorPane.leftAnchor="14.0" />
       <ImageView fx:id="cartItemEco" fitHeight="48.0" fitWidth="48.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="688.0" AnchorPane.topAnchor="4.0">
          <image>
             <Image url="@../../../../resources/icons/eco_label.png" />

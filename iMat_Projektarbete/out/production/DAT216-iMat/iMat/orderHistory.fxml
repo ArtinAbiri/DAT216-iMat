@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.orderHistoryController">
+   <children>
+      <AnchorPane fx:id="header" prefHeight="100.0" prefWidth="1600.0" styleClass="header">
+         <children>
+            <TextField fx:id="searchBar" layoutX="198.0" layoutY="10.0" prefHeight="80.0" prefWidth="702.0" promptText="Sök efter produkter..." styleClass="search-bar">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </TextField>
+            <Button fx:id="searchButton" layoutX="900.0" layoutY="10.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+               <styleClass>
+                  <String fx:value="color-green" />
+                  <String fx:value="search-button" />
+               </styleClass>
+            </Button>
+            <Text fx:id="logoText" layoutX="5.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="iMat" textAlignment="CENTER" wrappingWidth="179.13671875">
+               <font>
+                  <Font name="Arial Narrow" size="70.0" />
+               </font>
+            </Text>
+            <Label fx:id="cartNumberOfItems" layoutX="1560.0" layoutY="7.0" prefHeight="47.0" prefWidth="21.0" text="0" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="patua-text" />
+                  <String fx:value="font-size-32" />
+               </styleClass>
+            </Label>
+            <Button fx:id="varukorgButton11" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="5.0" layoutY="5.0" maxHeight="90.0" maxWidth="270.0" mnemonicParsing="false" onAction="#loadStoreFromOrderHistory" prefHeight="90.0" prefWidth="196.0" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="clickable" />
+                  <String fx:value="invisible" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Button layoutX="40.0" layoutY="131.0" mnemonicParsing="false" onAction="#loadStoreFromOrderHistory" prefHeight="52.0" prefWidth="255.0" text="Tillbaka till butiken" textAlignment="RIGHT" textFill="WHITE">
+         <styleClass>
+            <String fx:value="button-shadow" />
+            <String fx:value="font-size-18" />
+            <String fx:value="color-green" />
+         </styleClass>
+      </Button>
+      <AnchorPane layoutX="250.0" layoutY="226.0" prefHeight="630.0" prefWidth="1100.0" styleClass="white-background">
+         <children>
+            <Text layoutX="25.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orderhistorik">
+               <styleClass>
+                  <String fx:value="patua-text" />
+                  <String fx:value="font-size-55" />
+               </styleClass>
+            </Text>
+            <ScrollPane layoutY="90.0" prefHeight="540.0" prefWidth="1100.0" styleClass="white-scrollpane">
+               <content>
+                  <Accordion fx:id="orderHistoryAccordion" minHeight="530.0" minWidth="976.0" translateX="50.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <Button disable="true" layoutX="1020.0" layoutY="12.0" mnemonicParsing="false" opacity="0.0" text="Orderhistorik">
+         <styleClass>
+            <String fx:value="button-shadow" />
+            <String fx:value="font-size-36" />
+         </styleClass>
+      </Button>
+   </children>
+</AnchorPane>

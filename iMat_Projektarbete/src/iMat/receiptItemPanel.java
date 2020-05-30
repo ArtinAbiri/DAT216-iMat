@@ -48,7 +48,7 @@ public class receiptItemPanel extends AnchorPane {
         cartItemName.setText(shoppingItem.getProduct().getName());
         cartItemPrice.setText(String.format("%.2f", shoppingItem.getProduct().getPrice()) + " " + shoppingItem.getProduct().getUnit());
         cartItemAmount.setText(String.valueOf(numberOfItems) + " st");
-        cartItemImage.setImage(model.getImage(shoppingItem.getProduct(), 120, 110));
+        cartItemImage.setImage(model.getImage(shoppingItem.getProduct(), 120, 93));
         if (!shoppingItem.getProduct().isEcological()) {
             cartItemEco.setImage(null);
         }

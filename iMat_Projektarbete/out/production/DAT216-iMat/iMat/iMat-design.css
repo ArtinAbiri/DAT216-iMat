@@ -266,3 +266,14 @@
     -fx-background-color: rgba(76,199,115,0.3);
 }
 
+.titled-pane > .title {
+    -fx-background-color: white;
+    -fx-padding: 30px 0 30px 50px;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: black;
+}
+
+.titled-pane > *.content {
+    -fx-box-border: 0;
+}
+

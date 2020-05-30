@@ -134,7 +134,7 @@
                               <String fx:value="category-item" />
                               <String fx:value="button-hover" />
                            </styleClass></Button>
-                           <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
+                           <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" onMouseClicked="#allProducts" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
                               <image>
                                  <Image url="@../../../../resources/icons/chevron_right.png" />
                               </image>
@@ -264,16 +264,6 @@
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Text fx:id="minaSidorText" layoutX="1007.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tidigare köp" wrappingWidth="278.8424072265625">
-                     <font>
-                        <Font size="52.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="patua-text" />
-                        <String fx:value="font-size-48" />
-                        <String fx:value="clickable" />
-                     </styleClass>
-                  </Text>
                   <Hyperlink layoutX="1331.0" layoutY="6.0" onAction="#handleOpenShoppingCartAction" prefHeight="88.0" prefWidth="229.0" text="Varukorg" textFill="WHITE">
                      <styleClass>
                         <String fx:value="font-size-48" />
@@ -309,6 +299,12 @@
                      <styleClass>
                         <String fx:value="clickable" />
                         <String fx:value="invisible" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="1020.0" layoutY="12.0" mnemonicParsing="false" onAction="#loadOrderHistory" text="Orderhistorik">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-36" />
                      </styleClass>
                   </Button>
                </children>

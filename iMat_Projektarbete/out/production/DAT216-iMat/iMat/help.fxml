@@ -55,14 +55,18 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="40.0" layoutY="210.0" prefHeight="655.0" prefWidth="985.0" styleClass="checkout-boxes">
+      <AnchorPane layoutX="40.0" layoutY="210.0" prefHeight="655.0" prefWidth="1432.0" styleClass="checkout-boxes">
          <children>
-            <Text layoutX="67.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Kundtjänst">
+            <Text layoutX="67.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kundtjänst">
                <font>
                   <Font size="56.0" />
                </font>
+               <styleClass>
+                  <String fx:value="patua-text" />
+                  <String fx:value="font-size-55" />
+               </styleClass>
             </Text>
-            <Text layoutX="67.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefon">
+            <Text layoutX="67.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefon:">
                <font>
                   <Font size="36.0" />
                </font>
@@ -80,7 +84,7 @@
                   <String fx:value="font-size-32" />
                </styleClass>
             </Text>
-            <Text layoutX="67.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-post">
+            <Text layoutX="67.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-post:">
                <font>
                   <Font size="36.0" />
                </font>
@@ -98,7 +102,7 @@
                   <String fx:value="font-size-32" />
                </styleClass>
             </Text>
-            <Text layoutX="67.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adress">
+            <Text layoutX="67.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adress:">
                <font>
                   <Font size="36.0" />
                </font>
@@ -125,7 +129,7 @@
                   <String fx:value="font-size-32" />
                </styleClass>
             </Text>
-            <Text layoutX="528.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Öppet tider:">
+            <Text layoutX="528.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Öppettider för kundtjänsten:" wrappingWidth="291.8916015625">
                <font>
                   <Font size="36.0" />
                </font>
@@ -134,47 +138,31 @@
                   <String fx:value="font-size-42" />
                </styleClass>
             </Text>
-            <Text layoutX="528.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vardagar" underline="true">
+            <Text layoutX="528.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vardagar:" underline="true">
                <styleClass>
                   <String fx:value="source-sans-regular" />
                   <String fx:value="font-size-32" />
                </styleClass>
             </Text>
-            <Text layoutX="528.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="09:00 - 17:30">
+            <Text layoutX="528.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="09:00 - 17:30">
                <styleClass>
                   <String fx:value="source-sans-regular" />
                   <String fx:value="font-size-32" />
                </styleClass>
             </Text>
-            <Text layoutX="528.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Helger &amp; Röda dagar" underline="true">
+            <Text layoutX="528.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Helger &amp; Röda dagar:" underline="true">
                <styleClass>
                   <String fx:value="source-sans-regular" />
                   <String fx:value="font-size-32" />
                </styleClass>
             </Text>
-            <Text layoutX="528.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="09:00 - 12:30">
+            <Text layoutX="528.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="09:00 - 12:30">
                <styleClass>
                   <String fx:value="source-sans-regular" />
                   <String fx:value="font-size-32" />
                </styleClass>
             </Text>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="1076.0" layoutY="210.0" prefHeight="655.0" prefWidth="472.0" styleClass="checkout-boxes">
-         <children>
-            <Button layoutX="35.0" layoutY="35.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="403.0" text="Chatta med iMat:s kundjänst" textAlignment="CENTER">
-               <styleClass>
-                  <String fx:value="button-shadow" />
-                  <String fx:value="font-size-28" />
-               </styleClass>
-            </Button>
-            <Button layoutX="35.0" layoutY="195.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="403.0" text="Skicka ett mail till iMat" textAlignment="CENTER">
-               <styleClass>
-                  <String fx:value="button-shadow" />
-                  <String fx:value="font-size-28" />
-               </styleClass>
-            </Button>
-            <Button layoutX="35.0" layoutY="442.0" mnemonicParsing="false" prefHeight="165.0" prefWidth="403.0" text="Så här använder du iMat" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button layoutX="997.0" layoutY="471.0" mnemonicParsing="false" prefHeight="165.0" prefWidth="403.0" text="Så här använder du iMat" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <styleClass>
                   <String fx:value="button-shadow" />
                   <String fx:value="font-size-42" />
