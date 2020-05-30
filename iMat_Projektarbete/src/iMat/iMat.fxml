@@ -132,6 +132,7 @@
                            <styleClass>
                               <String fx:value="category-item-selected" />
                               <String fx:value="category-item" />
+                              <String fx:value="button-hover" />
                            </styleClass></Button>
                            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
                               <image>
@@ -152,7 +153,11 @@
                   </AnchorPane>
                   <AnchorPane layoutY="150.0">
                      <children>
-                        <Button fx:id="fruitAndVegetablesButton" mnemonicParsing="false" onAction="#fruitAndVegetable" prefHeight="75.0" prefWidth="300.0" styleClass="category-item" text="Frukt &amp; Grönt" />
+                        <Button fx:id="fruitAndVegetablesButton" mnemonicParsing="false" onAction="#fruitAndVegetable" prefHeight="75.0" prefWidth="300.0" text="Frukt &amp; Grönt">
+                           <styleClass>
+                              <String fx:value="category-item" />
+                              <String fx:value="hovä" />
+                           </styleClass></Button>
                         <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
                            <image>
                               <Image url="@../../../../resources/icons/chevron_right.png" />
@@ -162,7 +167,11 @@
                   </AnchorPane>
                   <AnchorPane layoutY="225.0">
                      <children>
-                        <Button fx:id="dairyButton" mnemonicParsing="false" onAction="#dairy" prefHeight="75.0" prefWidth="300.0" styleClass="category-item" text="Mejeri" />
+                        <Button fx:id="dairyButton" mnemonicParsing="false" onAction="#dairy" prefHeight="75.0" prefWidth="300.0" text="Mejeri">
+                           <styleClass>
+                              <String fx:value="category-item" />
+                              <String fx:value="button-hover" />
+                           </styleClass></Button>
                         <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
                            <image>
                               <Image url="@../../../../resources/icons/chevron_right.png" />
@@ -176,6 +185,7 @@
                            <styleClass>
                               <String fx:value="category-item" />
                               <String fx:value="font-size-28" />
+                              <String fx:value="button-hover" />
                            </styleClass></Button>
                         <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
                            <image>
@@ -186,7 +196,11 @@
                   </AnchorPane>
                   <AnchorPane layoutY="375.0">
                      <children>
-                        <Button fx:id="ingredientsButton" mnemonicParsing="false" onAction="#ingredients" prefHeight="75.0" prefWidth="300.0" styleClass="category-item" text="Ingredienser" />
+                        <Button fx:id="ingredientsButton" mnemonicParsing="false" onAction="#ingredients" prefHeight="75.0" prefWidth="300.0" text="Ingredienser">
+                           <styleClass>
+                              <String fx:value="category-item" />
+                              <String fx:value="button-hover" />
+                           </styleClass></Button>
                         <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
                            <image>
                               <Image url="@../../../../resources/icons/chevron_right.png" />
@@ -196,7 +210,11 @@
                   </AnchorPane>
                   <AnchorPane layoutY="450.0">
                      <children>
-                        <Button fx:id="breadButton" mnemonicParsing="false" onAction="#bread" prefHeight="75.0" prefWidth="300.0" styleClass="category-item" text="Bröd" />
+                        <Button fx:id="breadButton" mnemonicParsing="false" onAction="#bread" prefHeight="75.0" prefWidth="300.0" text="Bröd">
+                           <styleClass>
+                              <String fx:value="category-item" />
+                              <String fx:value="button-hover" />
+                           </styleClass></Button>
                         <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
                            <image>
                               <Image url="@../../../../resources/icons/chevron_right.png" />
@@ -206,7 +224,11 @@
                   </AnchorPane>
                   <AnchorPane layoutY="525.0">
                      <children>
-                        <Button fx:id="drinksButton" mnemonicParsing="false" onAction="#drinks" prefHeight="75.0" prefWidth="300.0" styleClass="category-item" text="Dryck" />
+                        <Button fx:id="drinksButton" mnemonicParsing="false" onAction="#drinks" prefHeight="75.0" prefWidth="300.0" text="Dryck">
+                           <styleClass>
+                              <String fx:value="category-item" />
+                              <String fx:value="button-hover" />
+                           </styleClass></Button>
                         <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
                            <image>
                               <Image url="@../../../../resources/icons/chevron_right.png" />
@@ -216,7 +238,11 @@
                   </AnchorPane>
                   <AnchorPane layoutY="600.0">
                      <children>
-                        <Button fx:id="sweetsButton" mnemonicParsing="false" onAction="#sweets" prefHeight="75.0" prefWidth="300.0" style="-fx-border-width: 0;" styleClass="category-item" text="Godis &amp; Fika" />
+                        <Button fx:id="sweetsButton" mnemonicParsing="false" onAction="#sweets" prefHeight="75.0" prefWidth="300.0" style="-fx-border-width: 0;" text="Godis &amp; Fika">
+                           <styleClass>
+                              <String fx:value="category-item" />
+                              <String fx:value="button-hover" />
+                           </styleClass></Button>
                         <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
                            <image>
                               <Image url="@../../../../resources/icons/chevron_right.png" />

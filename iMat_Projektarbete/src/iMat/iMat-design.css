@@ -262,3 +262,7 @@
     -fx-alignment: center-left;
 }
 
+.category-item:hover{
+    -fx-background-color: rgba(76,199,115,0.3);
+}
+

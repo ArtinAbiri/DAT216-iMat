@@ -21,6 +21,7 @@ import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingCartListener;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
+import java.awt.desktop.PreferencesEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
@@ -33,7 +34,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
 
   public final static DecimalFormat df2 = new DecimalFormat("0.00");
 
-
+    List<Product> PreviousList= new ArrayList<>();
     static HashMap<Integer,productPanel> hashproducts= new HashMap<Integer, productPanel>();
 
     @FXML
@@ -140,13 +141,19 @@ public class iMatController implements Initializable, ShoppingCartListener {
     private void handleFavouriteProductsAction(ActionEvent event) {
         if(!FavouriteButtonSelected) {
             List<Product> matches = model.iMatDataHandler.favorites();
-            updateProductList(matches);
+            List<Product> catMatches= new ArrayList<>();
+            for (Product p:matches) {
+                for (Product cp: PreviousList) {
+                    if (p.getProductId()==cp.getProductId())
+                        catMatches.add(p);
+                }
+            }
+            updateProductList(catMatches);
             FavouriteButtonSelected = true;
             favouriteButton.setStyle("-fx-background-color: #4cc773; -fx-text-fill: white; -fx-border-color: #4cc773; -fx-border-width: 3px; -fx-border-radius: 3;");
     }
         else{
-            List<Product> matches = model.findProducts("");
-            updateProductList(matches);
+            updateProductList(PreviousList);
             FavouriteButtonSelected = false;
             favouriteButton.setStyle("-fx-background-color: rgba(0,0,0,0); -fx-border-color: #4cc773; -fx-border-width: 3px; -fx-border-radius: 3;");
         }
@@ -200,7 +207,8 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void allProducts(ActionEvent event) {
         updateProductList(model.getProducts());
-
+        PreviousList.clear();
+        PreviousList.addAll(model.getProducts());
         allButton.getStyleClass().add("category-item-selected");
 
         meatAndFishButton.getStyleClass().remove("category-item-selected");
@@ -217,6 +225,8 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void meatAndFish() {
         updateProductList(model.categorySearch("meatAndFish"));
+        PreviousList.clear();
+        PreviousList.addAll(model.categorySearch("meatAndFish"));
         meatAndFishButton.getStyleClass().add("category-item-selected");
 
         allButton.getStyleClass().remove("category-item-selected");
@@ -232,7 +242,8 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void fruitAndVegetable() {
         updateProductList(model.categorySearch("fruitAndVegetables"));
-
+        PreviousList.clear();
+        PreviousList.addAll(model.categorySearch("fruitAndVegetables"));
         fruitAndVegetablesButton.getStyleClass().add("category-item-selected");
 
         allButton.getStyleClass().remove("category-item-selected");
@@ -248,7 +259,8 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void pastaPotatoAndRice() {
         updateProductList(model.categorySearch("pastaPotatoAndRice"));
-
+        PreviousList.clear();
+        PreviousList.addAll(model.categorySearch("pastaPotatoAndRice"));
         pastaPotatoRiceButton.getStyleClass().add("category-item-selected");
 
         allButton.getStyleClass().remove("category-item-selected");
@@ -264,7 +276,8 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void dairy() {
         updateProductList(model.categorySearch("dairy"));
-
+        PreviousList.clear();
+        PreviousList.addAll(model.categorySearch("dairy"));
         dairyButton.getStyleClass().add("category-item-selected");
 
         allButton.getStyleClass().remove("category-item-selected");
@@ -280,7 +293,8 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void bread() {
         updateProductList(model.categorySearch("bread"));
-
+        PreviousList.clear();
+        PreviousList.addAll(model.categorySearch("bread"));
         breadButton.getStyleClass().add("category-item-selected");
 
         allButton.getStyleClass().remove("category-item-selected");
@@ -296,7 +310,8 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void drinks() {
         updateProductList(model.categorySearch("drinks"));
-
+        PreviousList.clear();
+        PreviousList.addAll(model.categorySearch("drinks"));
         drinksButton.getStyleClass().add("category-item-selected");
 
         allButton.getStyleClass().remove("category-item-selected");
@@ -312,7 +327,8 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void ingredients() {
         updateProductList(model.categorySearch("ingredients"));
-
+        PreviousList.clear();
+        PreviousList.addAll(model.categorySearch("ingredients"));
         ingredientsButton.getStyleClass().add("category-item-selected");
 
         allButton.getStyleClass().remove("category-item-selected");
@@ -328,7 +344,8 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void sweets() {
         updateProductList(model.categorySearch("sweets"));
-
+        PreviousList.clear();
+        PreviousList.addAll(model.categorySearch("sweets"));
         sweetsButton.getStyleClass().add("category-item-selected");
 
         allButton.getStyleClass().remove("category-item-selected");
@@ -376,10 +393,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         cartNumberOfItems.setText(Integer.toString(model.shoppingCart.getItems().size()));
-
-
         cartSumLabel.setText("Summa: " + df2.format( model.shoppingCart.getTotal()) + " kr");
-
         updateCartList();
 
     }

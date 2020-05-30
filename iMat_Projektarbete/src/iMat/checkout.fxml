@@ -618,7 +618,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="checkoutPart1" layoutY="100.0" onMouseDragged="#updateCost" onMouseEntered="#updateCartList" prefHeight="810.0" prefWidth="1600.0" styleClass="standard-background" stylesheets="@iMat-design.css">
+      <AnchorPane fx:id="checkoutPart1" layoutY="100.0" prefHeight="810.0" prefWidth="1600.0" styleClass="standard-background" stylesheets="@iMat-design.css">
          <children>
             <AnchorPane layoutX="40.0" layoutY="110.0" prefHeight="655.0" prefWidth="1100.0" styleClass="checkout-boxes">
                <children>
