@@ -75,7 +75,7 @@ public class productPanel extends AnchorPane {
         removeimage.setFitWidth(45);
         removeButton.setGraphic(removeimage);
 
-        if (favouriteSelected){
+        if (favouriteSelected || model.isFavorite(product)){
             Image favoSelected = new Image("file:iMat_Projektarbete/resources/icons/favorite_filled.png");
             ImageView favobuttonSelected = new ImageView(favoSelected);
             favobuttonSelected.setFitHeight(50);

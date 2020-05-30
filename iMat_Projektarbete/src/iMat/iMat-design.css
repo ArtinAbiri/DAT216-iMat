@@ -33,6 +33,14 @@
     -fx-font-size: 36px;
 }
 
+.font-size-38 {
+    -fx-font-size: 38px;
+}
+
+.font-size-40 {
+    -fx-font-size: 40px;
+}
+
 .font-size-42 {
     -fx-font-size: 42px;
 }
@@ -80,7 +88,11 @@
 
 .clear-cart-button {
     -fx-background-color: #c6c6c6;
-    -fx-text-fill: black;
+    -fx-text-fill: white;
+}
+
+.favourite-button {
+    -fx-background-color: rgba(0,0,0,0);
 }
 
 .source-sans-regular {
@@ -148,6 +160,8 @@
     -fx-border-radius: 5px;
     -fx-border-color: black;
     -fx-border-width: 1px;
+    -fx-height: 64px;
+    -fx-width: 64px;
 }
 
 .remove-button {
@@ -262,10 +276,6 @@
     -fx-alignment: center-left;
 }
 
-.category-item:hover{
-    -fx-background-color: rgba(76,199,115,0.3);
-}
-
 .titled-pane > .title {
     -fx-background-color: white;
     -fx-padding: 30px 0 30px 50px;
@@ -277,3 +287,31 @@
     -fx-box-border: 0;
 }
 
+/* PLIANCY */
+.button:hover {
+    -fx-background-color: #f6f6f6;
+}
+
+.favourite-button:hover {
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.category-item:hover{
+    -fx-background-color: rgba(76,199,115,0.3);
+}
+
+.category-item-selected:hover, .button.color-green:hover, .add-button:hover {
+    -fx-background-color: #40ad63;
+}
+
+.clear-cart-button:hover {
+    -fx-background-color: #b0b0b0;
+}
+
+.help-button:hover {
+    -fx-background-color: #3669b5;
+}
+
+.remove-button:hover {
+    -fx-background-color: #b0b0b0;
+}

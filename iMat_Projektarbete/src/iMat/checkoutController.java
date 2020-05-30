@@ -126,6 +126,8 @@ public class checkoutController implements Initializable, ShoppingCartListener {
         updateCard();
         updateCustomerInformation();
         model.shoppingCart.clear();
+        model.resetShoppingItemAmounts();
+
         Parent storeParent = FXMLLoader.load(getClass().getResource("iMat.fxml"));
         Scene storeScene = new Scene(storeParent);
 
@@ -172,7 +174,6 @@ public class checkoutController implements Initializable, ShoppingCartListener {
         if (checkifLegalCheckout2()) {
             displayCard();
             checkoutPart3.toFront();
-
         }
     }
 

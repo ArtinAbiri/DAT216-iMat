@@ -17,16 +17,6 @@
                   <Font size="34.0" />
                </font>
             </TextField>
-            <Text fx:id="minaSidorText" layoutX="1007.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tidigare köp" wrappingWidth="278.8424072265625">
-               <font>
-                  <Font size="52.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="patua-text" />
-                  <String fx:value="font-size-48" />
-                  <String fx:value="clickable" />
-               </styleClass>
-            </Text>
             <Button fx:id="searchButton" layoutX="900.0" layoutY="10.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
                <styleClass>
                   <String fx:value="color-green" />
@@ -51,6 +41,15 @@
                <styleClass>
                   <String fx:value="clickable" />
                   <String fx:value="invisible" />
+               </styleClass>
+            </Button>
+            <Button layoutX="1020.0" layoutY="10.0" maxHeight="80.0" mnemonicParsing="false" onAction="#loadOrderHistory" prefHeight="80.0" text="Orderhistorik">
+               <font>
+                  <Font size="38.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="clear-cart-button" />
+                  <String fx:value="font-size-38" />
                </styleClass>
             </Button>
          </children>

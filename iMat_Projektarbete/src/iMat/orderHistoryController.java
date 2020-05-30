@@ -32,7 +32,7 @@ public class orderHistoryController implements Initializable {
         Collections.sort(previousOrders, new Comparator<Order>() {
             @Override
             public int compare(Order order1, Order order2) {
-                return order2.getDate().compareTo(order1.getDate());
+                return (order2.getOrderNumber() > order1.getOrderNumber()) ? order2.getOrderNumber() : order1.getOrderNumber();
             }
         });
 

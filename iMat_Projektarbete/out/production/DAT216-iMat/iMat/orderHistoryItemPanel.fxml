@@ -16,7 +16,7 @@
          <image>
             <Image url="@../../../../resources/icons/eco_label.png" />
          </image></ImageView>
-      <Label fx:id="cartItemName" layoutX="170.0" layoutY="10.0" prefHeight="106.0" prefWidth="218.0" text="Kycklingklubbor" wrapText="true">
+      <Label fx:id="cartItemName" layoutX="170.0" layoutY="37.0" prefHeight="58.0" prefWidth="218.0" text="Kycklingklubbor" wrapText="true">
          <font>
             <Font size="32.0" />
          </font>

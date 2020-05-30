@@ -58,6 +58,8 @@ public class orderHistoryItemPanel extends AnchorPane {
         ImageView plusimage = new ImageView(plus);
         plusimage.setFitHeight(40);
         plusimage.setFitWidth(40);
+        cartItemAdd.setPrefHeight(64);
+        cartItemAdd.setPrefWidth(64);
         cartItemAdd.setGraphic(plusimage);
     }
 

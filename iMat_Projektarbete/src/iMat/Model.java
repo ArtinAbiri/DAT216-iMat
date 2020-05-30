@@ -40,9 +40,7 @@ public class Model {
     }
 
     private void init() {
-
         iMatDataHandler = IMatDataHandler.getInstance();
-
     }
 
 
@@ -154,5 +152,25 @@ public class Model {
 
     public List<Order> getOrders() {
         return iMatDataHandler.getOrders();
+    }
+
+    public boolean isFavorite(Product product) {
+        return iMatDataHandler.isFavorite(product);
+    }
+
+    public void updateShoppingItemAmount(ShoppingItem shoppingItem) {
+        iMatController.hashproducts.get(shoppingItem.getProduct().getProductId()).update(shoppingItem);
+    }
+
+    public void resetShoppingItemAmounts() {
+        List<Product> products = getProducts();
+        List<Integer> id = new ArrayList<>();
+        for (Product pro: products) {
+            id.add(pro.getProductId());
+        }
+
+        for (Integer productId : id) {
+            iMatController.hashproducts.get(productId).shoppingItem.setAmount(0);
+        }
     }
 }

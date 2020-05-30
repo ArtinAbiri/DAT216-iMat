@@ -14,8 +14,7 @@ public class iMat extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("startscreen.fxml"));
         Scene scene = new Scene(root);
 
-     //   IMatDataHandler.getInstance().reset();
-
+//        IMatDataHandler.getInstance().reset();
 
         stage.setMinWidth(1600);
         stage.setMinHeight(900);
