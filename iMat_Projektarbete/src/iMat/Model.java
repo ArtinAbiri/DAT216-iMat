@@ -121,6 +121,8 @@ public class Model {
                 returnList.addAll(iMatDataHandler.getProducts(MELONS));
                 returnList.addAll(iMatDataHandler.getProducts(NUTS_AND_SEEDS));
                 returnList.addAll(iMatDataHandler.getProducts(POD));
+                returnList.addAll(iMatDataHandler.getProducts(HERB));
+
                 return returnList;
             case "pastaPotatoAndRice":
                 returnList.addAll(iMatDataHandler.getProducts(POTATO_RICE));
@@ -137,7 +139,6 @@ public class Model {
                 returnList.addAll(iMatDataHandler.getProducts(COLD_DRINKS));
                 return returnList;
             case "ingredients":
-                returnList.addAll(iMatDataHandler.getProducts(HERB));
                 returnList.addAll(iMatDataHandler.getProducts(FLOUR_SUGAR_SALT));
                 return returnList;
             case "sweets":

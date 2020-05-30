@@ -23,7 +23,9 @@ public class helpController{
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(storeScene);
         window.show();
+
     }
+
 
 
 }

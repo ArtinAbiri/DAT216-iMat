@@ -122,6 +122,18 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     }
 
     @FXML
+    private void loadStoreFromCheckoutEnd(ActionEvent event) throws IOException {
+        updateCard();
+        updateCustomerInformation();
+        model.shoppingCart.clear();
+        Parent storeParent = FXMLLoader.load(getClass().getResource("iMat.fxml"));
+        Scene storeScene = new Scene(storeParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(storeScene);
+        window.show();
+    }
+    @FXML
     private void loadHelpCheckout(ActionEvent event) throws IOException {
         Parent helpParent = FXMLLoader.load(getClass().getResource("help.fxml"));
         Scene checkoutScene = new Scene(helpParent);
@@ -150,15 +162,17 @@ public class checkoutController implements Initializable, ShoppingCartListener {
         if (checkifLegalCheckout2()) {
             displayCard();
             checkoutPart3.toFront();
+
         }
     }
 
     @FXML
     private void completePurchase() {
         if (checkifLegalCheckout3()) {
+            updateCost();
             updateCard();
             showPurchase();
-            model.placeOrder(true);
+            model.placeOrder(false);
             purchaseComplete.toFront();
         }
     }
@@ -396,6 +410,7 @@ public class checkoutController implements Initializable, ShoppingCartListener {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        model.shoppingCart.addShoppingCartListener(this);
         updateCost();
         updateCartList();
     }

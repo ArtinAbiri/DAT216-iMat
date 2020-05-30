@@ -333,79 +333,6 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="purchaseComplete" layoutY="100.0" prefHeight="810.0" prefWidth="1600.0" styleClass="standard-background" stylesheets="@iMat-design.css">
-         <children>
-            <AnchorPane layoutX="40.0" layoutY="110.0" prefHeight="655.0" prefWidth="1100.0" styleClass="checkout-boxes">
-               <children>
-                  <Text layoutX="40.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Köp slutfört">
-                     <font>
-                        <Font size="56.0" />
-                     </font>
-                  </Text>
-                  <ScrollPane layoutX="38.0" layoutY="94.0" prefHeight="514.0" prefWidth="1025.0" styleClass="white-scrollpane">
-                     <content>
-                        <FlowPane fx:id="checkoutReceiptFlowPane" prefHeight="497.0" prefWidth="915.0">
-                           <children>
-                              <Text fill="#868686" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-32" />
-                           </children>
-                        </FlowPane>
-                     </content>
-                  </ScrollPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="1180.0" layoutY="110.0" prefHeight="361.0" prefWidth="380.0" styleClass="checkout-boxes">
-               <children>
-                  <Text layoutX="40.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Summa">
-                     <font>
-                        <Font size="56.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="checkoutSumLabel3" layoutX="40.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varor:" wrappingWidth="220.13671875">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="source-sans-regular" />
-                        <String fx:value="font-size-28" />
-                     </styleClass>
-                  </Text>
-                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frakt: 49,00:-" wrappingWidth="220.13671875">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="source-sans-regular" />
-                        <String fx:value="font-size-28" />
-                     </styleClass>
-                  </Text>
-                  <Line endX="200.0" layoutX="140.0" layoutY="225.0" startX="-100.0" />
-                  <Text fx:id="checkoutTotalLabel3" layoutX="40.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Totalkostnad (inkl. moms):" wrappingWidth="279.13671875">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="source-sans-regular" />
-                        <String fx:value="font-size-28" />
-                     </styleClass>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <Button layoutX="40.0" layoutY="30.0" mnemonicParsing="false" onAction="#loadStoreFromCheckout" prefHeight="52.0" prefWidth="255.0" text="Tillbaka till butiken" textAlignment="RIGHT" textFill="WHITE">
-               <styleClass>
-                  <String fx:value="button-shadow" />
-                  <String fx:value="font-size-18" />
-                  <String fx:value="color-green" />
-               </styleClass>
-            </Button>
-            <Button layoutX="1390.0" layoutY="719.0" mnemonicParsing="false" onAction="#loadHelpCheckout" prefHeight="75.0" prefWidth="196.0" text="Hjälp   ?" textFill="WHITE">
-               <styleClass>
-                  <String fx:value="patua-text" />
-                  <String fx:value="font-size-36" />
-                  <String fx:value="help-button" />
-               </styleClass>
-            </Button>
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="checkoutPart2" layoutY="100.0" prefHeight="810.0" prefWidth="1600.0" styleClass="standard-background" stylesheets="@iMat-design.css">
          <children>
             <AnchorPane layoutX="40.0" layoutY="110.0" prefHeight="655.0" prefWidth="1100.0" styleClass="checkout-boxes">
@@ -742,6 +669,79 @@
                <styleClass>
                   <String fx:value="button-shadow" />
                   <String fx:value="font-size-48" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="purchaseComplete" layoutY="100.0" prefHeight="810.0" prefWidth="1600.0" styleClass="standard-background" stylesheets="@iMat-design.css">
+         <children>
+            <AnchorPane layoutX="40.0" layoutY="110.0" prefHeight="655.0" prefWidth="1100.0" styleClass="checkout-boxes">
+               <children>
+                  <Text layoutX="40.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Köp slutfört">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Text>
+                  <ScrollPane layoutX="38.0" layoutY="94.0" prefHeight="514.0" prefWidth="1025.0" styleClass="white-scrollpane">
+                     <content>
+                        <FlowPane fx:id="checkoutReceiptFlowPane" prefHeight="497.0" prefWidth="915.0">
+                           <children>
+                              <Text fill="#868686" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-32" />
+                           </children>
+                        </FlowPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1180.0" layoutY="110.0" prefHeight="361.0" prefWidth="380.0" styleClass="checkout-boxes">
+               <children>
+                  <Text layoutX="40.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="patua-text" text="Summa">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="checkoutSumLabel3" layoutX="40.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Varor:" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="source-sans-regular" />
+                        <String fx:value="font-size-28" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frakt: 49,00:-" wrappingWidth="220.13671875">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="source-sans-regular" />
+                        <String fx:value="font-size-28" />
+                     </styleClass>
+                  </Text>
+                  <Line endX="200.0" layoutX="140.0" layoutY="225.0" startX="-100.0" />
+                  <Text fx:id="checkoutTotalLabel3" layoutX="40.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Totalkostnad (inkl. moms):" wrappingWidth="279.13671875">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="source-sans-regular" />
+                        <String fx:value="font-size-28" />
+                     </styleClass>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <Button layoutX="40.0" layoutY="30.0" mnemonicParsing="false" onAction="#loadStoreFromCheckoutEnd" prefHeight="52.0" prefWidth="255.0" text="Tillbaka till butiken" textAlignment="RIGHT" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="button-shadow" />
+                  <String fx:value="font-size-18" />
+                  <String fx:value="color-green" />
+               </styleClass>
+            </Button>
+            <Button layoutX="1390.0" layoutY="719.0" mnemonicParsing="false" onAction="#loadHelpCheckout" prefHeight="75.0" prefWidth="196.0" text="Hjälp   ?" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="patua-text" />
+                  <String fx:value="font-size-36" />
+                  <String fx:value="help-button" />
                </styleClass>
             </Button>
          </children>
