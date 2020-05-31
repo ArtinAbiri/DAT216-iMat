@@ -161,7 +161,7 @@
                   <String fx:value="font-size-32" />
                </styleClass>
             </Text>
-            <Button layoutX="997.0" layoutY="471.0" mnemonicParsing="false" prefHeight="165.0" prefWidth="403.0" text="Så här använder du iMat" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button layoutX="993.0" layoutY="229.0" mnemonicParsing="false" prefHeight="165.0" prefWidth="403.0" text="Så här använder du iMat" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <styleClass>
                   <String fx:value="button-shadow" />
                   <String fx:value="font-size-42" />

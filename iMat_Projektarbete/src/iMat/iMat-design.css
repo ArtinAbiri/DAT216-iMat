@@ -264,14 +264,14 @@
     -fx-cursor: hand;
     -fx-alignment: center-left;
 }
-.subsubcategory-button{
+.subsubcategory-button {
     -fx-background-color: rgba(0,0,0,0);
     -fx-border-color: #4cc773;
      -fx-border-width: 3px;
     -fx-border-radius:5;
 
 }
-.subsubcategory-button-on{
+.subsubcategory-button-on {
     -fx-text-fill: white;
     -fx-background-color: #4cc773;
     -fx-border-color: #4cc773;
@@ -355,13 +355,9 @@
 }
 
 .guide-box {
-    /*-fx-background-color: #4078CC;
-    -fx-background-color: white;*/
-    -fx-background-color: #c6c6c6;
+    -fx-background-color: white; /* #c6c6c6 #4078CC */
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
-    /*-fx-stroke-width: 10px;
-    -fx-stroke-color: rgba(0,0,0,0);*/
 }
 
 .text-color-white {
@@ -378,15 +374,23 @@
     -fx-background-color: #f6f6f6;
 }
 
+.button:hover {
+    -fx-background-color: #f6f6f6;
+}
+
+.closeCartButton:hover {
+    -fx-background-color: rgba(0,0,0,0);
+}
+
 .favourite-button:hover {
     -fx-background-color: rgba(0,0,0,0);
 }
 
-.category-item:hover{
+.category-item:hover, .subsubcategory-button:hover {
     -fx-background-color: rgba(76,199,115,0.3);
 }
 
-.category-item-selected:hover, .button.color-green:hover, .add-button:hover {
+.category-item-selected:hover, .button.color-green:hover, .add-button:hover, .subsubcategory-button-on:hover {
     -fx-background-color: #40ad63;
 }
 

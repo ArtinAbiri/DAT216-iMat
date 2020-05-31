@@ -36,5 +36,15 @@ public class helpController{
         window.show();
     }
 
+    @FXML
+    private void loadGuide(ActionEvent event) throws IOException {
+        Parent guideParent = FXMLLoader.load(getClass().getResource("guide.fxml"));
+        Scene guideScene = new Scene(guideParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(guideScene);
+        window.show();
+    }
+
 
 }

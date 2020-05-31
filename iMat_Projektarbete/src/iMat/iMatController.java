@@ -133,7 +133,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     Button herbButton;
     @FXML
-    Button nutButton    ;
+    Button nutButton;
 
 
 
@@ -141,13 +141,11 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     Label cartNumberOfItems;
 
-
     private Boolean FavouriteButtonSelected = false;
 
     public void initialize(URL url, ResourceBundle rb) {
 
         updateProductList(model.getProducts());
-        model.shoppingCart.clear();
         model.shoppingCart.addShoppingCartListener(this);
         System.out.println(hashproducts.toString());
     }
@@ -157,6 +155,10 @@ public class iMatController implements Initializable, ShoppingCartListener {
         for (Product product : allProducts) {
             hashproducts.put(product.getProductId(),new productPanel(product));
         }
+    }
+
+    public void clearShoppingCart() {
+        model.shoppingCart.clear();
     }
 
     @FXML
