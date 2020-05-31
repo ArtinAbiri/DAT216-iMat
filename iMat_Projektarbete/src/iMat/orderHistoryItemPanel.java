@@ -60,6 +60,10 @@ public class orderHistoryItemPanel extends AnchorPane {
         plusimage.setFitWidth(40);
         cartItemAdd.setPrefHeight(64);
         cartItemAdd.setPrefWidth(64);
+        cartItemAdd.setMaxHeight(64);
+        cartItemAdd.setMaxWidth(64);
+        cartItemAdd.setMinHeight(64);
+        cartItemAdd.setMinWidth(64);
         cartItemAdd.setGraphic(plusimage);
     }
 

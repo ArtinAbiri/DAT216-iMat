@@ -100,6 +100,56 @@ public class Model {
             shoppingCart.removeItem(shoppingItem);
         }
     }
+    public List<Product> subCategorySearch(String category) {
+        List<Product> returnList = new ArrayList<>();
+        switch(category) {
+            case "meat":
+                returnList.addAll(iMatDataHandler.getProducts(MEAT));
+                return returnList;
+            case "fish":
+                returnList.addAll(iMatDataHandler.getProducts(FISH));
+                return returnList;
+
+            case "potato_rice":
+                returnList.addAll(iMatDataHandler.getProducts(POTATO_RICE));
+                return returnList;
+            case "pasta":
+                returnList.addAll(iMatDataHandler.getProducts(PASTA));
+                return returnList;
+            case "hotDrink":
+                returnList.addAll(iMatDataHandler.getProducts(HOT_DRINKS));
+                return returnList;
+            case "coldDrink":
+                returnList.addAll(iMatDataHandler.getProducts(COLD_DRINKS));
+                return returnList;
+            case "fruit":
+                returnList.addAll(iMatDataHandler.getProducts(FRUIT));
+                returnList.addAll(iMatDataHandler.getProducts(CITRUS_FRUIT));
+                returnList.addAll(iMatDataHandler.getProducts(EXOTIC_FRUIT));
+                returnList.addAll(iMatDataHandler.getProducts(MELONS));
+
+                return returnList;
+            case "greens":
+                returnList.addAll(iMatDataHandler.getProducts(POD));
+                returnList.addAll(iMatDataHandler.getProducts(CABBAGE));
+                returnList.addAll(iMatDataHandler.getProducts(VEGETABLE_FRUIT));
+
+                return returnList;
+            case "herbs":
+                returnList.addAll(iMatDataHandler.getProducts(HERB));
+                return returnList;
+            case "nut":
+                returnList.addAll(iMatDataHandler.getProducts(NUTS_AND_SEEDS));
+                return returnList;
+            case "root":
+                returnList.addAll(iMatDataHandler.getProducts(ROOT_VEGETABLE));
+                return returnList;
+            case "berry":
+                returnList.addAll(iMatDataHandler.getProducts(BERRY));
+                return returnList;
+
+        }            return null;
+    }
 
     public List<Product> categorySearch(String category) {
         List<Product> returnList = new ArrayList<>();

@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -20,7 +21,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static iMat.iMatController.df2;
-import se.chalmers.cse.dat216.project.CartEvent;
 import se.chalmers.cse.dat216.project.CartEvent;
 
 public class checkoutController implements Initializable, ShoppingCartListener {
@@ -97,9 +97,9 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     @FXML
     TextField cardNumber;
     @FXML
-    TextField validMonth;
+    ComboBox<String> validMonth;
     @FXML
-    TextField validYear;
+    ComboBox<String> validYear;
     @FXML
     TextField cvvCode;
     @FXML
@@ -173,7 +173,10 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     private void loadCheckout3() {
         if (checkifLegalCheckout2()) {
             displayCard();
+            validMonth.getItems().addAll("01","02","03","04","05","06","07","08","09","10","11","12");
+
             checkoutPart3.toFront();
+
         }
     }
 
@@ -216,6 +219,11 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     private void updateCustomerInformation() {
         model.updateCustomerInformation(firstName.getText(), lastName.getText(), address.getText(), postCode.getText(), postArea.getText(), email.getText(), mobilePhoneNumber.getText());
     }
+    @FXML
+    private void threenumberlock(){
+        if(cvvCode.getText().length()>2) {
+            cvvCode.deleteText(2,3);
+        }    }
 
     @FXML
     private void displayCustomerInformation() {
@@ -231,7 +239,7 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     @FXML
     private void updateCard() {
         if (saveCard.isSelected()) {
-            model.updateCard(cardHolder.getText(), cardNumber.getText(), Integer.parseInt(validMonth.getText()), Integer.parseInt(validYear.getText()), Integer.parseInt(cvvCode.getText()));
+            model.updateCard(cardHolder.getText(), cardNumber.getText(), Integer.parseInt(validMonth.getValue()), Integer.parseInt(validYear.getValue()), Integer.parseInt(cvvCode.getText()));
         } else {
             model.updateCard(null, null, 0, 0, 0);
         }
@@ -241,19 +249,7 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     private void displayCard() {
         cardHolder.setText(model.creditCard.getHoldersName());
         cardNumber.setText(model.creditCard.getCardNumber());
-        if (model.creditCard.getValidMonth() == 0) {
-            validMonth.setText("");
-        } else {
-            validMonth.setText(Integer.toString(model.creditCard.getValidMonth()));
 
-        }
-
-        if (model.creditCard.getValidYear() == 0) {
-            validYear.setText("");
-        } else {
-            validYear.setText(Integer.toString(model.creditCard.getValidYear()));
-
-        }
 
         if (model.creditCard.getVerificationCode() == 0) {
             cvvCode.setText("");
@@ -305,16 +301,28 @@ public class checkoutController implements Initializable, ShoppingCartListener {
         }
         return (num > 0);
     }
-
     private boolean checkIfIllegalEmail(String str) {
         if (str == null || str.isEmpty()) return true;
         int num = 0;
         for (char c : str.toCharArray()) {
-            if ((Character.toString(c).equals("@")) || (Character.toString(c).equals("."))) {
+            if ((Character.isLetter(c)&&num==0)||(Character.isLetter(c)&&num==0)){
+                num++;
+            }
+            if ((Character.toString(c).equals("@"))&&num==1) {
+                num++;
+            }
+          if ((Character.isLetter(c)&&num==2)||(Character.isLetter(c)&&num==2)){
+                num++;
+            }
+          if ((Character.toString(c).equals("."))&& num==3){
+              num++;
+          }
+
+            if ((Character.isLetter(c)&&num==4)||(Character.isLetter(c)&&num==4)){
                 num++;
             }
         }
-        return (num < 2);
+        return (num  <5);
     }
 
     private boolean checkIfIllegalAdress(String str) {
@@ -401,15 +409,6 @@ public class checkoutController implements Initializable, ShoppingCartListener {
             num++;
         } else cardNumber.setStyle("-fx-border-width: 0px ;");
 
-        if (checkIfIllegalLetter(validMonth.getText()) && !(validMonth.getText().length() == 2)) {
-            validMonth.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
-            num++;
-        } else validMonth.setStyle("-fx-border-width: 0px ;");
-
-        if (checkIfIllegalAdress(validYear.getText()) && !(validYear.getText().length() == 2)) {
-            validYear.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
-            num++;
-        } else validYear.setStyle("-fx-border-width: 0px ;");
 
         if (checkIfIllegalLetter(cvvCode.getText()) && !(cvvCode.getText().length() == 3)) {
             cvvCode.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
@@ -424,6 +423,9 @@ public class checkoutController implements Initializable, ShoppingCartListener {
         model.shoppingCart.addShoppingCartListener(this);
         updateCost();
         updateCartList();
+        validMonth.getItems().addAll("01","02","03","04","05","06","07","08","09","10","11","12");
+        validYear.getItems().addAll("2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030","2031","2032","2033","2034","2035","2036","2037","2038","2039");
+
     }
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
@@ -432,4 +434,5 @@ public class checkoutController implements Initializable, ShoppingCartListener {
         updateCartList();
 
     }
+
 }

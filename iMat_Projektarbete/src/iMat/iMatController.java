@@ -110,6 +110,32 @@ public class iMatController implements Initializable, ShoppingCartListener {
     Button drinksButton;
     @FXML
     Button sweetsButton;
+    @FXML
+    Button meatButton;
+    @FXML
+    Button fishButton;
+    @FXML
+    Button potatoRiceButton;
+    @FXML
+    Button pastaButton;
+    @FXML
+    Button hotDrinkButton;
+    @FXML
+    Button coldDrinkButton;
+    @FXML
+    Button fruitButton;
+    @FXML
+    Button greensButton;
+    @FXML
+    Button berryButton;
+    @FXML
+    Button rootButton;
+    @FXML
+    Button herbButton;
+    @FXML
+    Button nutButton    ;
+
+
 
     //
     @FXML
@@ -119,10 +145,11 @@ public class iMatController implements Initializable, ShoppingCartListener {
     private Boolean FavouriteButtonSelected = false;
 
     public void initialize(URL url, ResourceBundle rb) {
+
         updateProductList(model.getProducts());
         model.shoppingCart.clear();
         model.shoppingCart.addShoppingCartListener(this);
-        System.out.println(this.toString());
+        System.out.println(hashproducts.toString());
     }
 
     public void hashstart(){
@@ -137,6 +164,41 @@ public class iMatController implements Initializable, ShoppingCartListener {
 
         List<Product> matches = model.findProducts(searchBar.getText());
         updateProductList(matches);
+
+        meatButton.toBack();
+        fishButton.toBack();
+        potatoRiceButton.toBack();
+        pastaButton.toBack();
+        hotDrinkButton.toBack();
+        coldDrinkButton.toBack();
+        fruitButton.toBack();
+        greensButton.toBack();
+        berryButton.toBack();
+        rootButton.toBack();
+        herbButton.toBack();
+        nutButton.toBack();
+        favouritesButton.getStyleClass().remove("category-item-selected");
+        allButton.getStyleClass().remove("category-item-selected");
+        meatAndFishButton.getStyleClass().remove("category-item-selected");
+        fruitAndVegetablesButton.getStyleClass().remove("category-item-selected");
+        dairyButton.getStyleClass().remove("category-item-selected");
+        pastaPotatoRiceButton.getStyleClass().remove("category-item-selected");
+        ingredientsButton.getStyleClass().remove("category-item-selected");
+        breadButton.getStyleClass().remove("category-item-selected");
+        drinksButton.getStyleClass().remove("category-item-selected");
+        sweetsButton.getStyleClass().remove("category-item-selected");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
 
     @FXML
@@ -210,8 +272,22 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void favourites(ActionEvent event) {
         updateProductList(model.iMatDataHandler.favorites());
-        favouritesButton.getStyleClass().add("category-item-selected");
+        searchBar.setText(null);
+        favouritesButton.getStyleClass().remove("category-item-selected");
 
+        favouritesButton.getStyleClass().add("category-item-selected");
+        meatButton.toBack();
+        fishButton.toBack();
+        potatoRiceButton.toBack();
+        pastaButton.toBack();
+        hotDrinkButton.toBack();
+        coldDrinkButton.toBack();
+        fruitButton.toBack();
+        greensButton.toBack();
+        berryButton.toBack();
+        rootButton.toBack();
+        herbButton.toBack();
+        nutButton.toBack();
         allButton.getStyleClass().remove("category-item-selected");
         meatAndFishButton.getStyleClass().remove("category-item-selected");
         fruitAndVegetablesButton.getStyleClass().remove("category-item-selected");
@@ -221,13 +297,39 @@ public class iMatController implements Initializable, ShoppingCartListener {
         breadButton.getStyleClass().remove("category-item-selected");
         drinksButton.getStyleClass().remove("category-item-selected");
         sweetsButton.getStyleClass().remove("category-item-selected");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
 
     @FXML
     private void allProducts(ActionEvent event) {
         updateProductList(model.getProducts());
-        allButton.getStyleClass().add("category-item-selected");
+        allButton.getStyleClass().remove("category-item-selected");
+        searchBar.setText(null);
 
+        allButton.getStyleClass().add("category-item-selected");
+        meatButton.toBack();
+        fishButton.toBack();
+        potatoRiceButton.toBack();
+        pastaButton.toBack();
+        hotDrinkButton.toBack();
+        coldDrinkButton.toBack();
+        fruitButton.toBack();
+        greensButton.toBack();
+        berryButton.toBack();
+        rootButton.toBack();
+        herbButton.toBack();
+        nutButton.toBack();
         meatAndFishButton.getStyleClass().remove("category-item-selected");
         fruitAndVegetablesButton.getStyleClass().remove("category-item-selected");
         dairyButton.getStyleClass().remove("category-item-selected");
@@ -237,12 +339,271 @@ public class iMatController implements Initializable, ShoppingCartListener {
         drinksButton.getStyleClass().remove("category-item-selected");
         sweetsButton.getStyleClass().remove("category-item-selected");
         favouritesButton.getStyleClass().remove("category-item-selected");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
+    ;
+    @FXML
+    private void subMeat(){
+        updateProductList(model.subCategorySearch("meat"));
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        searchBar.setText(null);
 
+        meatButton.getStyleClass().add("subsubcategory-button-on");
+
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+    }
+    @FXML
+    private void subFish(){
+        updateProductList(model.subCategorySearch("fish"));
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        searchBar.setText(null);
+
+        fishButton.getStyleClass().add("subsubcategory-button-on");
+
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+    }
+    @FXML
+    private void subHotDrink(){
+        updateProductList(model.subCategorySearch("hotDrink"));
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+
+        hotDrinkButton.getStyleClass().add("subsubcategory-button-on");
+        searchBar.setText(null);
+
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+    }
+    @FXML
+    private void subColdDrink(){
+        updateProductList(model.subCategorySearch("coldDrink"));
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        searchBar.setText(null);
+
+        coldDrinkButton.getStyleClass().add("subsubcategory-button-on");
+
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+    } @FXML
+    private void subFruit(){
+        updateProductList(model.subCategorySearch("fruit"));
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        searchBar.setText(null);
+
+        fruitButton.getStyleClass().add("subsubcategory-button-on");
+
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+    } @FXML
+    private void subGreens(){
+        updateProductList(model.subCategorySearch("greens"));
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        searchBar.setText(null);
+
+        greensButton.getStyleClass().add("subsubcategory-button-on");
+
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+    }
+    @FXML
+    private void subPotatoRice(){
+        updateProductList(model.subCategorySearch("potato_rice"));
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+
+        pastaButton.getStyleClass().add("subsubcategory-button-on");
+        searchBar.setText(null);
+
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+    } @FXML
+    private void subPasta(){
+        updateProductList(model.subCategorySearch("pasta"));
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+
+        pastaButton.getStyleClass().add("subsubcategory-button-on");
+        searchBar.setText(null);
+
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+    } @FXML
+    private void subBerry(){
+        updateProductList(model.subCategorySearch("berry"));
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        searchBar.setText(null);
+
+        berryButton.getStyleClass().add("subsubcategory-button-on");
+
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+    } @FXML
+    private void subRoot(){
+        updateProductList(model.subCategorySearch("root"));
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        searchBar.setText(null);
+
+        rootButton.getStyleClass().add("subsubcategory-button-on");
+
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+    } @FXML
+    private void subHerb(){
+        updateProductList(model.subCategorySearch("herbs"));
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        searchBar.setText(null);
+
+        herbButton.getStyleClass().add("subsubcategory-button-on");
+
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+    } @FXML
+    private void subNut(){
+        updateProductList(model.subCategorySearch("nut"));
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().add("subsubcategory-button-on");
+        searchBar.setText(null);
+
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+    }
     @FXML
     private void meatAndFish() {
         updateProductList(model.categorySearch("meatAndFish"));
+        meatAndFishButton.getStyleClass().remove("category-item-selected");
+        searchBar.setText(null);
+
         meatAndFishButton.getStyleClass().add("category-item-selected");
+        meatButton.toFront();
+        fishButton.toFront();
+        potatoRiceButton.toBack();
+        pastaButton.toBack();
+        hotDrinkButton.toBack();
+        coldDrinkButton.toBack();
+        fruitButton.toBack();
+        greensButton.toBack();
+        berryButton.toBack();
+        rootButton.toBack();
+        herbButton.toBack();
+        nutButton.toBack();
 
         allButton.getStyleClass().remove("category-item-selected");
         fruitAndVegetablesButton.getStyleClass().remove("category-item-selected");
@@ -253,12 +614,39 @@ public class iMatController implements Initializable, ShoppingCartListener {
         drinksButton.getStyleClass().remove("category-item-selected");
         sweetsButton.getStyleClass().remove("category-item-selected");
         favouritesButton.getStyleClass().remove("category-item-selected");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
 
     @FXML
     private void fruitAndVegetable() {
         updateProductList(model.categorySearch("fruitAndVegetables"));
+        fruitAndVegetablesButton.getStyleClass().remove("category-item-selected");
+        searchBar.setText(null);
+
         fruitAndVegetablesButton.getStyleClass().add("category-item-selected");
+        meatButton.toBack();
+        fishButton.toBack();
+        potatoRiceButton.toBack();
+        pastaButton.toBack();
+        hotDrinkButton.toBack();
+        coldDrinkButton.toBack();
+        fruitButton.toFront();
+        greensButton.toFront();
+        berryButton.toFront();
+        rootButton.toFront();
+        herbButton.toFront();
+        nutButton.toFront();
 
         allButton.getStyleClass().remove("category-item-selected");
         meatAndFishButton.getStyleClass().remove("category-item-selected");
@@ -269,12 +657,39 @@ public class iMatController implements Initializable, ShoppingCartListener {
         drinksButton.getStyleClass().remove("category-item-selected");
         sweetsButton.getStyleClass().remove("category-item-selected");
         favouritesButton.getStyleClass().remove("category-item-selected");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
 
     @FXML
     private void pastaPotatoAndRice() {
         updateProductList(model.categorySearch("pastaPotatoAndRice"));
+        pastaPotatoRiceButton.getStyleClass().remove("category-item-selected");
+        searchBar.setText(null);
+
         pastaPotatoRiceButton.getStyleClass().add("category-item-selected");
+        meatButton.toBack();
+        fishButton.toBack();
+        potatoRiceButton.toFront();
+        pastaButton.toFront();
+        hotDrinkButton.toBack();
+        coldDrinkButton.toBack();
+        fruitButton.toBack();
+        greensButton.toBack();
+        berryButton.toBack();
+        rootButton.toBack();
+        herbButton.toBack();
+        nutButton.toBack();
 
         allButton.getStyleClass().remove("category-item-selected");
         fruitAndVegetablesButton.getStyleClass().remove("category-item-selected");
@@ -285,12 +700,39 @@ public class iMatController implements Initializable, ShoppingCartListener {
         drinksButton.getStyleClass().remove("category-item-selected");
         sweetsButton.getStyleClass().remove("category-item-selected");
         favouritesButton.getStyleClass().remove("category-item-selected");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
 
     @FXML
     private void dairy() {
         updateProductList(model.categorySearch("dairy"));
+        dairyButton.getStyleClass().remove("category-item-selected");
+        searchBar.setText(null);
+
         dairyButton.getStyleClass().add("category-item-selected");
+        meatButton.toBack();
+        fishButton.toBack();
+        potatoRiceButton.toBack();
+        pastaButton.toBack();
+        hotDrinkButton.toBack();
+        coldDrinkButton.toBack();
+        fruitButton.toBack();
+        greensButton.toBack();
+        berryButton.toBack();
+        rootButton.toBack();
+        herbButton.toBack();
+        nutButton.toBack();
 
         allButton.getStyleClass().remove("category-item-selected");
         fruitAndVegetablesButton.getStyleClass().remove("category-item-selected");
@@ -301,13 +743,39 @@ public class iMatController implements Initializable, ShoppingCartListener {
         drinksButton.getStyleClass().remove("category-item-selected");
         sweetsButton.getStyleClass().remove("category-item-selected");
         favouritesButton.getStyleClass().remove("category-item-selected");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
 
     @FXML
     private void bread() {
         updateProductList(model.categorySearch("bread"));
-        breadButton.getStyleClass().add("category-item-selected");
+        breadButton.getStyleClass().remove("category-item-selected");
+        searchBar.setText(null);
 
+        breadButton.getStyleClass().add("category-item-selected");
+        meatButton.toBack();
+        fishButton.toBack();
+        potatoRiceButton.toBack();
+        pastaButton.toBack();
+        hotDrinkButton.toBack();
+        coldDrinkButton.toBack();
+        fruitButton.toBack();
+        greensButton.toBack();
+        berryButton.toBack();
+        rootButton.toBack();
+        herbButton.toBack();
+        nutButton.toBack();
         allButton.getStyleClass().remove("category-item-selected");
         fruitAndVegetablesButton.getStyleClass().remove("category-item-selected");
         dairyButton.getStyleClass().remove("category-item-selected");
@@ -317,13 +785,39 @@ public class iMatController implements Initializable, ShoppingCartListener {
         drinksButton.getStyleClass().remove("category-item-selected");
         sweetsButton.getStyleClass().remove("category-item-selected");
         favouritesButton.getStyleClass().remove("category-item-selected");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
 
     @FXML
     private void drinks() {
         updateProductList(model.categorySearch("drinks"));
-        drinksButton.getStyleClass().add("category-item-selected");
+        drinksButton.getStyleClass().remove("category-item-selected");
+        searchBar.setText(null);
 
+        drinksButton.getStyleClass().add("category-item-selected");
+        meatButton.toBack();
+        fishButton.toBack();
+        potatoRiceButton.toBack();
+        pastaButton.toBack();
+        hotDrinkButton.toFront();
+        coldDrinkButton.toFront();
+        fruitButton.toBack();
+        greensButton.toBack();
+        berryButton.toBack();
+        rootButton.toBack();
+        herbButton.toBack();
+        nutButton.toBack();
         allButton.getStyleClass().remove("category-item-selected");
         fruitAndVegetablesButton.getStyleClass().remove("category-item-selected");
         dairyButton.getStyleClass().remove("category-item-selected");
@@ -333,13 +827,39 @@ public class iMatController implements Initializable, ShoppingCartListener {
         meatAndFishButton.getStyleClass().remove("category-item-selected");
         sweetsButton.getStyleClass().remove("category-item-selected");
         favouritesButton.getStyleClass().remove("category-item-selected");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
 
     @FXML
     private void ingredients() {
         updateProductList(model.categorySearch("ingredients"));
-        ingredientsButton.getStyleClass().add("category-item-selected");
+        ingredientsButton.getStyleClass().remove("category-item-selected");
+        searchBar.setText(null);
 
+        ingredientsButton.getStyleClass().add("category-item-selected");
+        meatButton.toBack();
+        fishButton.toBack();
+        potatoRiceButton.toBack();
+        pastaButton.toBack();
+        hotDrinkButton.toBack();
+        coldDrinkButton.toBack();
+        fruitButton.toBack();
+        greensButton.toBack();
+        berryButton.toBack();
+        rootButton.toBack();
+        herbButton.toBack();
+        nutButton.toBack();
         allButton.getStyleClass().remove("category-item-selected");
         fruitAndVegetablesButton.getStyleClass().remove("category-item-selected");
         dairyButton.getStyleClass().remove("category-item-selected");
@@ -349,13 +869,39 @@ public class iMatController implements Initializable, ShoppingCartListener {
         drinksButton.getStyleClass().remove("category-item-selected");
         sweetsButton.getStyleClass().remove("category-item-selected");
         favouritesButton.getStyleClass().remove("category-item-selected");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
 
     @FXML
     private void sweets() {
         updateProductList(model.categorySearch("sweets"));
+        sweetsButton.getStyleClass().remove("category-item-selected");
         sweetsButton.getStyleClass().add("category-item-selected");
+        meatButton.toBack();
+        searchBar.setText(null);
 
+        fishButton.toBack();
+        potatoRiceButton.toBack();
+        pastaButton.toBack();
+        hotDrinkButton.toBack();
+        coldDrinkButton.toBack();
+        fruitButton.toBack();
+        greensButton.toBack();
+        berryButton.toBack();
+        rootButton.toBack();
+        herbButton.toBack();
+        nutButton.toBack();
         allButton.getStyleClass().remove("category-item-selected");
         fruitAndVegetablesButton.getStyleClass().remove("category-item-selected");
         dairyButton.getStyleClass().remove("category-item-selected");
@@ -365,6 +911,18 @@ public class iMatController implements Initializable, ShoppingCartListener {
         drinksButton.getStyleClass().remove("category-item-selected");
         meatAndFishButton.getStyleClass().remove("category-item-selected");
         favouritesButton.getStyleClass().remove("category-item-selected");
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
 
     @FXML
@@ -407,6 +965,42 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @FXML
     private void reloadStore(ActionEvent event) throws IOException {
         updateProductList(model.getProducts());
+        meatButton.toBack();
+        fishButton.toBack();
+        potatoRiceButton.toBack();
+        pastaButton.toBack();
+        hotDrinkButton.toBack();
+        coldDrinkButton.toBack();
+        fruitButton.toBack();
+        greensButton.toBack();
+        berryButton.toBack();
+        rootButton.toBack();
+        herbButton.toBack();
+        nutButton.toBack();
+        meatButton.getStyleClass().remove("subsubcategory-button-on");
+        fishButton.getStyleClass().remove("subsubcategory-button-on");
+        potatoRiceButton.getStyleClass().remove("subsubcategory-button-on");
+        pastaButton.getStyleClass().remove("subsubcategory-button-on");
+        hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
+        fruitButton.getStyleClass().remove("subsubcategory-button-on");
+        greensButton.getStyleClass().remove("subsubcategory-button-on");
+        berryButton.getStyleClass().remove("subsubcategory-button-on");
+        rootButton.getStyleClass().remove("subsubcategory-button-on");
+        herbButton.getStyleClass().remove("subsubcategory-button-on");
+        nutButton.getStyleClass().remove("subsubcategory-button-on");
+
+        allButton.getStyleClass().add("category-item-selected");
+        meatAndFishButton.getStyleClass().remove("category-item-selected");
+        fruitAndVegetablesButton.getStyleClass().remove("category-item-selected");
+        dairyButton.getStyleClass().remove("category-item-selected");
+        pastaPotatoRiceButton.getStyleClass().remove("category-item-selected");
+        ingredientsButton.getStyleClass().remove("category-item-selected");
+        breadButton.getStyleClass().remove("category-item-selected");
+        drinksButton.getStyleClass().remove("category-item-selected");
+        sweetsButton.getStyleClass().remove("category-item-selected");
+        favouritesButton.getStyleClass().remove("category-item-selected");
+
     }
 
     @Override

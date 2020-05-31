@@ -17,12 +17,10 @@ import java.util.ResourceBundle;
 public class startscreenController implements Initializable {
     @FXML
     AnchorPane startscreenRootPane;
-
-
+  private   Parent storeParent;
+  private   Scene storeScene;
     @FXML
-    private void loadStoreFromStartscreen(ActionEvent event) throws IOException {
-        Parent storeParent = FXMLLoader.load(getClass().getResource("iMat.fxml"));
-        Scene storeScene = new Scene(storeParent);
+    private void loadStoreFromStartscreen(ActionEvent event){
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(storeScene);
@@ -32,7 +30,18 @@ public class startscreenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         iMatController iMatController = new iMatController();
-        System.out.println(iMatController.toString());
-        iMatController.hashstart();
+       iMatController.hashstart();
+        System.out.println(iMatController.hashproducts.toString());
+        try {
+             storeParent = FXMLLoader.load(getClass().getResource("iMat.fxml"));
+             storeScene = new Scene(storeParent);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
     }
 }

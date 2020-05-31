@@ -252,7 +252,9 @@
     -fx-background-radius: 50;
 
 }
-
+.combo-box-popup > .list-view {
+    -fx-pref-height: 300    ;
+}
 .category-item {
     -fx-font-family: "Source Sans Pro Semibold";
     -fx-font-size: 32px;
@@ -261,6 +263,21 @@
     -fx-border-radius: 0;
     -fx-cursor: hand;
     -fx-alignment: center-left;
+}
+.subsubcategory-button{
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-border-color: #4cc773;
+     -fx-border-width: 3px;
+    -fx-border-radius:5;
+
+}
+.subsubcategory-button-on{
+    -fx-text-fill: white;
+    -fx-background-color: #4cc773;
+    -fx-border-color: #4cc773;
+     -fx-border-width: 3px;
+    -fx-border-radius:5;
+
 }
 
 .category-item-selected {
@@ -276,6 +293,7 @@
     -fx-alignment: center-left;
 }
 
+
 .titled-pane > .title {
     -fx-background-color: white;
     -fx-padding: 30px 0 30px 50px;
@@ -283,12 +301,61 @@
     -fx-border-color: black;
 }
 
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color :transparent;
+    -fx-border-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-border-radius :2.0em;
+}
+
+
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 30.0 0.0 0.0;
+
+}
+
+ .scroll-bar .increment-arrow,
+ .scroll-bar .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.15em 0.0;
+}
+
+ .scroll-bar:vertical .increment-arrow,
+ .scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color :derive(black,90.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color :derive(#4D4C4F,10.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
 .titled-pane > *.content {
     -fx-box-border: 0;
 }
+.scroll-bar:horizontal {
+    -fx-pref-height: 0;
+    -fx-padding: 0;
+        -fx-font-size: 0px;
+
+}
 
 /* PLIANCY */
-.button:hover {
+.buttons:hover {
     -fx-background-color: #f6f6f6;
 }
 
