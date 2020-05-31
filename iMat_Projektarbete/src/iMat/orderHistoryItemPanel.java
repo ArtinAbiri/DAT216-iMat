@@ -69,7 +69,7 @@ public class orderHistoryItemPanel extends AnchorPane {
 
     @FXML
     private void handleAddAction(ActionEvent event) {
-        model.addToCart(shoppingItem);
+        model.addToCart(iMatController.hashproducts.get(shoppingItem.getProduct().getProductId()).shoppingItem);
         model.shoppingCart.fireShoppingCartChanged(shoppingItem, true);
         iMatController.hashproducts.get(shoppingItem.getProduct().getProductId()).update(shoppingItem);
 

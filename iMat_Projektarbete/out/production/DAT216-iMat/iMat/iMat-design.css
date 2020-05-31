@@ -246,7 +246,12 @@
 .invisible {
     -fx-opacity: 0;
 }
+.popup{
+   -fx-background-color: #4078CC;
 
+  -fx-background-radius: 10;
+
+}
 .help-button {
    -fx-background-color: #4078CC;
     -fx-background-radius: 50;

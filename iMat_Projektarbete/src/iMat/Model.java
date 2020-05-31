@@ -1,12 +1,16 @@
 package iMat;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,6 +22,8 @@ import static se.chalmers.cse.dat216.project.ProductCategory.*;
 
 
 public class Model {
+     String searchText;
+
     private static Model instance = null;
     IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
 
@@ -80,6 +86,8 @@ public class Model {
 
     ShoppingCart shoppingCart = iMatDataHandler.getShoppingCart();
 
+
+
     public void addToCart(ShoppingItem shoppingItem) {
         if (shoppingCart.getItems().contains(shoppingItem)) {
             shoppingItem.setAmount(shoppingItem.getAmount() + 1);
@@ -90,6 +98,7 @@ public class Model {
             shoppingCart.addItem(shoppingItem);
         }
     }
+
 
         public void removeFromCart(ShoppingItem shoppingItem) {
         if (shoppingItem.getAmount() > 1) {

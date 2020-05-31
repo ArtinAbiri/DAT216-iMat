@@ -8,6 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.Order;
 
@@ -21,7 +23,10 @@ public class orderHistoryController implements Initializable {
 
 
 
-
+    @FXML
+    TextField searchBar;
+    @FXML
+    Button searchButton;
     @FXML
     Accordion orderHistoryAccordion;
 
@@ -56,4 +61,25 @@ public class orderHistoryController implements Initializable {
         window.show();
 
     }
+    @FXML
+    private void search(ActionEvent event) throws IOException {
+        model.searchText=searchBar.getText();
+        Parent storeParent = FXMLLoader.load(getClass().getResource("iMat.fxml"));
+        Scene storeScene = new Scene(storeParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(storeScene);
+        window.show();
+
+    }
+    @FXML
+    private void loadHelp(ActionEvent event) throws IOException {
+        Parent helpParent = FXMLLoader.load(getClass().getResource("help.fxml"));
+        Scene checkoutScene = new Scene(helpParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(checkoutScene);
+        window.show();
+    }
+
 }

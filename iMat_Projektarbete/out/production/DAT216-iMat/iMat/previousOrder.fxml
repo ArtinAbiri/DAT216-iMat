@@ -20,9 +20,9 @@
       <String fx:value="source-sans-bold" />
    </styleClass>
    <graphic>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bild" fitHeight="99.0" fitWidth="200.0" onMouseClicked="#handleAddALLAction" pickOnBounds="true" preserveRatio="true" translateX="750.0">
          <image>
-            <Image url="@../../../../resources/grocery_bag.png" />
+            <Image url="@../../../../resources/läggtillalla.PNG" />
          </image>
       </ImageView>
    </graphic>

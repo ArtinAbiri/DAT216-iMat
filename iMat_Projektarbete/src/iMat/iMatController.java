@@ -21,7 +21,6 @@ import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingCartListener;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
-import java.awt.desktop.PreferencesEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
@@ -32,10 +31,10 @@ import java.util.ResourceBundle;
 
 public class iMatController implements Initializable, ShoppingCartListener {
 
-  public final static DecimalFormat df2 = new DecimalFormat("0.00");
+    public final static DecimalFormat df2 = new DecimalFormat("0.00");
 
-    List<Product> PreviousList= new ArrayList<>();
-    static HashMap<Integer,productPanel> hashproducts= new HashMap<Integer, productPanel>();
+    List<Product> PreviousList = new ArrayList<>();
+    static HashMap<Integer, productPanel> hashproducts = new HashMap<Integer, productPanel>();
 
     @FXML
     Button startShopButton;
@@ -48,7 +47,10 @@ public class iMatController implements Initializable, ShoppingCartListener {
 
     @FXML
     AnchorPane mainScreen;
-
+    @FXML
+    AnchorPane popup;
+    @FXML
+    Label popupLable;
     @FXML
     ScrollPane mainScrollScreen;
     @FXML
@@ -136,7 +138,6 @@ public class iMatController implements Initializable, ShoppingCartListener {
     Button nutButton;
 
 
-
     //
     @FXML
     Label cartNumberOfItems;
@@ -144,16 +145,23 @@ public class iMatController implements Initializable, ShoppingCartListener {
     private Boolean FavouriteButtonSelected = false;
 
     public void initialize(URL url, ResourceBundle rb) {
-
-        updateProductList(model.getProducts());
+        updateCartAmount();
+        if (model.searchText!=null){
+            List<Product> matches = model.findProducts(model.searchText);
+            updateProductList(matches);
+            model.searchText=null;
+        }else {
+        updateProductList(model.getProducts());}
         model.shoppingCart.addShoppingCartListener(this);
         System.out.println(hashproducts.toString());
+
+
     }
 
-    public void hashstart(){
+    public void hashstart() {
         List<Product> allProducts = model.getProducts();
         for (Product product : allProducts) {
-            hashproducts.put(product.getProductId(),new productPanel(product));
+            hashproducts.put(product.getProductId(), new productPanel(product));
         }
     }
 
@@ -205,20 +213,19 @@ public class iMatController implements Initializable, ShoppingCartListener {
 
     @FXML
     private void handleFavouriteProductsAction(ActionEvent event) {
-        if(!FavouriteButtonSelected) {
+        if (!FavouriteButtonSelected) {
             List<Product> matches = model.iMatDataHandler.favorites();
-            List<Product> catMatches= new ArrayList<>();
-            for (Product p:matches) {
-                for (Product cp: PreviousList) {
-                    if (p.getProductId()==cp.getProductId())
+            List<Product> catMatches = new ArrayList<>();
+            for (Product p : matches) {
+                for (Product cp : PreviousList) {
+                    if (p.getProductId() == cp.getProductId())
                         catMatches.add(p);
                 }
             }
             updateProductList(catMatches);
             FavouriteButtonSelected = true;
             favouriteButton.setStyle("-fx-background-color: #4cc773; -fx-text-fill: white; -fx-border-color: #4cc773; -fx-border-width: 3px; -fx-border-radius: 3;");
-        }
-        else{
+        } else {
             updateProductList(PreviousList);
             FavouriteButtonSelected = false;
             favouriteButton.setStyle("-fx-background-color: rgba(0,0,0,0); -fx-border-color: #4cc773; -fx-border-width: 3px; -fx-border-radius: 3;");
@@ -251,8 +258,8 @@ public class iMatController implements Initializable, ShoppingCartListener {
         }
 
 
-        cartSumLabel.setText("Summa: " + df2.format( model.shoppingCart.getTotal()) + " kr");
-        }
+        cartSumLabel.setText("Summa: " + df2.format(model.shoppingCart.getTotal()) + " kr");
+    }
 
 
     private final Model model = Model.getInstance();
@@ -261,7 +268,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
     private void updateProductList(List<Product> products) {
         productsFlowPane.getChildren().clear();
         List<Integer> id = new ArrayList<>();
-        for (Product pro:products) {
+        for (Product pro : products) {
             id.add(pro.getProductId());
         }
 
@@ -354,9 +361,11 @@ public class iMatController implements Initializable, ShoppingCartListener {
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
+
     ;
+
     @FXML
-    private void subMeat(){
+    private void subMeat() {
         updateProductList(model.subCategorySearch("meat"));
         meatButton.getStyleClass().remove("subsubcategory-button-on");
         searchBar.setText(null);
@@ -375,8 +384,9 @@ public class iMatController implements Initializable, ShoppingCartListener {
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
+
     @FXML
-    private void subFish(){
+    private void subFish() {
         updateProductList(model.subCategorySearch("fish"));
         fishButton.getStyleClass().remove("subsubcategory-button-on");
         searchBar.setText(null);
@@ -395,8 +405,9 @@ public class iMatController implements Initializable, ShoppingCartListener {
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
+
     @FXML
-    private void subHotDrink(){
+    private void subHotDrink() {
         updateProductList(model.subCategorySearch("hotDrink"));
         hotDrinkButton.getStyleClass().remove("subsubcategory-button-on");
 
@@ -415,8 +426,9 @@ public class iMatController implements Initializable, ShoppingCartListener {
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
+
     @FXML
-    private void subColdDrink(){
+    private void subColdDrink() {
         updateProductList(model.subCategorySearch("coldDrink"));
         coldDrinkButton.getStyleClass().remove("subsubcategory-button-on");
         searchBar.setText(null);
@@ -434,8 +446,10 @@ public class iMatController implements Initializable, ShoppingCartListener {
         rootButton.getStyleClass().remove("subsubcategory-button-on");
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
-    } @FXML
-    private void subFruit(){
+    }
+
+    @FXML
+    private void subFruit() {
         updateProductList(model.subCategorySearch("fruit"));
         fruitButton.getStyleClass().remove("subsubcategory-button-on");
         searchBar.setText(null);
@@ -453,8 +467,10 @@ public class iMatController implements Initializable, ShoppingCartListener {
         rootButton.getStyleClass().remove("subsubcategory-button-on");
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
-    } @FXML
-    private void subGreens(){
+    }
+
+    @FXML
+    private void subGreens() {
         updateProductList(model.subCategorySearch("greens"));
         greensButton.getStyleClass().remove("subsubcategory-button-on");
         searchBar.setText(null);
@@ -473,8 +489,9 @@ public class iMatController implements Initializable, ShoppingCartListener {
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
     }
+
     @FXML
-    private void subPotatoRice(){
+    private void subPotatoRice() {
         updateProductList(model.subCategorySearch("potato_rice"));
         pastaButton.getStyleClass().remove("subsubcategory-button-on");
 
@@ -492,8 +509,10 @@ public class iMatController implements Initializable, ShoppingCartListener {
         rootButton.getStyleClass().remove("subsubcategory-button-on");
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
-    } @FXML
-    private void subPasta(){
+    }
+
+    @FXML
+    private void subPasta() {
         updateProductList(model.subCategorySearch("pasta"));
         pastaButton.getStyleClass().remove("subsubcategory-button-on");
 
@@ -511,8 +530,10 @@ public class iMatController implements Initializable, ShoppingCartListener {
         rootButton.getStyleClass().remove("subsubcategory-button-on");
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
-    } @FXML
-    private void subBerry(){
+    }
+
+    @FXML
+    private void subBerry() {
         updateProductList(model.subCategorySearch("berry"));
         berryButton.getStyleClass().remove("subsubcategory-button-on");
         searchBar.setText(null);
@@ -530,8 +551,10 @@ public class iMatController implements Initializable, ShoppingCartListener {
         rootButton.getStyleClass().remove("subsubcategory-button-on");
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
-    } @FXML
-    private void subRoot(){
+    }
+
+    @FXML
+    private void subRoot() {
         updateProductList(model.subCategorySearch("root"));
         rootButton.getStyleClass().remove("subsubcategory-button-on");
         searchBar.setText(null);
@@ -549,8 +572,10 @@ public class iMatController implements Initializable, ShoppingCartListener {
         meatButton.getStyleClass().remove("subsubcategory-button-on");
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
-    } @FXML
-    private void subHerb(){
+    }
+
+    @FXML
+    private void subHerb() {
         updateProductList(model.subCategorySearch("herbs"));
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         searchBar.setText(null);
@@ -568,8 +593,10 @@ public class iMatController implements Initializable, ShoppingCartListener {
         rootButton.getStyleClass().remove("subsubcategory-button-on");
         meatButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
-    } @FXML
-    private void subNut(){
+    }
+
+    @FXML
+    private void subNut() {
         updateProductList(model.subCategorySearch("nut"));
         nutButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().add("subsubcategory-button-on");
@@ -587,6 +614,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         meatButton.getStyleClass().remove("subsubcategory-button-on");
     }
+
     @FXML
     private void meatAndFish() {
         updateProductList(model.categorySearch("meatAndFish"));
@@ -936,6 +964,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
         window.setScene(checkoutScene);
         window.show();
     }
+
     @FXML
     private void loadHelp(ActionEvent event) throws IOException {
         Parent helpParent = FXMLLoader.load(getClass().getResource("help.fxml"));
@@ -958,9 +987,13 @@ public class iMatController implements Initializable, ShoppingCartListener {
 
     @FXML
     private void clearCart(ActionEvent event) throws IOException {
-        model.shoppingCart.clear();
-        cartSumLabel.setText("Summa: " + df2.format( model.shoppingCart.getTotal()) + " kr");
+        for (ShoppingItem item : model.shoppingCart.getItems()) {
+            item.setAmount(0);
 
+        }
+        model.shoppingCart.clear();
+        cartSumLabel.setText("Summa: " + df2.format(model.shoppingCart.getTotal()) + " kr");
+        updateProductList(model.getProducts());
         updateCartList();
     }
 
@@ -1009,11 +1042,15 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         updateCartAmount();
-        cartSumLabel.setText("Summa: " + df2.format( model.shoppingCart.getTotal()) + " kr");
+        cartSumLabel.setText("Summa: " + df2.format(model.shoppingCart.getTotal()) + " kr");
         updateCartList();
     }
 
     public void updateCartAmount() {
         cartNumberOfItems.setText(Integer.toString(model.shoppingCart.getItems().size()));
+
+        //popup.toFront();
+        //   popupLable.setText("Du har lagt till en vara i vatukorgen");
     }
 }
+

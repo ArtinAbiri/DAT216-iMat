@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -14,17 +15,24 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import se.chalmers.cse.dat216.project.*;
+import se.chalmers.cse.dat216.project.CartEvent;
+import se.chalmers.cse.dat216.project.ShoppingCartListener;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import static iMat.iMatController.df2;
-import se.chalmers.cse.dat216.project.CartEvent;
 
 public class checkoutController implements Initializable, ShoppingCartListener {
     private final Model model = Model.getInstance();
+    @FXML
+    Text kundvagnstext;
+    @FXML
+    TextField searchBar;
+    @FXML
+    Button searchButton;
     @FXML
     Text errorPhone;
     @FXML
@@ -32,6 +40,7 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     @FXML
     Text errorLastName;
     @FXML
+
     Text errorEmail;
     @FXML
     Text errorPostal;
@@ -104,12 +113,23 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     ComboBox<String> validYear;
     @FXML
     TextField cvvCode;
-    @FXML
-    TextField searchBar;
+
 
     //Save card info checkbox
     @FXML
     CheckBox saveCard;
+
+    @FXML
+    private void search(ActionEvent event) throws IOException {
+    model.searchText=searchBar.getText();
+        Parent storeParent = FXMLLoader.load(getClass().getResource("iMat.fxml"));
+        Scene storeScene = new Scene(storeParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(storeScene);
+        window.show();
+
+    }
 
     @FXML
     private void loadStoreFromCheckout(ActionEvent event) throws IOException {
@@ -137,6 +157,7 @@ public class checkoutController implements Initializable, ShoppingCartListener {
         window.setScene(storeScene);
         window.show();
     }
+
     @FXML
     private void loadHelpCheckout(ActionEvent event) throws IOException {
         Parent helpParent = FXMLLoader.load(getClass().getResource("help.fxml"));
@@ -158,26 +179,32 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     }
 
     @FXML
-    private void loadCheckout1()  {
+    private void loadCheckout1() {
         updateCartList();
         updateCost();
         checkoutPart1.toFront();
         header.toFront();
+        kundvagnstext.toBack();
     }
 
     @FXML
     private void loadCheckout2() {
+        if(model.shoppingCart.getItems().size()==0){
+            kundvagnstext.toFront();
+            kundvagnstext.setText("Varukorgen är tom, lägg till varor för att gå vidare");
+
+        }else {
         displayCustomerInformation();
         updateCard();
         checkoutPart2.toFront();
         header.toFront();
-    }
+    }}
 
     @FXML
     private void loadCheckout3() {
         if (checkifLegalCheckout2()) {
             displayCard();
-            validMonth.getItems().addAll("01","02","03","04","05","06","07","08","09","10","11","12");
+            validMonth.getItems().addAll("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
 
             checkoutPart3.toFront();
             header.toFront();
@@ -207,28 +234,30 @@ public class checkoutController implements Initializable, ShoppingCartListener {
 
     @FXML
     private void updateCost() {
-        checkoutSumLabel.setText("Varor: " + df2.format( model.shoppingCart.getTotal())+ ":-");
-        checkoutTotalLabel.setText("Total summa: " + (df2.format(49+ model.shoppingCart.getTotal())) + ":-");
+        checkoutSumLabel.setText("Varor: " + df2.format(model.shoppingCart.getTotal()) + ":-");
+        checkoutTotalLabel.setText("Total summa: " + (df2.format(49 + model.shoppingCart.getTotal())) + ":-");
 
-        checkoutSumLabel1.setText("Varor: " +df2.format( model.shoppingCart.getTotal()) + ":-");
-        checkoutTotalLabel1.setText("Total summa: " + (df2.format(49+ model.shoppingCart.getTotal()) ) + ":-");
+        checkoutSumLabel1.setText("Varor: " + df2.format(model.shoppingCart.getTotal()) + ":-");
+        checkoutTotalLabel1.setText("Total summa: " + (df2.format(49 + model.shoppingCart.getTotal())) + ":-");
 
-        checkoutSumLabel2.setText("Varor: " + df2.format( model.shoppingCart.getTotal()) + ":-");
-        checkoutTotalLabel2.setText("Total summa: " + (df2.format( 49+model.shoppingCart.getTotal()) ) + ":-");
+        checkoutSumLabel2.setText("Varor: " + df2.format(model.shoppingCart.getTotal()) + ":-");
+        checkoutTotalLabel2.setText("Total summa: " + (df2.format(49 + model.shoppingCart.getTotal())) + ":-");
 
-        checkoutSumLabel3.setText("Varor: " + df2.format( model.shoppingCart.getTotal()) + ":-");
-        checkoutTotalLabel3.setText("Total summa: " + ( df2.format(49+ model.shoppingCart.getTotal()) )  + ":-");
+        checkoutSumLabel3.setText("Varor: " + df2.format(model.shoppingCart.getTotal()) + ":-");
+        checkoutTotalLabel3.setText("Total summa: " + (df2.format(49 + model.shoppingCart.getTotal())) + ":-");
     }
 
     @FXML
     private void updateCustomerInformation() {
         model.updateCustomerInformation(firstName.getText(), lastName.getText(), address.getText(), postCode.getText(), postArea.getText(), email.getText(), mobilePhoneNumber.getText());
     }
+
     @FXML
-    private void threenumberlock(){
-        if(cvvCode.getText().length()>2) {
-            cvvCode.deleteText(2,3);
-        }    }
+    private void threenumberlock() {
+        if (cvvCode.getText().length() > 2) {
+            cvvCode.deleteText(2, 3);
+        }
+    }
 
     @FXML
     private void displayCustomerInformation() {
@@ -306,28 +335,29 @@ public class checkoutController implements Initializable, ShoppingCartListener {
         }
         return (num > 0);
     }
+
     private boolean checkIfIllegalEmail(String str) {
         if (str == null || str.isEmpty()) return true;
         int num = 0;
         for (char c : str.toCharArray()) {
-            if ((Character.isLetter(c)&&num==0)||(Character.isLetter(c)&&num==0)){
+            if ((Character.isLetter(c) && num == 0) || (Character.isLetter(c) && num == 0)) {
                 num++;
             }
-            if ((Character.toString(c).equals("@"))&&num==1) {
+            if ((Character.toString(c).equals("@")) && num == 1) {
                 num++;
             }
-          if ((Character.isLetter(c)&&num==2)||(Character.isLetter(c)&&num==2)){
+            if ((Character.isLetter(c) && num == 2) || (Character.isLetter(c) && num == 2)) {
                 num++;
             }
-          if ((Character.toString(c).equals("."))&& num==3){
-              num++;
-          }
+            if ((Character.toString(c).equals(".")) && num == 3) {
+                num++;
+            }
 
-            if ((Character.isLetter(c)&&num==4)||(Character.isLetter(c)&&num==4)){
+            if ((Character.isLetter(c) && num == 4) || (Character.isLetter(c) && num == 4)) {
                 num++;
             }
         }
-        return (num  <5);
+        return (num < 5);
     }
 
     private boolean checkIfIllegalAdress(String str) {
@@ -344,43 +374,48 @@ public class checkoutController implements Initializable, ShoppingCartListener {
             firstName.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
             num++;
             errorFirstName.toFront();
-        } else{ firstName.setStyle("-fx-border-width: 0px ;");
-        errorFirstName.toBack();
-    }
+        } else {
+            firstName.setStyle("-fx-border-width: 0px ;");
+            errorFirstName.toBack();
+        }
 
         if (checkIfIllegalNumber(lastName.getText())) {
             lastName.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
             num++;
             errorLastName.toFront();
-        } else{ lastName.setStyle("-fx-border-width: 0px ;");
-        errorLastName.toBack();
-    }
+        } else {
+            lastName.setStyle("-fx-border-width: 0px ;");
+            errorLastName.toBack();
+        }
 
         if (checkIfIllegalNumber(postArea.getText())) {
             postArea.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
             num++;
             errorPostal.toFront();
-        } else{ postArea.setStyle("-fx-border-width: 0px ;");
-        errorPostal.toBack();
-    }
+        } else {
+            postArea.setStyle("-fx-border-width: 0px ;");
+            errorPostal.toBack();
+        }
 
         if (checkIfIllegalAdress(address.getText())) {
             address.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
             num++;
             errorAddress.toFront();
-        } else{ address.setStyle("-fx-border-width: 0px ;");
-        errorAddress.toBack();
-    }
+        } else {
+            address.setStyle("-fx-border-width: 0px ;");
+            errorAddress.toBack();
+        }
 
-        if (checkIfIllegalLetter(postCode.getText())) {
+        if (checkIfIllegalLetter(postCode.getText()) || postCode.getText().length() != 5) {
             postCode.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
             num++;
             errorPostalCode.toFront();
 
-        } else {postCode.setStyle("-fx-border-width: 0px ;");
-        errorPostalCode.toBack();
+        } else {
+            postCode.setStyle("-fx-border-width: 0px ;");
+            errorPostalCode.toBack();
 
-    }
+        }
         if (checkIfIllegalPhone(mobilePhoneNumber.getText())) {
             mobilePhoneNumber.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
             num++;
@@ -409,7 +444,7 @@ public class checkoutController implements Initializable, ShoppingCartListener {
             num++;
         } else cardHolder.setStyle("-fx-border-width: 0px ;");
 
-        if (checkIfIllegalLetter(cardNumber.getText())) {
+        if (checkIfIllegalLetter(cardNumber.getText()) || cardNumber.getText().length() != 16) {
             cardNumber.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
             num++;
         } else cardNumber.setStyle("-fx-border-width: 0px ;");
@@ -428,10 +463,11 @@ public class checkoutController implements Initializable, ShoppingCartListener {
         model.shoppingCart.addShoppingCartListener(this);
         updateCost();
         updateCartList();
-        validMonth.getItems().addAll("01","02","03","04","05","06","07","08","09","10","11","12");
-        validYear.getItems().addAll("2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030","2031","2032","2033","2034","2035","2036","2037","2038","2039");
+        validMonth.getItems().addAll("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
+        validYear.getItems().addAll("2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039");
 
     }
+
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
 

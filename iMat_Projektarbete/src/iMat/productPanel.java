@@ -128,4 +128,5 @@ public class productPanel extends AnchorPane {
         productAmountLabel.setText(Integer.toString( (int) shoppingItem.getAmount()));
 
     }
+
 }

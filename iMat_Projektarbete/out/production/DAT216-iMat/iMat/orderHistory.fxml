@@ -19,7 +19,7 @@
                   <Font size="34.0" />
                </font>
             </TextField>
-            <Button fx:id="searchButton" layoutX="900.0" layoutY="10.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+            <Button fx:id="searchButton" layoutX="900.0" layoutY="10.0" mnemonicParsing="false" onAction="#search" prefHeight="80.0" prefWidth="80.0">
                <styleClass>
                   <String fx:value="color-green" />
                   <String fx:value="search-button" />
@@ -75,7 +75,7 @@
             <String fx:value="font-size-36" />
          </styleClass>
       </Button>
-      <Button layoutX="1400.0" layoutY="729.0" mnemonicParsing="false" onAction="#loadHelpCheckout" prefHeight="75.0" prefWidth="196.0" text="Hjälp   ?" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="80.0">
+      <Button layoutX="1400.0" layoutY="729.0" mnemonicParsing="false" onAction="#loadHelp" prefHeight="75.0" prefWidth="196.0" text="Hjälp   ?" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="80.0">
          <styleClass>
             <String fx:value="patua-text" />
             <String fx:value="font-size-36" />
