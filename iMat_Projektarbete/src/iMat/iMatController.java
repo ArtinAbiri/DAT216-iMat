@@ -989,6 +989,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
         rootButton.getStyleClass().remove("subsubcategory-button-on");
         herbButton.getStyleClass().remove("subsubcategory-button-on");
         nutButton.getStyleClass().remove("subsubcategory-button-on");
+        allButton.getStyleClass().remove("category-item-selected");
 
         allButton.getStyleClass().add("category-item-selected");
         meatAndFishButton.getStyleClass().remove("category-item-selected");
