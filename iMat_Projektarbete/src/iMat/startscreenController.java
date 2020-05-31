@@ -43,11 +43,9 @@ public class startscreenController implements Initializable {
         iMatController iMatController = new iMatController();
         iMatController.hashstart();
         iMatController.clearShoppingCart();
-        System.out.println(iMatController.hashproducts.toString());
         try {
              storeParent = FXMLLoader.load(getClass().getResource("iMat.fxml"));
              storeScene = new Scene(storeParent);
-
 
         } catch (IOException e) {
             e.printStackTrace();

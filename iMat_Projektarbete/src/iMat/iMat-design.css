@@ -272,17 +272,18 @@
 .subsubcategory-button {
     -fx-background-color: rgba(0,0,0,0);
     -fx-border-color: #4cc773;
-     -fx-border-width: 3px;
+    -fx-border-width: 3px;
     -fx-border-radius:5;
-
+    -fx-height: 57px;
 }
+
 .subsubcategory-button-on {
     -fx-text-fill: white;
     -fx-background-color: #4cc773;
     -fx-border-color: #4cc773;
-     -fx-border-width: 3px;
-    -fx-border-radius:5;
-
+    -fx-border-width: 3px;
+    -fx-border-radius: 5;
+    -fx-height: 57px;
 }
 
 .category-item-selected {

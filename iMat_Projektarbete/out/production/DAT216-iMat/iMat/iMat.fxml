@@ -74,23 +74,35 @@
       </AnchorPane>
       <AnchorPane fx:id="mainScreen" prefHeight="800.0" prefWidth="1600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane fx:id="popup" layoutX="1030.0" layoutY="83.0" prefHeight="200.0" prefWidth="430.0">
-               <children>
-                  <ImageView fx:id="popupImage" fitHeight="168.0" fitWidth="200.0" layoutX="326.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../resources/arrow.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="popupLable" layoutX="73.0" layoutY="28.0" prefHeight="156.0" prefWidth="300.0" text="Du har lagt till _ varor i varukorgen" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
-                     <styleClass>
-                        <String fx:value="popup" />
-                        <String fx:value="font-size-32" />
-                        <String fx:value="patua-text" />
-                     </styleClass>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <Button fx:id="meatButton" layoutX="380.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#subMeat" prefHeight="47.0" prefWidth="160.0" text="Kött">
+            <Button fx:id="hotDrinkButton" layoutX="380.0" layoutY="154.0" mnemonicParsing="false" onAction="#subHotDrink" prefHeight="57.0" prefWidth="212.0" text="Varma Drycker">
+               <styleClass>
+                  <String fx:value="subsubcategory-button" />
+                  <String fx:value="font-size-24" />
+                  <String fx:value="patua-text" />
+               </styleClass>
+            </Button>
+            <Button fx:id="coldDrinkButton" layoutX="622.0" layoutY="154.0" mnemonicParsing="false" onAction="#subColdDrink" prefHeight="50.0" prefWidth="187.0" text="Kalla drycker">
+               <styleClass>
+                  <String fx:value="subsubcategory-button" />
+                  <String fx:value="font-size-24" />
+                  <String fx:value="patua-text" />
+               </styleClass>
+            </Button>
+            <Button fx:id="potatoRiceButton" layoutX="380.0" layoutY="154.0" mnemonicParsing="false" onAction="#subPotatoRice" prefHeight="50.0" prefWidth="200.0" text="Potatis och Ris">
+               <styleClass>
+                  <String fx:value="subsubcategory-button" />
+                  <String fx:value="font-size-24" />
+                  <String fx:value="patua-text" />
+               </styleClass>
+            </Button>
+            <Button fx:id="pastaButton" layoutX="610.0" layoutY="154.0" mnemonicParsing="false" onAction="#subPasta" prefHeight="50.0" prefWidth="160.0" text="Pasta">
+               <styleClass>
+                  <String fx:value="subsubcategory-button" />
+                  <String fx:value="font-size-24" />
+                  <String fx:value="patua-text" />
+               </styleClass>
+            </Button>
+            <Button fx:id="meatButton" layoutX="380.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#subMeat" prefHeight="50.0" prefWidth="160.0" text="Kött">
                <styleClass>
                   <String fx:value="subsubcategory-button" />
                   <String fx:value="font-size-24" />
@@ -98,34 +110,6 @@
                </styleClass>
             </Button>
             <Button fx:id="fishButton" layoutX="570.0" layoutY="154.0" mnemonicParsing="false" onAction="#subFish" prefHeight="50.0" prefWidth="160.0" text="Fisk">
-               <styleClass>
-                  <String fx:value="subsubcategory-button" />
-                  <String fx:value="font-size-24" />
-                  <String fx:value="patua-text" />
-               </styleClass>
-            </Button>
-            <Button fx:id="potatoRiceButton" layoutX="380.0" layoutY="154.0" mnemonicParsing="false" onAction="#subPotatoRice" prefHeight="50.0" prefWidth="160.0" text="Potatis och Ris">
-               <styleClass>
-                  <String fx:value="subsubcategory-button" />
-                  <String fx:value="font-size-24" />
-                  <String fx:value="patua-text" />
-               </styleClass>
-            </Button>
-            <Button fx:id="pastaButton" layoutX="570.0" layoutY="154.0" mnemonicParsing="false" onAction="#subPasta" prefHeight="50.0" prefWidth="160.0" text="Pasta">
-               <styleClass>
-                  <String fx:value="subsubcategory-button" />
-                  <String fx:value="font-size-24" />
-                  <String fx:value="patua-text" />
-               </styleClass>
-            </Button>
-            <Button fx:id="hotDrinkButton" layoutX="380.0" layoutY="154.0" mnemonicParsing="false" onAction="#subHotDrink" prefHeight="50.0" prefWidth="160.0" text="Varma Drycker">
-               <styleClass>
-                  <String fx:value="subsubcategory-button" />
-                  <String fx:value="font-size-24" />
-                  <String fx:value="patua-text" />
-               </styleClass>
-            </Button>
-            <Button fx:id="coldDrinkButton" layoutX="570.0" layoutY="154.0" mnemonicParsing="false" onAction="#subColdDrink" prefHeight="50.0" prefWidth="160.0" text="Kalla drycker">
                <styleClass>
                   <String fx:value="subsubcategory-button" />
                   <String fx:value="font-size-24" />
@@ -153,27 +137,43 @@
                   <String fx:value="patua-text" />
                </styleClass>
             </Button>
-            <Button fx:id="nutButton" layoutX="950.0" layoutY="154.0" mnemonicParsing="false" onAction="#subNut" prefHeight="50.0" prefWidth="160.0" text="Nötter och frön">
+            <Button fx:id="nutButton" layoutX="950.0" layoutY="154.0" mnemonicParsing="false" onAction="#subNut" prefHeight="50.0" prefWidth="212.0" text="Nötter och frön">
                <styleClass>
                   <String fx:value="subsubcategory-button" />
                   <String fx:value="font-size-24" />
                   <String fx:value="patua-text" />
                </styleClass>
             </Button>
-            <Button fx:id="herbButton" layoutX="1140.0" layoutY="154.0" mnemonicParsing="false" onAction="#subHerb" prefHeight="50.0" prefWidth="160.0" text="Örter">
+            <Button fx:id="herbButton" layoutX="1192.0" layoutY="154.0" mnemonicParsing="false" onAction="#subHerb" prefHeight="50.0" prefWidth="109.0" text="Örter">
                <styleClass>
                   <String fx:value="subsubcategory-button" />
                   <String fx:value="font-size-24" />
                   <String fx:value="patua-text" />
                </styleClass>
             </Button>
-            <Button fx:id="berryButton" layoutX="1330.0" layoutY="154.0" mnemonicParsing="false" onAction="#subBerry" prefHeight="50.0" prefWidth="160.0" text="Bär">
+            <Button fx:id="berryButton" layoutX="1331.0" layoutY="154.0" mnemonicParsing="false" onAction="#subBerry" prefHeight="50.0" prefWidth="102.0" text="Bär">
                <styleClass>
                   <String fx:value="subsubcategory-button" />
                   <String fx:value="font-size-24" />
                   <String fx:value="patua-text" />
                </styleClass>
             </Button>
+            <AnchorPane fx:id="popup" layoutX="1030.0" layoutY="83.0" prefHeight="200.0" prefWidth="430.0">
+               <children>
+                  <ImageView fx:id="popupImage" fitHeight="168.0" fitWidth="200.0" layoutX="326.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/arrow.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="popupLable" layoutX="73.0" layoutY="28.0" prefHeight="156.0" prefWidth="300.0" text="Du har lagt till _ varor i varukorgen" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+                     <styleClass>
+                        <String fx:value="popup" />
+                        <String fx:value="font-size-32" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Label>
+               </children>
+            </AnchorPane>
             <Rectangle fill="#f6f6f6" height="800.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="standard-background" width="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
             <ScrollPane fx:id="mainScrollScreen" layoutX="380.0" layoutY="218.0" maxWidth="1180.0" prefHeight="672.0" prefWidth="1180.0">
                <content>
@@ -205,7 +205,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="12.0" onMouseClicked="#allProducts" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
+                        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="238.0" layoutY="12.0" onMouseClicked="#favourites" pickOnBounds="true" preserveRatio="true" styleClass="clickable">
                            <image>
                               <Image url="@../../../../resources/icons/chevron_right.png" />
                            </image>

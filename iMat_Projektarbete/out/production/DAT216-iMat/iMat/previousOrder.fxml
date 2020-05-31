@@ -20,7 +20,7 @@
       <String fx:value="source-sans-bold" />
    </styleClass>
    <graphic>
-      <ImageView fx:id="bild" fitHeight="99.0" fitWidth="200.0" onMouseClicked="#handleAddALLAction" pickOnBounds="true" preserveRatio="true" translateX="750.0">
+      <ImageView fx:id="bild" fitHeight="99.0" fitWidth="200.0" onMouseClicked="#handleAddALLAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../resources/läggtillalla.PNG" />
          </image>

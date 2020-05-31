@@ -50,6 +50,13 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     Text errorAddress;
 
     @FXML
+    Text errorCardName;
+    @FXML
+    Text errorCardNumber;
+    @FXML
+    Text errorVerificationCode;
+
+    @FXML
     AnchorPane checkoutPart1;
     @FXML
     AnchorPane checkoutPart2;
@@ -121,7 +128,20 @@ public class checkoutController implements Initializable, ShoppingCartListener {
 
     @FXML
     private void search(ActionEvent event) throws IOException {
-    model.searchText=searchBar.getText();
+        model.searchText=searchBar.getText();
+        Parent storeParent = FXMLLoader.load(getClass().getResource("iMat.fxml"));
+        Scene storeScene = new Scene(storeParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(storeScene);
+        window.show();
+
+    }
+
+    @FXML
+    private void searchEnd(ActionEvent event) throws IOException {
+        model.shoppingCart.clear();
+        model.searchText=searchBar.getText();
         Parent storeParent = FXMLLoader.load(getClass().getResource("iMat.fxml"));
         Scene storeScene = new Scene(storeParent);
 
@@ -133,7 +153,6 @@ public class checkoutController implements Initializable, ShoppingCartListener {
 
     @FXML
     private void loadStoreFromCheckout(ActionEvent event) throws IOException {
-        updateCard();
         updateCustomerInformation();
         Parent storeParent = FXMLLoader.load(getClass().getResource("iMat.fxml"));
         Scene storeScene = new Scene(storeParent);
@@ -145,7 +164,6 @@ public class checkoutController implements Initializable, ShoppingCartListener {
 
     @FXML
     private void loadStoreFromCheckoutEnd(ActionEvent event) throws IOException {
-        updateCard();
         updateCustomerInformation();
         model.shoppingCart.clear();
         model.resetShoppingItemAmounts();
@@ -169,7 +187,29 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     }
 
     @FXML
+    private void loadHelpCheckoutEnd(ActionEvent event) throws IOException {
+        model.shoppingCart.clear();
+        Parent helpParent = FXMLLoader.load(getClass().getResource("help.fxml"));
+        Scene checkoutScene = new Scene(helpParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(checkoutScene);
+        window.show();
+    }
+
+    @FXML
     private void loadOrderHistory(ActionEvent event) throws IOException {
+        Parent helpParent = FXMLLoader.load(getClass().getResource("orderHistory.fxml"));
+        Scene checkoutScene = new Scene(helpParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(checkoutScene);
+        window.show();
+    }
+
+    @FXML
+    private void loadOrderHistoryFromEnd(ActionEvent event) throws IOException {
+        model.shoppingCart.clear();
         Parent helpParent = FXMLLoader.load(getClass().getResource("orderHistory.fxml"));
         Scene checkoutScene = new Scene(helpParent);
 
@@ -192,20 +232,18 @@ public class checkoutController implements Initializable, ShoppingCartListener {
         if(model.shoppingCart.getItems().size()==0){
             kundvagnstext.toFront();
             kundvagnstext.setText("Varukorgen är tom, lägg till varor för att gå vidare");
-
-        }else {
-        displayCustomerInformation();
-        updateCard();
-        checkoutPart2.toFront();
-        header.toFront();
-    }}
+        } else {
+            displayCustomerInformation();
+//            updateCard();
+            checkoutPart2.toFront();
+            header.toFront();
+        }
+    }
 
     @FXML
     private void loadCheckout3() {
         if (checkifLegalCheckout2()) {
             displayCard();
-            validMonth.getItems().addAll("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
-
             checkoutPart3.toFront();
             header.toFront();
         }
@@ -214,12 +252,10 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     @FXML
     private void completePurchase() {
         if (checkifLegalCheckout3()) {
-            updateCost();
-            updateCard();
+            updateCardIfSelected();
             showPurchase();
             model.placeOrder(false);
             purchaseComplete.toFront();
-            header.toFront();
         }
     }
 
@@ -271,11 +307,21 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     }
 
     @FXML
-    private void updateCard() {
+    private void updateCardIfSelected() {
         if (saveCard.isSelected()) {
             model.updateCard(cardHolder.getText(), cardNumber.getText(), Integer.parseInt(validMonth.getValue()), Integer.parseInt(validYear.getValue()), Integer.parseInt(cvvCode.getText()));
         } else {
-            model.updateCard(null, null, 0, 0, 0);
+            model.updateCard("", "", 01, 2021, 0);
+        }
+    }
+
+    @FXML
+    private void updateCard() {
+        if (cardHolder.getText() != null || cardNumber.getText() != null || validMonth.getValue() != "01" || validYear.getValue() != "2021" || cvvCode.getText() != "") {
+            System.out.println(cardHolder.getText());
+            System.out.println(cardNumber.getText());
+            System.out.println(Integer.parseInt(validMonth.getValue()));
+            model.updateCard(cardHolder.getText(), cardNumber.getText(), Integer.parseInt(validMonth.getValue()), Integer.parseInt(validYear.getValue()), Integer.parseInt(cvvCode.getText()));
         }
     }
 
@@ -283,7 +329,13 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     private void displayCard() {
         cardHolder.setText(model.creditCard.getHoldersName());
         cardNumber.setText(model.creditCard.getCardNumber());
+        validYear.setValue(Integer.toString(model.creditCard.getValidYear()));
 
+        if (model.creditCard.getValidMonth() == 1) {
+            validMonth.setValue("01");
+        } else {
+            validMonth.setValue(Integer.toString(model.creditCard.getValidMonth()));
+        }
 
         if (model.creditCard.getVerificationCode() == 0) {
             cvvCode.setText("");
@@ -441,19 +493,31 @@ public class checkoutController implements Initializable, ShoppingCartListener {
         int num = 0;
         if (checkIfIllegalNumber(cardHolder.getText())) {
             cardHolder.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            errorCardName.toFront();
             num++;
-        } else cardHolder.setStyle("-fx-border-width: 0px ;");
+        } else {
+            cardHolder.setStyle("-fx-border-width: 0px ;");
+            errorCardName.toBack();
+        }
 
         if (checkIfIllegalLetter(cardNumber.getText()) || cardNumber.getText().length() != 16) {
             cardNumber.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            errorCardNumber.toFront();
             num++;
-        } else cardNumber.setStyle("-fx-border-width: 0px ;");
+        } else {
+            cardNumber.setStyle("-fx-border-width: 0px ;");
+            errorCardName.toBack();
+        }
 
 
         if (checkIfIllegalLetter(cvvCode.getText()) && !(cvvCode.getText().length() == 3)) {
             cvvCode.setStyle("-fx-border-color: red ; -fx-border-width: 2px ;");
+            errorVerificationCode.toFront();
             num++;
-        } else cvvCode.setStyle("-fx-border-width: 0px ;");
+        } else {
+            cvvCode.setStyle("-fx-border-width: 0px ;");
+            errorCardName.toBack();
+        }
 
         return num == 0;
     }
@@ -470,10 +534,7 @@ public class checkoutController implements Initializable, ShoppingCartListener {
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
-
         updateCost();
         updateCartList();
-
     }
-
 }

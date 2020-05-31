@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -15,12 +16,19 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class helpController{
-    Model model=Model.getInstance();
+public class helpController implements Initializable {
+    Model model = Model.getInstance();
     @FXML
     TextField searchBar;
     @FXML
     Button searchButton;
+    @FXML
+    Label cartNumberOfItems;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        updateCartAmount();
+    }
 
     @FXML
     private void loadStoreFromHelpscreen(ActionEvent event) throws IOException {
@@ -64,5 +72,19 @@ public class helpController{
         window.show();
     }
 
+    @FXML
+    private void loadStore(ActionEvent event) throws IOException {
+        model.openCart = true;
 
+        Parent storeParent = FXMLLoader.load(getClass().getResource("iMat.fxml"));
+        Scene storeScene = new Scene(storeParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(storeScene);
+        window.show();
+    }
+
+    public void updateCartAmount() {
+        cartNumberOfItems.setText(Integer.toString(model.shoppingCart.getItems().size()));
+    }
 }

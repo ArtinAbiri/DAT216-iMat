@@ -23,6 +23,7 @@ import static se.chalmers.cse.dat216.project.ProductCategory.*;
 
 public class Model {
      String searchText;
+     boolean openCart;
 
     private static Model instance = null;
     IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
@@ -136,7 +137,6 @@ public class Model {
                 returnList.addAll(iMatDataHandler.getProducts(CITRUS_FRUIT));
                 returnList.addAll(iMatDataHandler.getProducts(EXOTIC_FRUIT));
                 returnList.addAll(iMatDataHandler.getProducts(MELONS));
-
                 return returnList;
             case "greens":
                 returnList.addAll(iMatDataHandler.getProducts(POD));
