@@ -354,6 +354,25 @@
 
 }
 
+.guide-box {
+    /*-fx-background-color: #4078CC;
+    -fx-background-color: white;*/
+    -fx-background-color: #c6c6c6;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    /*-fx-stroke-width: 10px;
+    -fx-stroke-color: rgba(0,0,0,0);*/
+}
+
+.text-color-white {
+    -fx-text-fill: white;
+}
+
+
+
+
+
+
 /* PLIANCY */
 .buttons:hover {
     -fx-background-color: #f6f6f6;

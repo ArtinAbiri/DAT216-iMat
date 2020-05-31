@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@iMat-design.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.guideController">
+   <children>
+      <AnchorPane fx:id="step2" prefHeight="900.0" prefWidth="1600.0">
+         <children>
+            <ImageView fitHeight="927.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/guide/search_bar.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="395.0" layoutY="130.0" prefHeight="313.0" prefWidth="959.0" styleClass="guide-box">
+               <children>
+                  <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steg 2 - Sökfältet" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="font-size-36" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="För att använda sökfältet klickar ni först på det och sedan kan ni skriva in namnet på den produkt ni letar efter. " wrappingWidth="909.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStart" text="Avsluta" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="497.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStep3" prefHeight="51.0" prefWidth="145.0" text="Fortsätt" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="color-green" />
+                        <String fx:value="text-color-white" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Vi fortsätter med att visa hur kategorierna kan användas." wrappingWidth="602.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="312.0" layoutY="242.0" mnemonicParsing="false" onAction="#loadStep1" prefHeight="51.0" prefWidth="145.0" text="Tillbaka" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="185.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="clear-cart-button" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="När ni har skrivit klart kan ni söka genom att trycka på Enter eller genom att klicka på sök-knappen längst till höger." wrappingWidth="934.076171875" AnchorPane.leftAnchor="20.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="step3" layoutX="10.0" layoutY="10.0" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="927.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/guide/categories.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="step21" layoutX="395.0" layoutY="130.0" prefHeight="313.0" prefWidth="959.0" styleClass="guide-box">
+               <children>
+                  <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steg 3 - Kategorier" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="font-size-36" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="I denna meny finns de olika kategorier av varor som vårt sortimentat är uppdelat it." wrappingWidth="909.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStart" text="Avsluta" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="497.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStep4" prefHeight="51.0" prefWidth="145.0" text="Fortsätt" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="color-green" />
+                        <String fx:value="text-color-white" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Vi fortsätter med att visa hur produkterna ser ut, och hur ni kan köpa dem." wrappingWidth="602.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="312.0" layoutY="242.0" mnemonicParsing="false" onAction="#loadStep2" prefHeight="51.0" prefWidth="145.0" text="Tillbaka" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="185.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="clear-cart-button" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="För att välja en kategori klickar ni på den respektive rutan och när ni gör det kommer produkterna inom den kategorin att visas." wrappingWidth="934.076171875" AnchorPane.leftAnchor="20.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="step4" layoutX="20.0" layoutY="20.0" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="927.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/guide/product.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="step211" layoutX="691.0" layoutY="178.0" prefHeight="422.0" prefWidth="841.0" styleClass="guide-box">
+               <children>
+                  <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steg 4 - Produkter" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="font-size-36" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="I denna meny finns de olika kategorier av varor som vårt sortimentat är uppdelat it." wrappingWidth="663.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStart" text="Avsluta" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="497.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStep5" prefHeight="51.0" prefWidth="145.0" text="Fortsätt" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="color-green" />
+                        <String fx:value="text-color-white" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Det går även att spara produkten som favorit genom att klicka på hjärtat i vänstra hörnet. Mellan - och + knapparna visas antal styck av produkten som ligger i er varukorg." wrappingWidth="602.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="312.0" layoutY="242.0" mnemonicParsing="false" onAction="#loadStep3" prefHeight="51.0" prefWidth="145.0" text="Tillbaka" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="185.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="clear-cart-button" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Utöver bild, namn och pris för produkten finns även knappar för att lägga till eller ta bort varje produkt från varukorgen." wrappingWidth="663.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Text layoutX="20.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Vi fortsätter med att utföra ett köp av produkten. Detta påbörjas av att varan läggs till i varukorgen med hjälp av + knappen." wrappingWidth="602.076171875" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="step5" layoutX="40.0" layoutY="40.0" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="927.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/guide/product_added.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="step21111" layoutX="740.0" layoutY="164.0" prefHeight="286.0" prefWidth="691.0" styleClass="guide-box">
+               <children>
+                  <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steg 5 - Produkt lagd i varukorgen" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="font-size-36" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="När en produkt läggs till i varukorgen indikeras detta av att siffran vid &quot;Varukorg&quot;-knappen ökar. Denna representerar antalet produkter i varukorgen." wrappingWidth="663.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStart" text="Avsluta" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="497.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStep6" prefHeight="51.0" prefWidth="145.0" text="Fortsätt" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="color-green" />
+                        <String fx:value="text-color-white" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="För att se varukorgen och gå vidare till kassan klickar ni på &quot;Varukorg&quot;-knappen." wrappingWidth="573.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="312.0" layoutY="242.0" mnemonicParsing="false" onAction="#loadStep4" prefHeight="51.0" prefWidth="145.0" text="Tillbaka" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="185.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="clear-cart-button" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="step6" layoutX="50.0" layoutY="50.0" prefHeight="900.0" prefWidth="1600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="927.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/guide/basket_expanded.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="step211111" layoutX="85.0" layoutY="135.0" prefHeight="328.0" prefWidth="691.0" styleClass="guide-box">
+               <children>
+                  <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steg 6 - Varukorgen" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="font-size-36" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="När man öppnar varukorgen visas den som ni ser här." wrappingWidth="663.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStart" text="Avsluta" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="497.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStep7" prefHeight="51.0" prefWidth="145.0" text="Fortsätt" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="color-green" />
+                        <String fx:value="text-color-white" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Här kan ni se vilka varor som finns i varukorgen och summan. Det går även att ta bort samt lägga till fler av varje produkt." wrappingWidth="643.0" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="312.0" layoutY="242.0" mnemonicParsing="false" onAction="#loadStep5" prefHeight="51.0" prefWidth="145.0" text="Tillbaka" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="185.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="clear-cart-button" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Vi fortsätter med att visa hur det ser ut när ni klickar på &quot;Till Kassan&quot;-knappen" wrappingWidth="573.076171875" AnchorPane.leftAnchor="20.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="step7" layoutX="60.0" layoutY="60.0" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="927.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/guide/checkoutPart1.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="step2111111" layoutX="92.0" layoutY="498.0" prefHeight="328.0" prefWidth="691.0" styleClass="guide-box">
+               <children>
+                  <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steg 7 - Kassan" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="font-size-36" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="I kassan möts man av denna vy." wrappingWidth="663.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStart" text="Avsluta" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="497.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStep8" prefHeight="51.0" prefWidth="145.0" text="Fortsätt" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="color-green" />
+                        <String fx:value="text-color-white" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Till vänster kan man se varukorgen och de produkter som finns i den. Till höger visas kostnaden för köpet inkl. frakt." wrappingWidth="643.0" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="312.0" layoutY="242.0" mnemonicParsing="false" onAction="#loadStep6" prefHeight="51.0" prefWidth="145.0" text="Tillbaka" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="185.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="clear-cart-button" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="För att fortsätta till att ange leverans-, och betalinformation använder man &quot;Nästa&quot;-knappen i det nedre högra hörnet." wrappingWidth="573.076171875" AnchorPane.leftAnchor="20.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="step8" layoutX="70.0" layoutY="70.0" prefHeight="900.0" prefWidth="1600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="927.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/guide/checkoutPart2.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="step21111111" layoutX="92.0" layoutY="498.0" prefHeight="369.0" prefWidth="691.0" styleClass="guide-box">
+               <children>
+                  <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steg 8 - Personuppgifter" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="font-size-36" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="I nästa steg av kassan anges leverans-, och personuppgifter." wrappingWidth="663.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStart" text="Avsluta" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="497.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStep9" prefHeight="51.0" prefWidth="145.0" text="Fortsätt" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="color-green" />
+                        <String fx:value="text-color-white" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="I formuläret skriver ni in era uppgifter genom att klicka på varje fält." wrappingWidth="643.0" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="312.0" layoutY="242.0" mnemonicParsing="false" onAction="#loadStep7" prefHeight="51.0" prefWidth="145.0" text="Tillbaka" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="185.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="clear-cart-button" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Längst upp kan ni även se vilket steg av kassan ni befinner i er. Just nu är vid i det andra steget av tre." wrappingWidth="573.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Text layoutX="20.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="När ni är klara klickar ni på &quot;Nästa&quot;-knappen, och vill ni gå tillbaka till den tidigare sidan klickar ni på &quot;Tillbaka&quot;" wrappingWidth="573.076171875" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="step9" layoutX="80.0" layoutY="80.0" prefHeight="900.0" prefWidth="1600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="927.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/guide/checkoutPart3.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="step211111111" layoutX="91.0" layoutY="512.0" prefHeight="322.0" prefWidth="691.0" styleClass="guide-box">
+               <children>
+                  <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steg 9 - Betalinformation" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="font-size-36" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="I det sista steget av kassan anger ni er betalinformation i formuläret på sidan." wrappingWidth="663.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStart" text="Avsluta" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="497.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStep10" prefHeight="51.0" prefWidth="145.0" text="Fortsätt" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="color-green" />
+                        <String fx:value="text-color-white" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="312.0" layoutY="242.0" mnemonicParsing="false" onAction="#loadStep8" prefHeight="51.0" prefWidth="145.0" text="Tillbaka" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="185.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="clear-cart-button" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Önskar ni ändra era leverans-, eller personuppgifter klickar ni på &quot;Tillbaka&quot;." wrappingWidth="573.076171875" />
+                  <Text layoutX="20.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="När ni är klara klickar ni på &quot;Slutför köp!&quot; för att genomföra köpet. " wrappingWidth="573.076171875" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="step10" layoutX="90.0" layoutY="90.0" prefHeight="900.0" prefWidth="1600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="927.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/guide/checkoutDone.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="step2111111111" layoutX="91.0" layoutY="512.0" prefHeight="322.0" prefWidth="691.0" styleClass="guide-box">
+               <children>
+                  <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steg 10 - Kvitto" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="font-size-36" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Nu har ni genomfört ert köp och er mat kommer att levereras hem till er!" wrappingWidth="663.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStart" text="Avsluta" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="497.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadEnd" prefHeight="51.0" prefWidth="145.0" text="Fortsätt" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="color-green" />
+                        <String fx:value="text-color-white" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="312.0" layoutY="242.0" mnemonicParsing="false" onAction="#loadStep9" prefHeight="51.0" prefWidth="145.0" text="Tillbaka" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="185.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="clear-cart-button" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="På denna sidan ser ni ert kvitto med de varor ni handlat och vad köpet kostade." wrappingWidth="573.076171875" />
+                  <Text layoutX="20.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="För att gå tillbaka till butiken klickar ni på knappen uppe till vänster." wrappingWidth="573.076171875" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="end" layoutX="10.0" layoutY="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="927.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@../../../../resources/guide/order_and_help.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="410.0" layoutY="220.0" prefHeight="322.0" prefWidth="712.0" styleClass="guide-box">
+               <children>
+                  <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genomgång slutförd!" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="font-size-36" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="26.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Nu har ni sett hur iMat ser ut och hur ni kan handla hos oss." wrappingWidth="650.076171875" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="50.923828125" />
+                  <Button layoutX="497.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStore" prefHeight="51.0" prefWidth="173.0" text="Börja handla" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="color-green" />
+                        <String fx:value="text-color-white" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="20.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Ifall ni någonsin vill ha hjälp kan ni närsomhelst klicka på &quot;Hjälp&quot;-knappen som finns nere i högra hörnet överallt i programmet." wrappingWidth="663.076171875" />
+                  <Text layoutX="20.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Ni kan även se tidigare köp genom att klicka på &quot;Orderhistorik&quot;-knappen." wrappingWidth="602.076171875" />
+                  <Button layoutX="20.0" layoutY="251.0" mnemonicParsing="false" onAction="#loadGuideStart" prefHeight="51.0" prefWidth="145.0" text="Börja om" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="step1">
+         <children>
+            <ImageView fitHeight="927.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/guide/base.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="479.0" layoutY="220.0" prefHeight="313.0" prefWidth="643.0" styleClass="guide-box">
+               <children>
+                  <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Steg 1 - Att hitta varor" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="font-size-36" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="För att hitta varor i vårt sortimentet finns det 2 sätt:" wrappingWidth="602.076171875" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStart" text="Avsluta" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="497.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStep2" prefHeight="51.0" prefWidth="145.0" text="Fortsätt" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="color-green" />
+                        <String fx:value="text-color-white" />
+                     </styleClass>
+                  </Button>
+                  <Text layoutX="40.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="1. Genom att använda sökfältet överst i fönstret" wrappingWidth="505.076171875" AnchorPane.leftAnchor="40.0" />
+                  <Text layoutX="40.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="2. Genom att använda kategorierna i menyn till vänster" wrappingWidth="467.076171875" AnchorPane.leftAnchor="40.0" />
+                  <Text layoutX="20.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="Vi börjar med det första sättet; genom att använda sökfältet." wrappingWidth="602.076171875" AnchorPane.leftAnchor="20.0" />
+                  <Button layoutX="312.0" layoutY="242.0" mnemonicParsing="false" onAction="#loadGuideStart" prefHeight="51.0" prefWidth="145.0" text="Tillbaka" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="185.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="clear-cart-button" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="start">
+         <children>
+            <ImageView fitHeight="927.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@../../../../resources/guide/base.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="479.0" layoutY="220.0" prefHeight="228.0" prefWidth="634.0" styleClass="guide-box">
+               <children>
+                  <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välkommen till iMat!" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="font-size-36" />
+                        <String fx:value="patua-text" />
+                     </styleClass>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-size-18" text="I denna genomgång kommer vi att stegvis visa er butikens olika funktioner, och hur ni använder dem." wrappingWidth="602.076171875" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStart" text="Avsluta" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="497.0" layoutY="163.0" mnemonicParsing="false" onAction="#loadStep1" prefHeight="51.0" prefWidth="125.0" text="Börja" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <styleClass>
+                        <String fx:value="button-shadow" />
+                        <String fx:value="font-size-24" />
+                        <String fx:value="color-green" />
+                        <String fx:value="text-color-white" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

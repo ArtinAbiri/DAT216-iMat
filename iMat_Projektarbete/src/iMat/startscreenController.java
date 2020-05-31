@@ -17,13 +17,23 @@ import java.util.ResourceBundle;
 public class startscreenController implements Initializable {
     @FXML
     AnchorPane startscreenRootPane;
-  private   Parent storeParent;
-  private   Scene storeScene;
+    private   Parent storeParent;
+    private   Scene storeScene;
     @FXML
     private void loadStoreFromStartscreen(ActionEvent event){
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(storeScene);
+        window.show();
+    }
+
+    @FXML
+    private void loadGuide(ActionEvent event) throws IOException {
+        Parent guideParent = FXMLLoader.load(getClass().getResource("guide.fxml"));
+        Scene guideScene = new Scene(guideParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(guideScene);
         window.show();
     }
 

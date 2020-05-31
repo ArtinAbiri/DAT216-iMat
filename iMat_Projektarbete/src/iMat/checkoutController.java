@@ -48,6 +48,8 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     AnchorPane checkoutPart3;
     @FXML
     AnchorPane purchaseComplete;
+    @FXML
+    AnchorPane header;
 
     //checkoutPart1
     @FXML
@@ -156,10 +158,11 @@ public class checkoutController implements Initializable, ShoppingCartListener {
     }
 
     @FXML
-    private void loadCheckout1() {
-        checkoutPart1.toFront();
+    private void loadCheckout1()  {
         updateCartList();
         updateCost();
+        checkoutPart1.toFront();
+        header.toFront();
     }
 
     @FXML
@@ -167,6 +170,7 @@ public class checkoutController implements Initializable, ShoppingCartListener {
         displayCustomerInformation();
         updateCard();
         checkoutPart2.toFront();
+        header.toFront();
     }
 
     @FXML
@@ -176,7 +180,7 @@ public class checkoutController implements Initializable, ShoppingCartListener {
             validMonth.getItems().addAll("01","02","03","04","05","06","07","08","09","10","11","12");
 
             checkoutPart3.toFront();
-
+            header.toFront();
         }
     }
 
@@ -188,6 +192,7 @@ public class checkoutController implements Initializable, ShoppingCartListener {
             showPurchase();
             model.placeOrder(false);
             purchaseComplete.toFront();
+            header.toFront();
         }
     }
 

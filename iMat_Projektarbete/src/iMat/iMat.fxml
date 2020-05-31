@@ -386,7 +386,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Button layoutX="1390.0" layoutY="810.0" mnemonicParsing="false" onAction="#loadHelp" prefHeight="75.0" prefWidth="196.0" text="Hjälp   ?" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+      <Button layoutX="1390.0" layoutY="810.0" mnemonicParsing="false" onAction="#loadHelp" prefHeight="75.0" prefWidth="196.0" text="Hjälp   ?" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="80.0">
          <styleClass>
             <String fx:value="patua-text" />
             <String fx:value="font-size-36" />
